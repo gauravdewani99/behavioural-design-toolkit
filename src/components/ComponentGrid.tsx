@@ -2,6 +2,7 @@
 import React from 'react';
 import ComponentCard from './ComponentCard';
 
+// Restructured to have 6 main components (removing the 2 empty ones)
 const components = [
   { 
     title: "Visual Salience", 
@@ -26,28 +27,18 @@ const components = [
   { 
     title: "Social Proofing", 
     imageUrl: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=800&q=80"
-  },
-  { 
-    title: "Future Component", 
-    imageUrl: "", 
-    empty: true 
-  },
-  { 
-    title: "Future Component", 
-    imageUrl: "", 
-    empty: true 
   }
 ];
 
 const ComponentGrid: React.FC = () => {
   return (
-    <div className="container py-12 md:py-16">
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
+    <div className="container py-8">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {components.map((component, index) => (
           <div key={index} className="opacity-0 animate-fade-in" style={{ animationDelay: `${0.2 + index * 0.1}s` }}>
             <ComponentCard 
               title={component.title} 
-              imageUrl={component.imageUrl} 
+              imageUrl={component.imageUrl}
               empty={component.empty ?? false}
               index={index}
             />

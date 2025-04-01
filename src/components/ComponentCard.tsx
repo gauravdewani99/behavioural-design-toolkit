@@ -17,7 +17,7 @@ const ComponentCard: React.FC<ComponentCardProps> = ({ title, imageUrl, empty = 
     <Card className={`overflow-hidden transition-all duration-300 hover:scale-[1.02] border border-border glass-morphism h-full ${!empty ? 'bg-secondary/20' : 'bg-secondary/10'}`} 
           style={{ animationDelay }}>
       <CardContent className="p-0 h-full flex flex-col">
-        <div className="relative aspect-video overflow-hidden">
+        <div className="relative aspect-[16/9] overflow-hidden">
           {!empty ? (
             <img 
               src={imageUrl} 
@@ -30,8 +30,8 @@ const ComponentCard: React.FC<ComponentCardProps> = ({ title, imageUrl, empty = 
             </div>
           )}
         </div>
-        <div className="p-5 flex-grow">
-          <h3 className="text-xl font-semibold mb-2">{title}</h3>
+        <div className="p-3 flex-grow">
+          <h3 className="text-lg font-semibold">{title}</h3>
         </div>
       </CardContent>
     </Card>
