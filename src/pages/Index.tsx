@@ -1,12 +1,25 @@
-// Update this page (the content is just a fallback if you fail to update the page)
 
-const Index = () => {
+import React from 'react';
+import Hero from '../components/Hero';
+import ComponentGrid from '../components/ComponentGrid';
+
+const Index: React.FC = () => {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-gray-600">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-background">
+      <main className="pb-16">
+        <Hero 
+          title="YOUR NAME" 
+          subtitle="Every product bottleneck is a behavioural problem. Here are some FE components that make modern day web design standout."
+        />
+        <ComponentGrid />
+      </main>
+      <footer className="py-6 border-t border-border">
+        <div className="container">
+          <p className="text-center text-sm text-muted-foreground">
+            © {new Date().getFullYear()} UI/UX Component Portfolio
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
