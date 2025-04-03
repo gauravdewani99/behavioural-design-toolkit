@@ -1,54 +1,60 @@
+
 import React from 'react';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowRight } from "lucide-react";
+import ComponentCard from './ComponentCard';
 
-// Define the structure for each component item
-interface ComponentItem {
-  name: string;
-  description: string;
-  href: string;
-}
-
-// Update the array of components to include Conversational Input
-export const components = [
-  {
-    name: "Visual Salience",
-    description: "Drawing attention to key interface elements with visual cues",
-    href: "/visual-salience",
+// Restructured to have 6 main components (removing the 2 empty ones)
+const components = [
+  { 
+    title: "Visual Salience", 
+    imageUrl: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80",
+    link: "/visual-salience"
   },
-  {
-    name: "Motion",
-    description: "Using animation to convey meaning and enhance usability",
-    href: "/motion",
+  { 
+    title: "Motion", 
+    imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80",
+    link: "/motion"
   },
-  {
-    name: "Progress Bars",
-    description: "Modern, interactive progress indicators to enhance user experience",
-    href: "/progress-bars",
+  { 
+    title: "Progress Bars", 
+    imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
+    link: "/progress-bars"
   },
-  {
-    name: "Conversational Input",
-    description: "Text and voice interfaces for natural human-computer interaction",
-    href: "/conversational-input",
+  { 
+    title: "Conversational Input", 
+    imageUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80"
   },
+  { 
+    title: "Theme Toggle", 
+    imageUrl: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80"
+  },
+  { 
+    title: "Social Proofing", 
+    imageUrl: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?auto=format&fit=crop&w=800&q=80"
+  }
 ];
 
 const ComponentGrid: React.FC = () => {
   return (
     <div className="container py-8">
-      <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
         {components.map((component, index) => (
-          <a key={index} href={component.href} className="no-underline">
-            <Card className="transition-colors duration-300 transform hover:scale-102 hover:shadow-lg">
-              <CardHeader>
-                <CardTitle>{component.name}</CardTitle>
-                <CardDescription>{component.description}</CardDescription>
-              </CardHeader>
-              <CardContent className="flex items-center justify-end text-primary">
-                Explore <ArrowRight className="ml-2 h-4 w-4" />
-              </CardContent>
-            </Card>
-          </a>
+          <div key={index} className="opacity-0 animate-fade-in" style={{ animationDelay: `${0.2 + index * 0.1}s` }}>
+            {component.link ? (
+              <a href={component.link}>
+                <ComponentCard 
+                  title={component.title} 
+                  imageUrl={component.imageUrl}
+                  index={index}
+                />
+              </a>
+            ) : (
+              <ComponentCard 
+                title={component.title} 
+                imageUrl={component.imageUrl}
+                index={index}
+              />
+            )}
+          </div>
         ))}
       </div>
     </div>
