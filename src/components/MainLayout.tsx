@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, lazy, Suspense } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
 
@@ -37,6 +37,24 @@ const components = [
   }
 ];
 
+// Pre-load components to avoid dynamic imports that can cause update loop issues
+const VisualSalience = lazy(() => import('../pages/VisualSalience'));
+const Motion = lazy(() => import('../pages/Motion'));
+const ProgressBars = lazy(() => import('../pages/ProgressBars'));
+const ConversationalInput = lazy(() => import('../pages/ConversationalInput'));
+const ThemeToggle = lazy(() => import('../pages/ThemeToggle'));
+const SocialProofing = lazy(() => import('../pages/SocialProofing'));
+
+// Map of component paths to their respective components
+const componentMap = {
+  '/visual-salience': VisualSalience,
+  '/motion': Motion,
+  '/progress-bars': ProgressBars,
+  '/conversational-input': ConversationalInput,
+  '/theme-toggle': ThemeToggle,
+  '/social-proofing': SocialProofing
+};
+
 interface MainLayoutProps {
   children?: React.ReactNode;
 }
@@ -44,16 +62,9 @@ interface MainLayoutProps {
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   const [selectedComponent, setSelectedComponent] = useState(components[0]);
   
-  // Dynamically import the component based on the selected item
-  const ComponentToRender = React.lazy(() => {
-    const componentName = selectedComponent.link.substring(1)
-      .split('-')
-      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-      .join('');
-      
-    return import(`../pages/${componentName}`);
-  });
-
+  // Get the component based on the selected link
+  const ComponentToRender = componentMap[selectedComponent.link];
+  
   return (
     <div className="flex flex-col w-full min-h-screen bg-background">
       {/* Header Section */}
@@ -106,7 +117,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
               <p className="text-muted-foreground mb-8">{selectedComponent.description}</p>
               <Separator className="mb-8" />
               
-              <React.Suspense fallback={
+              <Suspense fallback={
                 <div className="animate-pulse p-12 flex items-center justify-center rounded-lg border border-border/30">
                   <div className="flex flex-col items-center">
                     <div className="h-8 w-8 rounded-full border-2 border-primary border-t-transparent animate-spin mb-4"></div>
@@ -114,8 +125,8 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
                   </div>
                 </div>
               }>
-                <ComponentToRender />
-              </React.Suspense>
+                {ComponentToRender && <ComponentToRender />}
+              </Suspense>
             </div>
           </div>
         </Tabs>
