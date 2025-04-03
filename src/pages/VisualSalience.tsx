@@ -1,17 +1,16 @@
 
 import React from "react";
-import { Link } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
 import { AuroraBackgroundDemo } from "@/components/AuroraBackgroundDemo";
+import { ArrowLeft } from "lucide-react";
 
 const VisualSalience: React.FC = () => {
   return (
     <div className="min-h-screen bg-background">
       <div className="container py-8">
-        <Link to="/" className="flex items-center text-primary hover:text-primary/80 mb-6 group">
+        <a href="/" className="flex items-center text-primary hover:text-primary/80 mb-6 group">
           <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
           Back to Portfolio
-        </Link>
+        </a>
         
         <h1 className="text-3xl md:text-4xl font-bold text-gradient mb-6">Visual Salience</h1>
         

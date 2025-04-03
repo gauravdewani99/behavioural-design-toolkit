@@ -39,13 +39,13 @@ const ComponentGrid: React.FC = () => {
         {components.map((component, index) => (
           <div key={index} className="opacity-0 animate-fade-in" style={{ animationDelay: `${0.2 + index * 0.1}s` }}>
             {component.link ? (
-              <Link to={component.link}>
+              <a href={component.link}>
                 <ComponentCard 
                   title={component.title} 
                   imageUrl={component.imageUrl}
                   index={index}
                 />
-              </Link>
+              </a>
             ) : (
               <ComponentCard 
                 title={component.title} 
