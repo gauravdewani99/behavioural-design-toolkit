@@ -36,7 +36,7 @@ const ComponentCard: React.FC<ComponentCardProps> = ({ title, index, isActive = 
       </div>
       
       <Card className={cn(
-        "relative h-16 overflow-hidden border border-border glass-morphism",
+        "relative h-14 overflow-hidden border border-border glass-morphism", 
         "bg-gradient-to-br dark:from-slate-800 dark:to-slate-900",
         isActive && "border-primary/50"
       )}>

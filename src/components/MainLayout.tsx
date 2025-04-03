@@ -65,20 +65,20 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
     <SidebarProvider>
       <div className="flex flex-col w-full min-h-screen bg-background">
-        {/* Header Section */}
-        <header className="w-full py-8 px-6 bg-background border-b border-border/30">
+        {/* Header Section - Updated title and subtitle with improved spacing */}
+        <header className="w-full py-10 px-6 bg-background border-b border-border/30">
           <div className="max-w-5xl mx-auto">
-            <h1 className="text-3xl font-bold tracking-tight mb-2">UI Component Library</h1>
-            <p className="text-muted-foreground">A collection of modern, interactive UI components for effective interfaces</p>
+            <h1 className="text-3xl font-bold tracking-tight mb-3">BeSci x UI</h1>
+            <p className="text-muted-foreground text-lg">Behaviourally backed UI components to improve product metrics</p>
           </div>
         </header>
         
         <div className="flex flex-1 w-full">
           <Sidebar side="left" variant="sidebar" className="border-r border-border/30">
             <SidebarContent>
-              <div className="p-6">
-                <h2 className="text-lg font-medium mb-6">Components</h2>
-                <SidebarMenu className="space-y-4">
+              <div className="p-8">
+                <h2 className="text-lg font-medium mb-8">Components</h2>
+                <SidebarMenu className="space-y-6">
                   {components.map((component, index) => (
                     <SidebarMenuItem key={component.title}>
                       <div 
@@ -98,8 +98,9 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
             </SidebarContent>
           </Sidebar>
 
-          <div className="flex-1 p-6">
+          <div className="flex-1 p-8">
             <div className="max-w-5xl mx-auto pt-4">
+              {/* Component title and description - kept only here, removed from individual components */}
               <h2 className="text-2xl font-bold mb-2">{selectedComponent.title}</h2>
               <p className="text-muted-foreground mb-8">{selectedComponent.description}</p>
               <Separator className="mb-8" />
