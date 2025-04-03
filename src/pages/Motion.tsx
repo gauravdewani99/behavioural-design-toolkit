@@ -3,7 +3,19 @@ import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { SplineSceneBasic } from "@/components/SplineSceneDemo";
 
-const Motion: React.FC = () => {
+interface MotionProps {
+  simplifiedView?: boolean;
+}
+
+const Motion: React.FC<MotionProps> = ({ simplifiedView = false }) => {
+  if (simplifiedView) {
+    return (
+      <div className="w-full max-w-3xl mx-auto">
+        <SplineSceneBasic />
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <div className="container py-8">

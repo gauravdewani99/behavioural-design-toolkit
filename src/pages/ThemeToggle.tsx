@@ -3,7 +3,21 @@ import React from 'react';
 import { Card } from '@/components/ui/card';
 import ThemeToggleDemo from '../components/ThemeToggleDemo';
 
-const ThemeTogglePage: React.FC = () => {
+interface ThemeTogglePageProps {
+  simplifiedView?: boolean;
+}
+
+const ThemeTogglePage: React.FC<ThemeTogglePageProps> = ({ simplifiedView = false }) => {
+  if (simplifiedView) {
+    return (
+      <div className="w-full max-w-3xl mx-auto">
+        <Card className="p-6 bg-secondary/20 border border-border glass-morphism flex justify-center">
+          <ThemeToggleDemo />
+        </Card>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <div className="container py-8">

@@ -1,7 +1,6 @@
 
 import React, { useState, lazy, Suspense } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Separator } from "@/components/ui/separator";
 
 // Component definitions with descriptions
 const components = [
@@ -67,26 +66,26 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   
   return (
     <div className="flex flex-col w-full min-h-screen bg-background">
-      {/* Header Section */}
-      <header className="w-full py-10 px-6 bg-background border-b border-border/30">
-        <div className="max-w-5xl mx-auto">
+      {/* Header Section - Centered */}
+      <header className="w-full py-10 px-6 bg-background border-b border-border/30 text-center">
+        <div className="max-w-3xl mx-auto">
           <h1 className="text-3xl font-bold tracking-tight mb-3">BeSci x UI</h1>
           <p className="text-muted-foreground text-lg">Behaviourally backed UI components to improve product metrics</p>
         </div>
       </header>
       
-      <div className="flex flex-1 w-full p-8">
+      <div className="flex flex-1 w-full p-8 justify-center">
         <Tabs 
           defaultValue={components[0].link} 
           orientation="vertical" 
-          className="flex w-full gap-6"
+          className="flex gap-8 max-w-5xl w-full"
           onValueChange={(value) => {
             const component = components.find(c => c.link === value);
             if (component) setSelectedComponent(component);
           }}
         >
-          <div className="w-64">
-            <h2 className="text-lg font-medium mb-6">Components</h2>
+          {/* Simplified sidebar without label */}
+          <div className="w-56">
             <TabsList className="flex-col rounded-none border-l border-border bg-transparent p-0">
               {components.map((component, index) => {
                 const pastelBg = [
@@ -111,12 +110,9 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
             </TabsList>
           </div>
 
+          {/* Simplified component view area - no duplicated titles */}
           <div className="flex-1">
-            <div className="max-w-5xl pt-4">
-              <h2 className="text-2xl font-bold mb-2">{selectedComponent.title}</h2>
-              <p className="text-muted-foreground mb-8">{selectedComponent.description}</p>
-              <Separator className="mb-8" />
-              
+            <div className="h-full flex items-center justify-center">
               <Suspense fallback={
                 <div className="animate-pulse p-12 flex items-center justify-center rounded-lg border border-border/30">
                   <div className="flex flex-col items-center">
@@ -125,7 +121,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
                   </div>
                 </div>
               }>
-                {ComponentToRender && <ComponentToRender />}
+                {ComponentToRender && <ComponentToRender simplifiedView={true} />}
               </Suspense>
             </div>
           </div>

@@ -4,7 +4,21 @@ import { ArrowLeft } from "lucide-react";
 import { PromptInputDemo } from "@/components/PromptInputDemo";
 import { AIVoiceInputDemo } from "@/components/AIVoiceInputDemo";
 
-const ConversationalInput: React.FC = () => {
+interface ConversationalInputProps {
+  simplifiedView?: boolean;
+}
+
+const ConversationalInput: React.FC<ConversationalInputProps> = ({ simplifiedView = false }) => {
+  if (simplifiedView) {
+    return (
+      <div className="w-full max-w-3xl mx-auto">
+        <div className="bg-secondary/20 rounded-lg p-6 glass-morphism">
+          <PromptInputDemo />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <div className="container py-8">

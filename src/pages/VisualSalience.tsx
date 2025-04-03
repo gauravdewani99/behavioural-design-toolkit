@@ -4,7 +4,21 @@ import { AuroraBackgroundDemo } from "@/components/AuroraBackgroundDemo";
 import { ArrowLeft } from "lucide-react";
 import { LampDemo } from "@/components/LampDemo";
 
-const VisualSalience: React.FC = () => {
+interface VisualSalienceProps {
+  simplifiedView?: boolean;
+}
+
+const VisualSalience: React.FC<VisualSalienceProps> = ({ simplifiedView = false }) => {
+  if (simplifiedView) {
+    return (
+      <div className="w-full max-w-3xl mx-auto">
+        <div className="bg-secondary/20 rounded-lg p-8 glass-morphism">
+          <AuroraBackgroundDemo />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <div className="container py-8">

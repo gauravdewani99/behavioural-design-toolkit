@@ -3,7 +3,21 @@ import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { AvatarSocialProof } from "@/components/AvatarSocialProof";
 
-const SocialProofing: React.FC = () => {
+interface SocialProofingProps {
+  simplifiedView?: boolean;
+}
+
+const SocialProofing: React.FC<SocialProofingProps> = ({ simplifiedView = false }) => {
+  if (simplifiedView) {
+    return (
+      <div className="w-full max-w-3xl mx-auto">
+        <div className="bg-secondary/20 rounded-lg p-6 glass-morphism">
+          <AvatarSocialProof />
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <div className="container py-8">

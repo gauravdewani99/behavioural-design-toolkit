@@ -3,7 +3,21 @@ import React from 'react';
 import StepperDemo from '../components/StepperDemo';
 import { Card } from '@/components/ui/card';
 
-const ProgressBars: React.FC = () => {
+interface ProgressBarsProps {
+  simplifiedView?: boolean;
+}
+
+const ProgressBars: React.FC<ProgressBarsProps> = ({ simplifiedView = false }) => {
+  if (simplifiedView) {
+    return (
+      <div className="w-full max-w-3xl mx-auto">
+        <Card className="p-6 bg-secondary/20 border border-border glass-morphism">
+          <StepperDemo />
+        </Card>
+      </div>
+    );
+  }
+
   return (
     <div className="min-h-screen bg-background">
       <div className="container py-8">
