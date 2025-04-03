@@ -101,7 +101,10 @@ export default {
         'fade-in': 'fade-in 0.5s ease-out forwards',
         'pulse-subtle': 'pulse-subtle 3s ease-in-out infinite',
         'float': 'float 6s ease-in-out infinite'
-      }
+      },
+      backgroundImage: {
+        'gradient-conic': 'conic-gradient(var(--conic-position), var(--tw-gradient-stops))',
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],

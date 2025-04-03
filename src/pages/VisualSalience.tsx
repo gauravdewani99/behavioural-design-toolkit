@@ -2,6 +2,7 @@
 import React from "react";
 import { AuroraBackgroundDemo } from "@/components/AuroraBackgroundDemo";
 import { ArrowLeft } from "lucide-react";
+import { LampDemo } from "@/components/LampDemo";
 
 const VisualSalience: React.FC = () => {
   return (
@@ -26,28 +27,8 @@ const VisualSalience: React.FC = () => {
           <AuroraBackgroundDemo />
         </div>
         
-        <div className="space-y-6">
-          <h2 className="text-2xl font-bold">Usage Guidelines</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div className="bg-secondary/10 p-6 rounded-lg glass-morphism">
-              <h3 className="text-xl font-semibold mb-3">When to Use</h3>
-              <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                <li>Hero sections requiring emphasis on multiple features</li>
-                <li>Headlines that need to convey multiple related concepts</li>
-                <li>When you want to save space but show multiple messages</li>
-                <li>For creating visual rhythm and interest in static content</li>
-              </ul>
-            </div>
-            <div className="bg-secondary/10 p-6 rounded-lg glass-morphism">
-              <h3 className="text-xl font-semibold mb-3">When to Avoid</h3>
-              <ul className="list-disc list-inside space-y-2 text-muted-foreground">
-                <li>Critical information that must be seen immediately</li>
-                <li>When content needs to be scanned quickly</li>
-                <li>Mobile interfaces with limited screen space</li>
-                <li>Sections requiring extended reading or focus</li>
-              </ul>
-            </div>
-          </div>
+        <div className="bg-secondary/20 rounded-lg p-8 mb-10 glass-morphism">
+          <LampDemo />
         </div>
       </div>
     </div>
