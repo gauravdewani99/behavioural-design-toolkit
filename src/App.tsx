@@ -10,6 +10,7 @@ import VisualSalience from "./pages/VisualSalience";
 import Motion from "./pages/Motion";
 import ProgressBars from "./pages/ProgressBars";
 import ThemeToggle from "./pages/ThemeToggle";
+import SocialProofing from "./pages/SocialProofing";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -27,6 +28,7 @@ const App = () => (
             <Route path="/motion" element={<Motion />} />
             <Route path="/progress-bars" element={<ProgressBars />} />
             <Route path="/theme-toggle" element={<ThemeToggle />} />
+            <Route path="/social-proofing" element={<SocialProofing />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
