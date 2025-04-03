@@ -12,8 +12,13 @@ const VisualSalience: React.FC<VisualSalienceProps> = ({ simplifiedView = false 
   if (simplifiedView) {
     return (
       <div className="w-full max-w-3xl mx-auto">
-        <div className="bg-secondary/20 rounded-lg p-8 glass-morphism">
-          <AuroraBackgroundDemo />
+        <div className="grid gap-6">
+          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism">
+            <AuroraBackgroundDemo />
+          </div>
+          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism">
+            <LampDemo />
+          </div>
         </div>
       </div>
     );
@@ -32,17 +37,19 @@ const VisualSalience: React.FC<VisualSalienceProps> = ({ simplifiedView = false 
         <div className="prose prose-invert max-w-none mb-10">
           <p className="text-muted-foreground text-lg">
             Visual salience in UI design refers to the prominence or noticeability of elements. 
-            This component demonstrates a word cycling animation that draws attention through 
-            subtle motion and creates visual interest.
+            These components demonstrate animations that draw attention through 
+            subtle motion and create visual interest.
           </p>
         </div>
         
-        <div className="bg-secondary/20 rounded-lg p-8 mb-10 glass-morphism">
-          <AuroraBackgroundDemo />
-        </div>
-        
-        <div className="bg-secondary/20 rounded-lg p-8 mb-10 glass-morphism">
-          <LampDemo />
+        <div className="grid gap-10">
+          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism">
+            <AuroraBackgroundDemo />
+          </div>
+          
+          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism h-auto">
+            <LampDemo />
+          </div>
         </div>
       </div>
     </div>
