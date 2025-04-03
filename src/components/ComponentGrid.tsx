@@ -1,6 +1,5 @@
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 import ComponentCard from './ComponentCard';
 
 // Restructured to have 6 main components (removing the 2 empty ones)
@@ -12,7 +11,8 @@ const components = [
   },
   { 
     title: "Motion", 
-    imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80"
+    imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=800&q=80",
+    link: "/motion"
   },
   { 
     title: "Progress Bars", 
