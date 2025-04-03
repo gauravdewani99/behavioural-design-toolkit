@@ -25,7 +25,8 @@ const components = [
   },
   { 
     title: "Theme Toggle", 
-    imageUrl: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80"
+    imageUrl: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&w=800&q=80",
+    link: "/theme-toggle"
   },
   { 
     title: "Social Proofing", 
