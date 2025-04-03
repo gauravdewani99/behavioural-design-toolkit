@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import VisualSalience from "./pages/VisualSalience";
 import Motion from "./pages/Motion";
+import ProgressBars from "./pages/ProgressBars";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -21,6 +22,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/visual-salience" element={<VisualSalience />} />
           <Route path="/motion" element={<Motion />} />
+          <Route path="/progress-bars" element={<ProgressBars />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

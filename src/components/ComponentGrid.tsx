@@ -16,7 +16,8 @@ const components = [
   },
   { 
     title: "Progress Bars", 
-    imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80"
+    imageUrl: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=800&q=80",
+    link: "/progress-bars"
   },
   { 
     title: "Conversational Input", 
