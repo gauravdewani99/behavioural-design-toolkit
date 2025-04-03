@@ -12,7 +12,7 @@ const ConversationalInput: React.FC<ConversationalInputProps> = ({ simplifiedVie
   if (simplifiedView) {
     return (
       <div className="w-full max-w-3xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="flex flex-col gap-4">
           <div className="bg-secondary/20 rounded-lg p-6 glass-morphism">
             <PromptInputDemo />
           </div>
@@ -41,8 +41,8 @@ const ConversationalInput: React.FC<ConversationalInputProps> = ({ simplifiedVie
           </p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-          <div className="bg-secondary/20 rounded-lg p-6 glass-morphism h-full">
+        <div className="flex flex-col gap-6 mb-6 max-w-2xl mx-auto">
+          <div className="bg-secondary/20 rounded-lg p-6 glass-morphism">
             <div className="flex flex-col items-center space-y-6">
               <h2 className="text-xl font-medium">Text-Based Conversation</h2>
               <div className="w-full flex justify-center">
@@ -55,7 +55,7 @@ const ConversationalInput: React.FC<ConversationalInputProps> = ({ simplifiedVie
             </div>
           </div>
 
-          <div className="bg-secondary/20 rounded-lg p-6 glass-morphism h-full">
+          <div className="bg-secondary/20 rounded-lg p-6 glass-morphism">
             <div className="flex flex-col items-center space-y-6">
               <h2 className="text-xl font-medium">Voice-Based Conversation</h2>
               <AIVoiceInputDemo />
