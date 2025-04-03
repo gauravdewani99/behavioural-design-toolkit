@@ -8,8 +8,8 @@ const Index: React.FC = () => {
     <div className="min-h-screen bg-background">
       <main className="pb-8">
         <Hero 
-          title="YOUR NAME" 
-          subtitle="Every product bottleneck is a behavioural problem. Here are some FE components that make modern day web design standout."
+          title="BeSci x UI" 
+          subtitle="A list of behaviourally-backed UI components that you can seamlessly integrate in your product"
         />
         <ComponentGrid />
       </main>
