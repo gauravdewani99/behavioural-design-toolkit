@@ -1,53 +1,38 @@
 
 import React, { useState, lazy, Suspense } from 'react';
-import { 
-  Eye, 
-  Sparkle, 
-  BarChart3, 
-  MessageSquare, 
-  SunMoon, 
-  Users 
-} from 'lucide-react';
-import { Dock, DockItem, DockIcon, DockLabel } from "@/components/ui/dock";
-import { motion } from 'framer-motion';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 // Component definitions with descriptions
 const components = [
   { 
     title: "Visual Salience", 
     link: "/visual-salience",
-    description: "Techniques to draw attention to key elements through contrast, color, and emphasis.",
-    icon: Sparkle
+    description: "Techniques to draw attention to key elements through contrast, color, and emphasis."
   },
   { 
     title: "Motion", 
     link: "/motion",
-    description: "Animation patterns that guide users and create a sense of orientation and hierarchy.",
-    icon: Eye
+    description: "Animation patterns that guide users and create a sense of orientation and hierarchy."
   },
   { 
     title: "Progress Bars", 
     link: "/progress-bars",
-    description: "Visual indicators that show completion status and reduce anxiety during waiting periods.",
-    icon: BarChart3
+    description: "Visual indicators that show completion status and reduce anxiety during waiting periods."
   },
   { 
     title: "Conversational Input", 
     link: "/conversational-input",
-    description: "Natural language interfaces that make complex interactions more intuitive and engaging.",
-    icon: MessageSquare
+    description: "Natural language interfaces that make complex interactions more intuitive and engaging."
   },
   { 
     title: "Theme Toggle", 
     link: "/theme-toggle",
-    description: "Controls that allow users to personalize their experience through appearance settings.",
-    icon: SunMoon
+    description: "Controls that allow users to personalize their experience through appearance settings."
   },
   { 
     title: "Social Proofing", 
     link: "/social-proofing",
-    description: "Elements that leverage social influence to build trust and guide decision-making.",
-    icon: Users
+    description: "Elements that leverage social influence to build trust and guide decision-making."
   }
 ];
 
@@ -89,59 +74,58 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
         </div>
       </header>
       
-      {/* Dock Menu - Horizontal */}
-      <div className="flex justify-center mt-8 mb-4">
-        <div className="max-w-4xl w-full">
-          <Dock className="bg-secondary/20 backdrop-blur-sm border border-border glass-morphism">
-            {components.map((component, index) => {
-              const Icon = component.icon;
-              const pastelBg = [
-                "bg-[#F2FCE2]", // soft green
-                "bg-[#FEF7CD]", // soft yellow
-                "bg-[#FEC6A1]", // soft orange
-                "bg-[#E5DEFF]", // soft purple
-                "bg-[#FFDEE2]", // soft pink
-                "bg-[#D3E4FD]", // soft blue
-              ][index % 6];
-              
-              const isSelected = selectedComponent.link === component.link;
-              
-              return (
-                <DockItem
-                  key={component.link}
-                  className={`rounded-full ${pastelBg} ${isSelected ? 'ring-2 ring-primary' : ''}`}
-                  onClick={() => setSelectedComponent(component)}
-                >
-                  <DockLabel>{component.title}</DockLabel>
-                  <DockIcon>
-                    <Icon className="h-full w-full text-foreground/70" />
-                  </DockIcon>
-                </DockItem>
-              );
-            })}
-          </Dock>
-        </div>
-      </div>
-
-      {/* Component View Area */}
-      <div className="flex-1 flex items-center justify-center px-8">
-        <motion.div 
-          className="h-full w-full max-w-4xl flex items-center justify-center"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
+      <div className="flex flex-1 w-full p-8 justify-center">
+        <Tabs 
+          defaultValue={components[0].link} 
+          orientation="vertical" 
+          className="flex gap-8 max-w-5xl w-full"
+          onValueChange={(value) => {
+            const component = components.find(c => c.link === value);
+            if (component) setSelectedComponent(component);
+          }}
         >
-          <Suspense fallback={
-            <div className="animate-pulse p-12 flex items-center justify-center rounded-lg border border-border/30">
-              <div className="flex flex-col items-center">
-                <div className="h-8 w-8 rounded-full border-2 border-primary border-t-transparent animate-spin mb-4"></div>
-                <p className="text-muted-foreground">Loading component...</p>
-              </div>
+          {/* Simplified sidebar without label */}
+          <div className="w-56">
+            <TabsList className="flex-col rounded-none border-l border-border bg-transparent p-0">
+              {components.map((component, index) => {
+                const pastelBg = [
+                  "hover:bg-[#F2FCE2]", // soft green
+                  "hover:bg-[#FEF7CD]", // soft yellow
+                  "hover:bg-[#FEC6A1]", // soft orange
+                  "hover:bg-[#E5DEFF]", // soft purple
+                  "hover:bg-[#FFDEE2]", // soft pink
+                  "hover:bg-[#D3E4FD]", // soft blue
+                ][index % 6];
+
+                return (
+                  <TabsTrigger
+                    key={component.link}
+                    value={component.link}
+                    className={`relative w-full justify-start rounded-none py-4 transition-colors dark:hover:bg-white/5 ${pastelBg} after:absolute after:inset-y-0 after:start-0 after:w-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary`}
+                  >
+                    {component.title}
+                  </TabsTrigger>
+                );
+              })}
+            </TabsList>
+          </div>
+
+          {/* Simplified component view area - no duplicated titles */}
+          <div className="flex-1">
+            <div className="h-full flex items-center justify-center">
+              <Suspense fallback={
+                <div className="animate-pulse p-12 flex items-center justify-center rounded-lg border border-border/30">
+                  <div className="flex flex-col items-center">
+                    <div className="h-8 w-8 rounded-full border-2 border-primary border-t-transparent animate-spin mb-4"></div>
+                    <p className="text-muted-foreground">Loading component...</p>
+                  </div>
+                </div>
+              }>
+                {ComponentToRender && <ComponentToRender simplifiedView={true} />}
+              </Suspense>
             </div>
-          }>
-            {ComponentToRender && <ComponentToRender simplifiedView={true} />}
-          </Suspense>
-        </motion.div>
+          </div>
+        </Tabs>
       </div>
     </div>
   );

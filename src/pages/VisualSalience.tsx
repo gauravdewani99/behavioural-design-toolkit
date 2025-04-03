@@ -24,7 +24,7 @@ const VisualSalience: React.FC<VisualSalienceProps> = ({ simplifiedView = false 
       <div className="container py-8">
         <a href="/" className="flex items-center text-primary hover:text-primary/80 mb-6 group">
           <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
-          Back to Home
+          Back to Portfolio
         </a>
         
         <h1 className="text-3xl md:text-4xl font-bold text-gradient mb-6">Visual Salience</h1>

@@ -2,7 +2,6 @@
 import React from 'react';
 import StepperDemo from '../components/StepperDemo';
 import { Card } from '@/components/ui/card';
-import { ArrowLeft } from 'lucide-react';
 
 interface ProgressBarsProps {
   simplifiedView?: boolean;
@@ -22,11 +21,6 @@ const ProgressBars: React.FC<ProgressBarsProps> = ({ simplifiedView = false }) =
   return (
     <div className="min-h-screen bg-background">
       <div className="container py-8">
-        <a href="/" className="flex items-center text-primary hover:text-primary/80 mb-6 group">
-          <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
-          Back to Home
-        </a>
-
         <div className="mb-8">
           <h1 className="text-4xl font-bold mb-2">Progress Bars</h1>
           <p className="text-muted-foreground">
@@ -41,6 +35,15 @@ const ProgressBars: React.FC<ProgressBarsProps> = ({ simplifiedView = false }) =
           </Card>
           
           {/* Additional progress bar examples could be added here */}
+        </div>
+        
+        <div className="mt-8">
+          <a 
+            href="/" 
+            className="inline-flex items-center text-primary hover:underline"
+          >
+            &larr; Back to Home
+          </a>
         </div>
       </div>
     </div>
