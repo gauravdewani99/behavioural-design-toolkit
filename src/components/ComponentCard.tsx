@@ -36,11 +36,11 @@ const ComponentCard: React.FC<ComponentCardProps> = ({ title, index, isActive = 
       </div>
       
       <Card className={cn(
-        "relative h-24 overflow-hidden border border-border glass-morphism",
+        "relative h-16 overflow-hidden border border-border glass-morphism",
         "bg-gradient-to-br dark:from-slate-800 dark:to-slate-900",
         isActive && "border-primary/50"
       )}>
-        <CardContent className="p-4 flex flex-col items-center justify-center h-full">
+        <CardContent className="p-3 flex flex-col items-center justify-center h-full">
           <div className={cn(
             "absolute inset-0 opacity-80 bg-gradient-to-br",
             pastelGradient,
@@ -48,7 +48,7 @@ const ComponentCard: React.FC<ComponentCardProps> = ({ title, index, isActive = 
           )} />
           
           <div className="relative z-10 flex flex-col items-center">
-            <h3 className="text-md font-semibold text-center">{title}</h3>
+            <h3 className="text-sm font-medium text-center">{title}</h3>
           </div>
         </CardContent>
       </Card>

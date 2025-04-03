@@ -5,10 +5,10 @@ import {
   SidebarContent, 
   SidebarMenu, 
   SidebarMenuItem, 
-  SidebarMenuButton,
   SidebarProvider
 } from "@/components/ui/sidebar";
 import ComponentCard from './ComponentCard';
+import { Separator } from "@/components/ui/separator";
 
 // Component definitions with descriptions
 const components = [
@@ -64,39 +64,57 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 
   return (
     <SidebarProvider>
-      <div className="flex w-full min-h-screen bg-background">
-        <Sidebar side="left" variant="sidebar" className="border-r border-border">
-          <SidebarContent>
-            <div className="p-4">
-              <h2 className="text-xl font-semibold mb-4">Components</h2>
-              <SidebarMenu>
-                {components.map((component, index) => (
-                  <SidebarMenuItem key={component.title}>
-                    <div 
-                      className="w-full cursor-pointer"
-                      onClick={() => setSelectedComponent(component)}
-                    >
-                      <ComponentCard 
-                        title={component.title} 
-                        index={index} 
-                        isActive={selectedComponent.title === component.title}
-                      />
-                    </div>
-                  </SidebarMenuItem>
-                ))}
-              </SidebarMenu>
-            </div>
-          </SidebarContent>
-        </Sidebar>
-
-        <div className="flex-1 p-6">
+      <div className="flex flex-col w-full min-h-screen bg-background">
+        {/* Header Section */}
+        <header className="w-full py-8 px-6 bg-background border-b border-border/30">
           <div className="max-w-5xl mx-auto">
-            <h1 className="text-2xl font-bold mb-2">{selectedComponent.title}</h1>
-            <p className="text-muted-foreground mb-8">{selectedComponent.description}</p>
-            
-            <React.Suspense fallback={<div className="animate-pulse p-12 bg-muted rounded-lg">Loading component...</div>}>
-              <ComponentToRender />
-            </React.Suspense>
+            <h1 className="text-3xl font-bold tracking-tight mb-2">UI Component Library</h1>
+            <p className="text-muted-foreground">A collection of modern, interactive UI components for effective interfaces</p>
+          </div>
+        </header>
+        
+        <div className="flex flex-1 w-full">
+          <Sidebar side="left" variant="sidebar" className="border-r border-border/30">
+            <SidebarContent>
+              <div className="p-6">
+                <h2 className="text-lg font-medium mb-6">Components</h2>
+                <SidebarMenu className="space-y-4">
+                  {components.map((component, index) => (
+                    <SidebarMenuItem key={component.title}>
+                      <div 
+                        className="w-full cursor-pointer"
+                        onClick={() => setSelectedComponent(component)}
+                      >
+                        <ComponentCard 
+                          title={component.title} 
+                          index={index} 
+                          isActive={selectedComponent.title === component.title}
+                        />
+                      </div>
+                    </SidebarMenuItem>
+                  ))}
+                </SidebarMenu>
+              </div>
+            </SidebarContent>
+          </Sidebar>
+
+          <div className="flex-1 p-6">
+            <div className="max-w-5xl mx-auto pt-4">
+              <h2 className="text-2xl font-bold mb-2">{selectedComponent.title}</h2>
+              <p className="text-muted-foreground mb-8">{selectedComponent.description}</p>
+              <Separator className="mb-8" />
+              
+              <React.Suspense fallback={
+                <div className="animate-pulse p-12 flex items-center justify-center rounded-lg border border-border/30">
+                  <div className="flex flex-col items-center">
+                    <div className="h-8 w-8 rounded-full border-2 border-primary border-t-transparent animate-spin mb-4"></div>
+                    <p className="text-muted-foreground">Loading component...</p>
+                  </div>
+                </div>
+              }>
+                <ComponentToRender />
+              </React.Suspense>
+            </div>
           </div>
         </div>
       </div>
