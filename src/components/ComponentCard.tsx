@@ -7,6 +7,7 @@ import { cn } from "@/lib/utils";
 interface ComponentCardProps {
   title: string;
   index: number;
+  isActive?: boolean;
 }
 
 // Pastel colors for the backgrounds
@@ -19,23 +20,27 @@ const pastels = [
   "from-[#D3E4FD] to-[#BAD5FC]", // soft blue
 ];
 
-const ComponentCard: React.FC<ComponentCardProps> = ({ title, index }) => {
+const ComponentCard: React.FC<ComponentCardProps> = ({ title, index, isActive = false }) => {
   // Get a pastel color for this card (cycling through the array)
   const pastelGradient = pastels[index % pastels.length];
   
   return (
-    <div className="relative p-[1px] rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.02]">
-      <div className="absolute inset-0">
+    <div className={cn(
+      "relative p-[1px] rounded-xl overflow-hidden transition-all duration-300 hover:scale-[1.02]",
+      isActive && "scale-[1.02] ring-2 ring-primary/20"
+    )}>
+      <div className="absolute inset-0 z-0">
         <MovingBorder duration={3000 + index * 500} rx="30%" ry="30%">
           <div className="h-20 w-20 opacity-[0.8] bg-[radial-gradient(var(--primary)_40%,transparent_60%)]" />
         </MovingBorder>
       </div>
       
       <Card className={cn(
-        "relative h-40 overflow-hidden border border-border glass-morphism",
-        "bg-gradient-to-br dark:from-slate-800 dark:to-slate-900"
+        "relative h-24 overflow-hidden border border-border glass-morphism",
+        "bg-gradient-to-br dark:from-slate-800 dark:to-slate-900",
+        isActive && "border-primary/50"
       )}>
-        <CardContent className="p-6 flex flex-col items-center justify-center h-full">
+        <CardContent className="p-4 flex flex-col items-center justify-center h-full">
           <div className={cn(
             "absolute inset-0 opacity-80 bg-gradient-to-br",
             pastelGradient,
@@ -43,7 +48,7 @@ const ComponentCard: React.FC<ComponentCardProps> = ({ title, index }) => {
           )} />
           
           <div className="relative z-10 flex flex-col items-center">
-            <h3 className="text-xl font-semibold text-center">{title}</h3>
+            <h3 className="text-md font-semibold text-center">{title}</h3>
           </div>
         </CardContent>
       </Card>

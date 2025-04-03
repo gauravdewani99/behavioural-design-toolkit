@@ -2,7 +2,7 @@
 import React from 'react';
 import ComponentCard from './ComponentCard';
 
-// Restructured to have 6 main components (removing the image URLs)
+// Restructured to have 6 main components
 const components = [
   { 
     title: "Visual Salience", 
