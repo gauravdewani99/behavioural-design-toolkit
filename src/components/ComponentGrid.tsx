@@ -21,7 +21,8 @@ const components = [
   },
   { 
     title: "Conversational Input", 
-    imageUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80"
+    imageUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
+    link: "/conversational-input"
   },
   { 
     title: "Theme Toggle", 
