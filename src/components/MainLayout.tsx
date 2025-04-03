@@ -1,13 +1,6 @@
 
 import React, { useState } from 'react';
-import { 
-  Sidebar, 
-  SidebarContent, 
-  SidebarMenu, 
-  SidebarMenuItem, 
-  SidebarProvider
-} from "@/components/ui/sidebar";
-import ComponentCard from './ComponentCard';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Separator } from "@/components/ui/separator";
 
 // Component definitions with descriptions
@@ -53,7 +46,6 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   
   // Dynamically import the component based on the selected item
   const ComponentToRender = React.lazy(() => {
-    // Remove the leading slash and convert to PascalCase
     const componentName = selectedComponent.link.substring(1)
       .split('-')
       .map(word => word.charAt(0).toUpperCase() + word.slice(1))
@@ -63,44 +55,53 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   });
 
   return (
-    <SidebarProvider>
-      <div className="flex flex-col w-full min-h-screen bg-background">
-        {/* Header Section - Updated title and subtitle with improved spacing */}
-        <header className="w-full py-10 px-6 bg-background border-b border-border/30">
-          <div className="max-w-5xl mx-auto">
-            <h1 className="text-3xl font-bold tracking-tight mb-3">BeSci x UI</h1>
-            <p className="text-muted-foreground text-lg">Behaviourally backed UI components to improve product metrics</p>
-          </div>
-        </header>
-        
-        <div className="flex flex-1 w-full">
-          <Sidebar side="left" variant="sidebar" className="border-r border-border/30">
-            <SidebarContent>
-              <div className="p-8">
-                <h2 className="text-lg font-medium mb-8">Components</h2>
-                <SidebarMenu className="space-y-6">
-                  {components.map((component, index) => (
-                    <SidebarMenuItem key={component.title}>
-                      <div 
-                        className="w-full cursor-pointer"
-                        onClick={() => setSelectedComponent(component)}
-                      >
-                        <ComponentCard 
-                          title={component.title} 
-                          index={index} 
-                          isActive={selectedComponent.title === component.title}
-                        />
-                      </div>
-                    </SidebarMenuItem>
-                  ))}
-                </SidebarMenu>
-              </div>
-            </SidebarContent>
-          </Sidebar>
+    <div className="flex flex-col w-full min-h-screen bg-background">
+      {/* Header Section */}
+      <header className="w-full py-10 px-6 bg-background border-b border-border/30">
+        <div className="max-w-5xl mx-auto">
+          <h1 className="text-3xl font-bold tracking-tight mb-3">BeSci x UI</h1>
+          <p className="text-muted-foreground text-lg">Behaviourally backed UI components to improve product metrics</p>
+        </div>
+      </header>
+      
+      <div className="flex flex-1 w-full p-8">
+        <Tabs 
+          defaultValue={components[0].link} 
+          orientation="vertical" 
+          className="flex w-full gap-6"
+          onValueChange={(value) => {
+            const component = components.find(c => c.link === value);
+            if (component) setSelectedComponent(component);
+          }}
+        >
+          <div className="w-64">
+            <h2 className="text-lg font-medium mb-6">Components</h2>
+            <TabsList className="flex-col rounded-none border-l border-border bg-transparent p-0">
+              {components.map((component, index) => {
+                const pastelBg = [
+                  "hover:bg-[#F2FCE2]", // soft green
+                  "hover:bg-[#FEF7CD]", // soft yellow
+                  "hover:bg-[#FEC6A1]", // soft orange
+                  "hover:bg-[#E5DEFF]", // soft purple
+                  "hover:bg-[#FFDEE2]", // soft pink
+                  "hover:bg-[#D3E4FD]", // soft blue
+                ][index % 6];
 
-          <div className="flex-1 p-8">
-            <div className="max-w-5xl mx-auto pt-4">
-              {/* Component title and description - kept only here, removed from individual components */}
+                return (
+                  <TabsTrigger
+                    key={component.link}
+                    value={component.link}
+                    className={`relative w-full justify-start rounded-none py-4 transition-colors dark:hover:bg-white/5 ${pastelBg} after:absolute after:inset-y-0 after:start-0 after:w-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary`}
+                  >
+                    {component.title}
+                  </TabsTrigger>
+                );
+              })}
+            </TabsList>
+          </div>
+
+          <div className="flex-1">
+            <div className="max-w-5xl pt-4">
               <h2 className="text-2xl font-bold mb-2">{selectedComponent.title}</h2>
               <p className="text-muted-foreground mb-8">{selectedComponent.description}</p>
               <Separator className="mb-8" />
@@ -117,9 +118,9 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
               </React.Suspense>
             </div>
           </div>
-        </div>
+        </Tabs>
       </div>
-    </SidebarProvider>
+    </div>
   );
 };
 
