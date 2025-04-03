@@ -11,14 +11,8 @@ export function AuroraBackgroundDemo() {
         Your{" "}
         <AnimatedWordCycle 
           words={[
-            "business",
-            "team",
-            "workflow",
-            "productivity",
-            "projects",
-            "analytics",
-            "dashboard",
-            "platform"
+            "moving text is good",
+            "I like moving text"
           ]}
           interval={3000}
           className={"text-foreground font-semi-bold"} 
