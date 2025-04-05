@@ -1,3 +1,4 @@
+
 import React from "react";
 import { AuroraBackgroundDemo } from "@/components/AuroraBackgroundDemo";
 import { ArrowLeft } from "lucide-react";
@@ -11,8 +12,10 @@ const VisualSalience: React.FC<VisualSalienceProps> = ({
   if (simplifiedView) {
     return <div className="w-full max-w-3xl mx-auto">
         <div className="grid gap-6">
-          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism px-[22px]">
-            <LampDemo />
+          <div className="bg-secondary/20 rounded-lg p-6 glass-morphism px-[22px]">
+            <div className="h-[280px] overflow-hidden">
+              <LampDemo />
+            </div>
           </div>
           <div className="bg-secondary/20 rounded-lg p-8 glass-morphism">
             <AuroraBackgroundDemo />
@@ -44,7 +47,7 @@ const VisualSalience: React.FC<VisualSalienceProps> = ({
                 Our attention is attracted to visually salient stimuli. [Itti, L. (2007). Visual salience. Scholarpedia, 2(9), 3327.]. 
                 Digital ecosystems are a constant fight for attention. Reduce drop offs and increase conversion rates by emphasizing your textual callouts!
               </p>
-              <div className="h-[360px] md:h-[380px] w-full">
+              <div className="h-[280px] w-full overflow-hidden">
                 <LampDemo />
               </div>
             </div>
