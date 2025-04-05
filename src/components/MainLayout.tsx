@@ -110,21 +110,19 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
             </TabsList>
           </div>
 
-          {/* Component view area with height limitation */}
+          {/* Simplified component view area - no duplicated titles */}
           <div className="flex-1">
             <div className="h-full flex items-center justify-center">
-              <div className="w-full max-w-3xl max-h-[80vh] overflow-auto mx-0">
-                <Suspense fallback={
-                  <div className="animate-pulse p-12 flex items-center justify-center rounded-lg border border-border/30">
-                    <div className="flex flex-col items-center">
-                      <div className="h-8 w-8 rounded-full border-2 border-primary border-t-transparent animate-spin mb-4"></div>
-                      <p className="text-muted-foreground">Loading component...</p>
-                    </div>
+              <Suspense fallback={
+                <div className="animate-pulse p-12 flex items-center justify-center rounded-lg border border-border/30">
+                  <div className="flex flex-col items-center">
+                    <div className="h-8 w-8 rounded-full border-2 border-primary border-t-transparent animate-spin mb-4"></div>
+                    <p className="text-muted-foreground">Loading component...</p>
                   </div>
-                }>
-                  {ComponentToRender && <ComponentToRender simplifiedView={true} />}
-                </Suspense>
-              </div>
+                </div>
+              }>
+                {ComponentToRender && <ComponentToRender simplifiedView={true} />}
+              </Suspense>
             </div>
           </div>
         </Tabs>
