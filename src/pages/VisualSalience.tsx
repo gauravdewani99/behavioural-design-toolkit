@@ -380,10 +380,7 @@ Steps to integrate
  2. Fill image assets with Unsplash stock images you know exist
  3. Use lucide-react icons for svgs or logos if component requires them
 
-
-Additional important context to consider: Generate a moving car instead of a robot in the 3D animation
-Remember: Do not change the component's code unless it's required to integrate or the user asks you to.
-IMPORTANT: Create all mentioned files in full, without abbreviations. Do not use placeholders like "insert the rest of the code here" – output every line of code exactly as it is, so it can be copied and pasted directly into the project.`}
+`}
               previewText="Prompt: Create a spotlight effect component that highlights text..."
             />
             <div className="flex flex-col gap-6">
