@@ -380,7 +380,6 @@ Steps to integrate
  2. Fill image assets with Unsplash stock images you know exist
  3. Use lucide-react icons for svgs or logos if component requires them
 
-
 `}
               previewText="Prompt: Create a spotlight effect component that highlights text..."
             />
