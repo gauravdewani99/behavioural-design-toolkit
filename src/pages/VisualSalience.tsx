@@ -11,7 +11,7 @@ const VisualSalience: React.FC<VisualSalienceProps> = ({
   if (simplifiedView) {
     return <div className="w-full max-w-3xl mx-auto">
         <div className="grid gap-6">
-          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism px-[22px]">
+          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism px-[10px]">
             <LampDemo />
           </div>
           <div className="bg-secondary/20 rounded-lg p-8 glass-morphism">
