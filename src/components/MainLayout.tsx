@@ -38,6 +38,8 @@ const components = [
 
 // Pre-load components to avoid dynamic imports that can cause update loop issues
 const VisualSalience = lazy(() => import('../pages/VisualSalience'));
+const SpotlightText = lazy(() => import('../pages/SpotlightText'));
+const CycleText = lazy(() => import('../pages/CycleText'));
 const Motion = lazy(() => import('../pages/Motion'));
 const ProgressBars = lazy(() => import('../pages/ProgressBars'));
 const ConversationalInput = lazy(() => import('../pages/ConversationalInput'));
@@ -47,6 +49,8 @@ const SocialProofing = lazy(() => import('../pages/SocialProofing'));
 // Map of component paths to their respective components
 const componentMap = {
   '/visual-salience': VisualSalience,
+  '/spotlight-text': SpotlightText,
+  '/cycle-text': CycleText,
   '/motion': Motion,
   '/progress-bars': ProgressBars,
   '/conversational-input': ConversationalInput,
