@@ -1,48 +1,37 @@
 
 import React from "react";
-import { ArrowLeft, ExternalLink } from "lucide-react";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { AuroraBackgroundDemo } from "@/components/AuroraBackgroundDemo";
+import { ArrowLeft } from "lucide-react";
+import { LampDemo } from "@/components/LampDemo";
 import { CopyPromptButton } from "@/components/CopyPromptButton";
 
 interface VisualSalienceProps {
   simplifiedView?: boolean;
 }
-
 const VisualSalience: React.FC<VisualSalienceProps> = ({
   simplifiedView = false
 }) => {
   if (simplifiedView) {
-    return (
-      <div className="w-full max-w-3xl mx-auto">
+    return <div className="w-full max-w-3xl mx-auto">
         <div className="grid gap-6">
-          <Card className="p-6 bg-secondary/20 border border-border glass-morphism">
-            <h2 className="text-xl font-semibold mb-4">Visual Salience Techniques</h2>
-            <p className="text-muted-foreground mb-6">
-              Explore specialized components that draw attention and create visual interest
-            </p>
-            <div className="grid gap-4">
-              <Button variant="outline" className="justify-between w-full" asChild>
-                <a href="/spotlight-text">
-                  Spotlight Text
-                  <ExternalLink className="h-4 w-4" />
-                </a>
-              </Button>
-              <Button variant="outline" className="justify-between w-full" asChild>
-                <a href="/cycle-text">
-                  Cycle Text
-                  <ExternalLink className="h-4 w-4" />
-                </a>
-              </Button>
-            </div>
-          </Card>
+          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism px-[22px] relative">
+            <CopyPromptButton 
+              prompt="Create a spotlight effect component that highlights text with a lamp-like spotlight animation. The lamp should create a soft glow around the text, making it the focal point of the page."
+              previewText="Prompt: Create a spotlight effect component that highlights text..."
+            />
+            <LampDemo />
+          </div>
+          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism relative">
+            <CopyPromptButton 
+              prompt="Create an animated background with text that cycles through different words related to business (team, workflow, productivity, etc.) with smooth transitions between each word."
+              previewText="Prompt: Create an animated background with text that cycles through different words..."
+            />
+            <AuroraBackgroundDemo />
+          </div>
         </div>
-      </div>
-    );
+      </div>;
   }
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <div className="container py-8">
         <a href="/" className="flex items-center text-primary hover:text-primary/80 mb-6 group">
           <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
@@ -60,46 +49,31 @@ const VisualSalience: React.FC<VisualSalienceProps> = ({
         </div>
         
         <div className="grid gap-10">
-          <Card className="p-8 bg-secondary/20 border border-border glass-morphism">
-            <h2 className="text-2xl font-semibold mb-6">Components</h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <Card className="p-6 border border-border/50 hover:border-primary/50 transition-colors">
-                <h3 className="text-xl font-medium mb-3">Spotlight Text</h3>
-                <p className="text-muted-foreground mb-6">
-                  A lamp-like spotlight animation that creates a soft glow around text,
-                  drawing attention to important content.
-                </p>
-                <Button className="w-full" asChild>
-                  <a href="/spotlight-text">View Component</a>
-                </Button>
-              </Card>
-              
-              <Card className="p-6 border border-border/50 hover:border-primary/50 transition-colors">
-                <h3 className="text-xl font-medium mb-3">Cycle Text</h3>
-                <p className="text-muted-foreground mb-6">
-                  An animated text component that cycles through different words with
-                  smooth, attention-grabbing transitions.
-                </p>
-                <Button className="w-full" asChild>
-                  <a href="/cycle-text">View Component</a>
-                </Button>
-              </Card>
+          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism relative">
+            <CopyPromptButton 
+              prompt="Create a spotlight effect component that highlights text with a lamp-like spotlight animation. The lamp should create a soft glow around the text, making it the focal point of the page."
+              previewText="Prompt: Create a spotlight effect component that highlights text..."
+            />
+            <div className="flex flex-col gap-6">
+              <p className="text-base text-muted-foreground leading-relaxed max-w-3xl mx-auto text-center">
+                Our attention is attracted to visually salient stimuli. [Itti, L. (2007). Visual salience. Scholarpedia, 2(9), 3327.]. 
+                Digital ecosystems are a constant fight for attention. Reduce drop offs and increase conversion rates by emphasizing your textual callouts!
+              </p>
+              <div className="h-[360px] md:h-[380px] w-full">
+                <LampDemo />
+              </div>
             </div>
-          </Card>
-        </div>
-        
-        <div className="mt-12 bg-card p-6 rounded-lg border border-border">
-          <h2 className="text-xl font-semibold mb-4">Implementation Notes</h2>
-          <ul className="list-disc pl-5 space-y-2 text-muted-foreground">
-            <li>Uses Framer Motion for smooth, physics-based animations</li>
-            <li>Implements attention-grabbing visual techniques based on cognitive psychology</li>
-            <li>Creates focal points through contrast, motion, and emphasis</li>
-            <li>Responsive layout adapts to different screen sizes</li>
-          </ul>
+          </div>
+          
+          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism h-auto relative">
+            <CopyPromptButton 
+              prompt="Create an animated background with text that cycles through different words related to business (team, workflow, productivity, etc.) with smooth transitions between each word."
+              previewText="Prompt: Create an animated background with text that cycles through different words..."
+            />
+            <AuroraBackgroundDemo />
+          </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default VisualSalience;
