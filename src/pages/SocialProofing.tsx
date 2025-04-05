@@ -2,6 +2,7 @@
 import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { AvatarSocialProof } from "@/components/AvatarSocialProof";
+import { CopyPromptButton } from "@/components/CopyPromptButton";
 
 interface SocialProofingProps {
   simplifiedView?: boolean;
@@ -11,7 +12,11 @@ const SocialProofing: React.FC<SocialProofingProps> = ({ simplifiedView = false 
   if (simplifiedView) {
     return (
       <div className="w-full max-w-3xl mx-auto">
-        <div className="bg-secondary/20 rounded-lg p-6 glass-morphism">
+        <div className="bg-secondary/20 rounded-lg p-6 glass-morphism relative">
+          <CopyPromptButton 
+            prompt="Create a social proof component that shows user avatars with a count of total users to build trust and credibility."
+            previewText="Prompt: Create a social proof component with user avatars..."
+          />
           <AvatarSocialProof />
         </div>
       </div>
@@ -36,14 +41,22 @@ const SocialProofing: React.FC<SocialProofingProps> = ({ simplifiedView = false 
           </p>
         </div>
         
-        <div className="bg-secondary/20 rounded-lg p-8 mb-10 glass-morphism">
+        <div className="bg-secondary/20 rounded-lg p-8 mb-10 glass-morphism relative">
+          <CopyPromptButton 
+            prompt="Create a social proof component that shows user avatars with a count of total users to build trust and credibility."
+            previewText="Prompt: Create a social proof component with user avatars..."
+          />
           <div className="flex flex-col items-center space-y-8">
             <h2 className="text-xl font-medium">Basic Social Proof</h2>
             <AvatarSocialProof />
           </div>
         </div>
 
-        <div className="bg-secondary/20 rounded-lg p-8 mb-10 glass-morphism">
+        <div className="bg-secondary/20 rounded-lg p-8 mb-10 glass-morphism relative">
+          <CopyPromptButton 
+            prompt="Create an enhanced social proof component that shows user avatars with a count and includes a call-to-action button."
+            previewText="Prompt: Create an enhanced social proof component with CTA..."
+          />
           <div className="flex flex-col items-center space-y-8">
             <h2 className="text-xl font-medium">Enhanced Social Proof</h2>
             <div className="flex flex-col md:flex-row items-center md:justify-between gap-4 rounded-lg border border-border p-4 w-full max-w-2xl">

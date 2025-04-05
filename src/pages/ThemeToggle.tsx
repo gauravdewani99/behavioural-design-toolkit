@@ -2,6 +2,7 @@
 import React from 'react';
 import { Card } from '@/components/ui/card';
 import ThemeToggleDemo from '../components/ThemeToggleDemo';
+import { CopyPromptButton } from '@/components/CopyPromptButton';
 
 interface ThemeTogglePageProps {
   simplifiedView?: boolean;
@@ -11,7 +12,11 @@ const ThemeTogglePage: React.FC<ThemeTogglePageProps> = ({ simplifiedView = fals
   if (simplifiedView) {
     return (
       <div className="w-full max-w-3xl mx-auto">
-        <Card className="p-6 bg-secondary/20 border border-border glass-morphism flex justify-center">
+        <Card className="p-6 bg-secondary/20 border border-border glass-morphism flex justify-center relative">
+          <CopyPromptButton 
+            prompt="Create a theme toggle component that allows users to switch between light and dark modes with a smooth animation effect."
+            previewText="Prompt: Create a theme toggle component with smooth animation..."
+          />
           <ThemeToggleDemo />
         </Card>
       </div>
@@ -29,7 +34,11 @@ const ThemeTogglePage: React.FC<ThemeTogglePageProps> = ({ simplifiedView = fals
         </div>
 
         <div className="grid gap-8">
-          <Card className="p-6 bg-secondary/20 border border-border glass-morphism">
+          <Card className="p-6 bg-secondary/20 border border-border glass-morphism relative">
+            <CopyPromptButton 
+              prompt="Create a theme toggle component that allows users to switch between light and dark modes with a smooth animation effect."
+              previewText="Prompt: Create a theme toggle component with smooth animation..."
+            />
             <h2 className="text-2xl font-semibold mb-6">Theme Toggle Component</h2>
             <div className="flex flex-col gap-4">
               <p className="text-muted-foreground">

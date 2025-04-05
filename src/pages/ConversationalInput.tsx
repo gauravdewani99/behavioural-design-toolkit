@@ -3,6 +3,7 @@ import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { PromptInputDemo } from "@/components/PromptInputDemo";
 import { AIVoiceInputDemo } from "@/components/AIVoiceInputDemo";
+import { CopyPromptButton } from "@/components/CopyPromptButton";
 
 interface ConversationalInputProps {
   simplifiedView?: boolean;
@@ -13,10 +14,18 @@ const ConversationalInput: React.FC<ConversationalInputProps> = ({ simplifiedVie
     return (
       <div className="w-full max-w-3xl mx-auto">
         <div className="flex flex-col gap-4">
-          <div className="bg-secondary/20 rounded-lg p-6 glass-morphism">
+          <div className="bg-secondary/20 rounded-lg p-6 glass-morphism relative">
+            <CopyPromptButton 
+              prompt="Create a modern chat interface with support for text input and file attachments."
+              previewText="Prompt: Create a modern chat interface with text input and attachments..."
+            />
             <PromptInputDemo />
           </div>
-          <div className="bg-secondary/20 rounded-lg p-6 glass-morphism">
+          <div className="bg-secondary/20 rounded-lg p-6 glass-morphism relative">
+            <CopyPromptButton 
+              prompt="Create a voice input interface that visualizes audio input with an animated waveform."
+              previewText="Prompt: Create a voice input interface with animated waveform..."
+            />
             <AIVoiceInputDemo />
           </div>
         </div>
@@ -42,7 +51,11 @@ const ConversationalInput: React.FC<ConversationalInputProps> = ({ simplifiedVie
         </div>
         
         <div className="flex flex-col gap-6 mb-6 max-w-2xl mx-auto">
-          <div className="bg-secondary/20 rounded-lg p-6 glass-morphism">
+          <div className="bg-secondary/20 rounded-lg p-6 glass-morphism relative">
+            <CopyPromptButton 
+              prompt="Create a modern chat interface with support for text input and file attachments."
+              previewText="Prompt: Create a modern chat interface with text input and attachments..."
+            />
             <div className="flex flex-col items-center space-y-6">
               <h2 className="text-xl font-medium">Text-Based Conversation</h2>
               <div className="w-full flex justify-center">
@@ -55,7 +68,11 @@ const ConversationalInput: React.FC<ConversationalInputProps> = ({ simplifiedVie
             </div>
           </div>
 
-          <div className="bg-secondary/20 rounded-lg p-6 glass-morphism">
+          <div className="bg-secondary/20 rounded-lg p-6 glass-morphism relative">
+            <CopyPromptButton 
+              prompt="Create a voice input interface that visualizes audio input with an animated waveform."
+              previewText="Prompt: Create a voice input interface with animated waveform..."
+            />
             <div className="flex flex-col items-center space-y-6">
               <h2 className="text-xl font-medium">Voice-Based Conversation</h2>
               <AIVoiceInputDemo />

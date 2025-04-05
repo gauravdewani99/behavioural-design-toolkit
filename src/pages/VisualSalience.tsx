@@ -1,7 +1,10 @@
+
 import React from "react";
 import { AuroraBackgroundDemo } from "@/components/AuroraBackgroundDemo";
 import { ArrowLeft } from "lucide-react";
 import { LampDemo } from "@/components/LampDemo";
+import { CopyPromptButton } from "@/components/CopyPromptButton";
+
 interface VisualSalienceProps {
   simplifiedView?: boolean;
 }
@@ -11,10 +14,18 @@ const VisualSalience: React.FC<VisualSalienceProps> = ({
   if (simplifiedView) {
     return <div className="w-full max-w-3xl mx-auto">
         <div className="grid gap-6">
-          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism px-[22px]">
+          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism px-[22px] relative">
+            <CopyPromptButton 
+              prompt="Create a spotlight effect component that highlights text with a lamp-like spotlight animation. The lamp should create a soft glow around the text, making it the focal point of the page."
+              previewText="Prompt: Create a spotlight effect component that highlights text..."
+            />
             <LampDemo />
           </div>
-          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism">
+          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism relative">
+            <CopyPromptButton 
+              prompt="Create an animated background with text that cycles through different words related to business (team, workflow, productivity, etc.) with smooth transitions between each word."
+              previewText="Prompt: Create an animated background with text that cycles through different words..."
+            />
             <AuroraBackgroundDemo />
           </div>
         </div>
@@ -38,7 +49,11 @@ const VisualSalience: React.FC<VisualSalienceProps> = ({
         </div>
         
         <div className="grid gap-10">
-          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism">
+          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism relative">
+            <CopyPromptButton 
+              prompt="Create a spotlight effect component that highlights text with a lamp-like spotlight animation. The lamp should create a soft glow around the text, making it the focal point of the page."
+              previewText="Prompt: Create a spotlight effect component that highlights text..."
+            />
             <div className="flex flex-col gap-6">
               <p className="text-base text-muted-foreground leading-relaxed max-w-3xl mx-auto text-center">
                 Our attention is attracted to visually salient stimuli. [Itti, L. (2007). Visual salience. Scholarpedia, 2(9), 3327.]. 
@@ -50,7 +65,11 @@ const VisualSalience: React.FC<VisualSalienceProps> = ({
             </div>
           </div>
           
-          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism h-auto">
+          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism h-auto relative">
+            <CopyPromptButton 
+              prompt="Create an animated background with text that cycles through different words related to business (team, workflow, productivity, etc.) with smooth transitions between each word."
+              previewText="Prompt: Create an animated background with text that cycles through different words..."
+            />
             <AuroraBackgroundDemo />
           </div>
         </div>

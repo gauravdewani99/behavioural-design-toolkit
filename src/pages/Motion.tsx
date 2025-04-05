@@ -2,6 +2,7 @@
 import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { SplineSceneBasic } from "@/components/SplineSceneDemo";
+import { CopyPromptButton } from "@/components/CopyPromptButton";
 
 interface MotionProps {
   simplifiedView?: boolean;
@@ -11,7 +12,13 @@ const Motion: React.FC<MotionProps> = ({ simplifiedView = false }) => {
   if (simplifiedView) {
     return (
       <div className="w-full max-w-3xl mx-auto">
-        <SplineSceneBasic />
+        <div className="relative">
+          <CopyPromptButton 
+            prompt="Create an interactive 3D scene component that adds depth and visual interest to a web page. Include a gradient text heading and descriptive text alongside the 3D element."
+            previewText="Prompt: Create an interactive 3D scene component that adds depth and visual interest..."
+          />
+          <SplineSceneBasic />
+        </div>
       </div>
     );
   }
@@ -31,7 +38,13 @@ const Motion: React.FC<MotionProps> = ({ simplifiedView = false }) => {
             Motion and 3D elements can significantly enhance your UI, creating more engaging and memorable experiences for users.
           </p>
           
-          <SplineSceneBasic />
+          <div className="relative">
+            <CopyPromptButton 
+              prompt="Create an interactive 3D scene component that adds depth and visual interest to a web page. Include a gradient text heading and descriptive text alongside the 3D element."
+              previewText="Prompt: Create an interactive 3D scene component that adds depth and visual interest..."
+            />
+            <SplineSceneBasic />
+          </div>
         </div>
         
         <div className="bg-card p-6 rounded-lg border border-border mt-12">
