@@ -1,4 +1,3 @@
-
 import React from "react";
 import { AuroraBackgroundDemo } from "@/components/AuroraBackgroundDemo";
 import { ArrowLeft } from "lucide-react";
@@ -177,12 +176,7 @@ Steps to integrate
  0. Copy paste all the code above in the correct directories
  1. Install external dependencies
  2. Fill image assets with Unsplash stock images you know exist
- 3. Use lucide-react icons for svgs or logos if component requires them
-
-
-Additional important context to consider: Generate a moving car instead of a robot in the 3D animation
-Remember: Do not change the component's code unless it's required to integrate or the user asks you to.
-IMPORTANT: Create all mentioned files in full, without abbreviations. Do not use placeholders like "insert the rest of the code here" – output every line of code exactly as it is, so it can be copied and pasted directly into the project.`}
+ 3. Use lucide-react icons for svgs or logos if component requires them`}
               previewText="Prompt: Create a spotlight effect component that highlights text..."
             />
             <LampDemo />
