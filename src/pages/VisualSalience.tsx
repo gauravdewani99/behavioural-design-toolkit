@@ -14,10 +14,10 @@ const VisualSalience: React.FC<VisualSalienceProps> = ({ simplifiedView = false 
       <div className="w-full max-w-3xl mx-auto">
         <div className="grid gap-6">
           <div className="bg-secondary/20 rounded-lg p-8 glass-morphism">
-            <AuroraBackgroundDemo />
+            <LampDemo />
           </div>
           <div className="bg-secondary/20 rounded-lg p-8 glass-morphism">
-            <LampDemo />
+            <AuroraBackgroundDemo />
           </div>
         </div>
       </div>
@@ -44,11 +44,19 @@ const VisualSalience: React.FC<VisualSalienceProps> = ({ simplifiedView = false 
         
         <div className="grid gap-10">
           <div className="bg-secondary/20 rounded-lg p-8 glass-morphism">
-            <AuroraBackgroundDemo />
+            <div className="flex flex-col gap-6">
+              <p className="text-base text-muted-foreground leading-relaxed max-w-3xl mx-auto text-center">
+                Our attention is attracted to visually salient stimuli. [Itti, L. (2007). Visual salience. Scholarpedia, 2(9), 3327.]. 
+                Digital ecosystems are a constant fight for attention. Reduce drop offs and increase conversion rates by emphasizing your textual callouts!
+              </p>
+              <div className="h-[360px] md:h-[380px] w-full">
+                <LampDemo />
+              </div>
+            </div>
           </div>
           
           <div className="bg-secondary/20 rounded-lg p-8 glass-morphism h-auto">
-            <LampDemo />
+            <AuroraBackgroundDemo />
           </div>
         </div>
       </div>
