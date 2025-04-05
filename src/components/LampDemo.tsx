@@ -5,15 +5,20 @@ import { motion, useAnimationControls } from "framer-motion";
 import { LampContainer } from "@/components/ui/lamp";
 
 export function LampDemo() {
-  const controls = useAnimationControls();
+  const textControls = useAnimationControls();
+  const tubeLightControls = useAnimationControls();
   
   useEffect(() => {
     // Function to reset the animation
     const resetAnimation = () => {
-      // Reset to initial state
-      controls.set({ opacity: 0.5, y: 100 });
-      // Then animate to the final state
-      controls.start({ opacity: 1, y: 0 });
+      // Reset text to initial state
+      textControls.set({ opacity: 0.5, y: 100 });
+      // Then animate text to the final state
+      textControls.start({ opacity: 1, y: 0 });
+      
+      // Reset tube light animations
+      tubeLightControls.set({ width: "15rem", opacity: 0.5 });
+      tubeLightControls.start({ width: "30rem", opacity: 1 });
     };
     
     // Initial animation
@@ -26,12 +31,12 @@ export function LampDemo() {
     
     // Clean up interval on component unmount
     return () => clearInterval(intervalId);
-  }, [controls]);
+  }, [textControls, tubeLightControls]);
 
   return (
-    <LampContainer>
+    <LampContainer tubeLightControls={tubeLightControls}>
       <motion.h1
-        animate={controls}
+        animate={textControls}
         transition={{
           delay: 0.3,
           duration: 0.8,
