@@ -14,7 +14,107 @@ const Motion: React.FC<MotionProps> = ({ simplifiedView = false }) => {
       <div className="w-full max-w-3xl mx-auto">
         <div className="relative">
           <CopyPromptButton 
-            prompt="Create an interactive 3D scene component that adds depth and visual interest to a web page. Include a gradient text heading and descriptive text alongside the 3D element."
+            prompt={`You are given a task to integrate an existing React component in the codebase
+
+The codebase should support:
+- shadcn project structure  
+- Tailwind CSS
+- Typescript
+
+If it doesn't, provide instructions on how to setup project via shadcn CLI, install Tailwind or Typescript.
+
+Determine the default path for components and styles. 
+If default path for components is not /components/ui, provide instructions on why it's important to create this folder
+Copy-paste this component to /components/ui folder:
+\`\`\`tsx
+'use client'
+
+import { Suspense, lazy } from 'react'
+const Spline = lazy(() => import('@splinetool/react-spline'))
+
+interface SplineSceneProps {
+  scene: string
+  className?: string
+}
+
+export function SplineScene({ scene, className }: SplineSceneProps) {
+  return (
+    <Suspense 
+      fallback={
+        <div className="w-full h-full flex items-center justify-center">
+          <span className="loader"></span>
+        </div>
+      }
+    >
+      <Spline
+        scene={scene}
+        className={className}
+      />
+    </Suspense>
+  )
+}
+
+demo.tsx
+'use client'
+
+import { SplineScene } from "@/components/ui/splite";
+import { Card } from "@/components/ui/card"
+import { Spotlight } from "@/components/ui/spotlight"
+ 
+export function SplineSceneBasic() {
+  return (
+    <Card className="w-full h-[500px] bg-black/[0.96] relative overflow-hidden">
+      <Spotlight
+        className="-top-40 left-0 md:left-60 md:-top-20"
+        fill="white"
+      />
+      
+      <div className="flex h-full">
+        {/* Left content */}
+        <div className="flex-1 p-8 relative z-10 flex flex-col justify-center">
+          <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
+            Interactive 3D
+          </h1>
+          <p className="mt-4 text-neutral-300 max-w-lg">
+            Bring your UI to life with beautiful 3D scenes. Create immersive experiences 
+            that capture attention and enhance your design.
+          </p>
+        </div>
+
+        {/* Right content */}
+        <div className="flex-1 relative">
+          <SplineScene 
+            scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+            className="w-full h-full"
+          />
+        </div>
+      </div>
+    </Card>
+  )
+}
+\`\`\`
+
+Implementation Guidelines
+ 1. Analyze the component structure and identify all required dependencies
+ 2. Review the component's argumens and state
+ 3. Identify any required context providers or hooks and install them
+ 4. Questions to Ask
+ - What data/props will be passed to this component?
+ - Are there any specific state management requirements?
+ - Are there any required assets (images, icons, etc.)?
+ - What is the expected responsive behavior?
+ - What is the best place to use this component in the app?
+
+Steps to integrate
+ 0. Copy paste all the code above in the correct directories
+ 1. Install external dependencies
+ 2. Fill image assets with Unsplash stock images you know exist
+ 3. Use lucide-react icons for svgs or logos if component requires them
+
+
+Additional important context to consider: Generate a moving car instead of a robot in the 3D animation
+Remember: Do not change the component's code unless it's required to integrate or the user asks you to.
+IMPORTANT: Create all mentioned files in full, without abbreviations. Do not use placeholders like "insert the rest of the code here" – output every line of code exactly as it is, so it can be copied and pasted directly into the project.`}
             previewText="Prompt: Create an interactive 3D scene component that adds depth and visual interest..."
           />
           <SplineSceneBasic />
@@ -40,7 +140,107 @@ const Motion: React.FC<MotionProps> = ({ simplifiedView = false }) => {
           
           <div className="relative">
             <CopyPromptButton 
-              prompt="Create an interactive 3D scene component that adds depth and visual interest to a web page. Include a gradient text heading and descriptive text alongside the 3D element."
+              prompt={`You are given a task to integrate an existing React component in the codebase
+
+The codebase should support:
+- shadcn project structure  
+- Tailwind CSS
+- Typescript
+
+If it doesn't, provide instructions on how to setup project via shadcn CLI, install Tailwind or Typescript.
+
+Determine the default path for components and styles. 
+If default path for components is not /components/ui, provide instructions on why it's important to create this folder
+Copy-paste this component to /components/ui folder:
+\`\`\`tsx
+'use client'
+
+import { Suspense, lazy } from 'react'
+const Spline = lazy(() => import('@splinetool/react-spline'))
+
+interface SplineSceneProps {
+  scene: string
+  className?: string
+}
+
+export function SplineScene({ scene, className }: SplineSceneProps) {
+  return (
+    <Suspense 
+      fallback={
+        <div className="w-full h-full flex items-center justify-center">
+          <span className="loader"></span>
+        </div>
+      }
+    >
+      <Spline
+        scene={scene}
+        className={className}
+      />
+    </Suspense>
+  )
+}
+
+demo.tsx
+'use client'
+
+import { SplineScene } from "@/components/ui/splite";
+import { Card } from "@/components/ui/card"
+import { Spotlight } from "@/components/ui/spotlight"
+ 
+export function SplineSceneBasic() {
+  return (
+    <Card className="w-full h-[500px] bg-black/[0.96] relative overflow-hidden">
+      <Spotlight
+        className="-top-40 left-0 md:left-60 md:-top-20"
+        fill="white"
+      />
+      
+      <div className="flex h-full">
+        {/* Left content */}
+        <div className="flex-1 p-8 relative z-10 flex flex-col justify-center">
+          <h1 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400">
+            Interactive 3D
+          </h1>
+          <p className="mt-4 text-neutral-300 max-w-lg">
+            Bring your UI to life with beautiful 3D scenes. Create immersive experiences 
+            that capture attention and enhance your design.
+          </p>
+        </div>
+
+        {/* Right content */}
+        <div className="flex-1 relative">
+          <SplineScene 
+            scene="https://prod.spline.design/kZDDjO5HuC9GJUM2/scene.splinecode"
+            className="w-full h-full"
+          />
+        </div>
+      </div>
+    </Card>
+  )
+}
+\`\`\`
+
+Implementation Guidelines
+ 1. Analyze the component structure and identify all required dependencies
+ 2. Review the component's argumens and state
+ 3. Identify any required context providers or hooks and install them
+ 4. Questions to Ask
+ - What data/props will be passed to this component?
+ - Are there any specific state management requirements?
+ - Are there any required assets (images, icons, etc.)?
+ - What is the expected responsive behavior?
+ - What is the best place to use this component in the app?
+
+Steps to integrate
+ 0. Copy paste all the code above in the correct directories
+ 1. Install external dependencies
+ 2. Fill image assets with Unsplash stock images you know exist
+ 3. Use lucide-react icons for svgs or logos if component requires them
+
+
+Additional important context to consider: Generate a moving car instead of a robot in the 3D animation
+Remember: Do not change the component's code unless it's required to integrate or the user asks you to.
+IMPORTANT: Create all mentioned files in full, without abbreviations. Do not use placeholders like "insert the rest of the code here" – output every line of code exactly as it is, so it can be copied and pasted directly into the project.`}
               previewText="Prompt: Create an interactive 3D scene component that adds depth and visual interest..."
             />
             <SplineSceneBasic />
