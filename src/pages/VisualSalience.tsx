@@ -13,7 +13,7 @@ const VisualSalience: React.FC<VisualSalienceProps> = ({
     return <div className="w-full max-w-3xl mx-auto">
         <div className="grid gap-6">
           <div className="bg-secondary/20 rounded-lg p-8 glass-morphism px-[22px]">
-            <div className="h-[240px]">
+            <div className="h-[180px]">
               <LampDemo />
             </div>
           </div>
@@ -47,7 +47,7 @@ const VisualSalience: React.FC<VisualSalienceProps> = ({
                 Our attention is attracted to visually salient stimuli. [Itti, L. (2007). Visual salience. Scholarpedia, 2(9), 3327.]. 
                 Digital ecosystems are a constant fight for attention. Reduce drop offs and increase conversion rates by emphasizing your textual callouts!
               </p>
-              <div className="h-[240px] w-full">
+              <div className="h-[180px] w-full">
                 <LampDemo />
               </div>
             </div>
