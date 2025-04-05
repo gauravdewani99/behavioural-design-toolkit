@@ -1,31 +1,26 @@
-
 import React from "react";
 import { AuroraBackgroundDemo } from "@/components/AuroraBackgroundDemo";
 import { ArrowLeft } from "lucide-react";
 import { LampDemo } from "@/components/LampDemo";
-
 interface VisualSalienceProps {
   simplifiedView?: boolean;
 }
-
-const VisualSalience: React.FC<VisualSalienceProps> = ({ simplifiedView = false }) => {
+const VisualSalience: React.FC<VisualSalienceProps> = ({
+  simplifiedView = false
+}) => {
   if (simplifiedView) {
-    return (
-      <div className="w-full max-w-3xl mx-auto">
+    return <div className="w-full max-w-3xl mx-auto">
         <div className="grid gap-6">
-          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism">
+          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism px-[22px]">
             <LampDemo />
           </div>
           <div className="bg-secondary/20 rounded-lg p-8 glass-morphism">
             <AuroraBackgroundDemo />
           </div>
         </div>
-      </div>
-    );
+      </div>;
   }
-
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <div className="container py-8">
         <a href="/" className="flex items-center text-primary hover:text-primary/80 mb-6 group">
           <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
@@ -60,8 +55,6 @@ const VisualSalience: React.FC<VisualSalienceProps> = ({ simplifiedView = false 
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default VisualSalience;
