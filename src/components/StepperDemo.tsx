@@ -34,8 +34,8 @@ function StepperDemo() {
   const [currentStep, setCurrentStep] = useState(1);
 
   return (
-    <div className="mx-auto max-w-xl space-y-8 text-center min-w-[300px] pt-12">
-      <div className="space-y-3">
+    <div className="mx-auto max-w-xl space-y-6 text-center min-w-[300px] py-6">
+      <div className="space-y-4">
         <Stepper value={currentStep} onValueChange={setCurrentStep}>
           {stepContent.map((step, index) => (
             <StepperItem key={index + 1} step={index + 1} className="flex-1">
@@ -53,15 +53,15 @@ function StepperDemo() {
       </div>
 
       {/* Display the content for the current step */}
-      <div className="bg-card p-6 rounded-md border border-border">
+      <div className="bg-card p-6 rounded-md border border-border h-[120px] flex flex-col justify-center">
         <h3 className="font-semibold text-lg mb-2">{stepContent[currentStep - 1].title}</h3>
         <p className="text-muted-foreground">{stepContent[currentStep - 1].description}</p>
       </div>
 
-      <div className="flex justify-center space-x-4">
+      <div className="flex justify-center space-x-4 pt-2">
         <Button
           variant="outline"
-          className="w-32"
+          className="w-28"
           onClick={() => setCurrentStep((prev) => prev - 1)}
           disabled={currentStep === 1}
         >
@@ -69,7 +69,7 @@ function StepperDemo() {
         </Button>
         <Button
           variant="outline"
-          className="w-32"
+          className="w-28"
           onClick={() => setCurrentStep((prev) => prev + 1)}
           disabled={currentStep >= stepContent.length}
         >

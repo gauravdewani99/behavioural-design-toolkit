@@ -6,8 +6,8 @@ import AnimatedWordCycle from "@/components/ui/animated-text-cycle";
 
 export function AuroraBackgroundDemo() {
   return (
-    <div className="p-4 max-w-[500px] pt-0">
-      <h1 className="text-4xl font-light text-left text-muted-foreground mt-0">
+    <div className="p-6 max-w-[500px] flex items-center justify-center mx-auto">
+      <h1 className="text-4xl font-light text-left text-muted-foreground">
         Your{" "}
         <AnimatedWordCycle 
           words={[

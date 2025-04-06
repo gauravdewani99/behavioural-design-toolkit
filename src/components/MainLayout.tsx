@@ -74,25 +74,25 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   return (
     <div className="flex flex-col w-full min-h-screen bg-background">
       {/* Header Section - Centered */}
-      <header className="w-full py-10 px-6 bg-background border-b border-border/30 text-center">
+      <header className="w-full py-8 px-6 bg-background border-b border-border/30 text-center">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-3xl font-bold tracking-tight mb-3">BeSci x UI</h1>
+          <h1 className="text-3xl font-bold tracking-tight mb-2">BeSci x UI</h1>
           <p className="text-muted-foreground text-lg">Behaviourally backed UI components to improve product metrics</p>
         </div>
       </header>
       
-      <div className="flex flex-1 w-full p-8 justify-center">
+      <div className="flex flex-1 w-full p-6 md:p-8 justify-center">
         <Tabs 
           defaultValue={components[0].link} 
           orientation="vertical" 
-          className="flex gap-8 max-w-5xl w-full"
+          className="flex gap-6 md:gap-8 max-w-5xl w-full"
           onValueChange={(value) => {
             const component = components.find(c => c.link === value);
             if (component) setSelectedComponent(component);
           }}
         >
           {/* Simplified sidebar without label */}
-          <div className="w-56">
+          <div className="w-52 md:w-56">
             <TabsList className="flex-col rounded-none border-l border-border bg-transparent p-0">
               {components.map((component, index) => {
                 const pastelBg = [
@@ -108,7 +108,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
                   <TabsTrigger
                     key={component.link}
                     value={component.link}
-                    className={`relative w-full justify-start rounded-none py-4 transition-colors dark:hover:bg-white/5 ${pastelBg} after:absolute after:inset-y-0 after:start-0 after:w-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary`}
+                    className={`relative w-full justify-start rounded-none py-3 transition-colors dark:hover:bg-white/5 ${pastelBg} after:absolute after:inset-y-0 after:start-0 after:w-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary`}
                   >
                     {component.title}
                   </TabsTrigger>
@@ -117,7 +117,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
             </TabsList>
           </div>
 
-          {/* Simplified component view area - no duplicated titles */}
+          {/* Component view area */}
           <div className="flex-1">
             <div className="h-full flex items-center justify-center">
               <Suspense fallback={
