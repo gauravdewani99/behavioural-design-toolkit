@@ -46,7 +46,7 @@ export function CopyPromptButton({
   return (
     <>
       <Button
-        variant="primary"
+        variant="default"
         size="sm"
         className={`absolute top-2 right-2 z-10 bg-blue-500 hover:bg-blue-600 text-white ${className}`}
         onClick={() => setIsDialogOpen(true)}
