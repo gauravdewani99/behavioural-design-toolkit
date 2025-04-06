@@ -34,18 +34,21 @@ export function LampDemo() {
   }, [textControls, tubeLightControls]);
 
   return (
-    <LampContainer tubeLightControls={tubeLightControls}>
-      <motion.h1
-        animate={textControls}
-        transition={{
-          delay: 0.3,
-          duration: 0.8,
-          ease: "easeInOut",
-        }}
-        className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
-      >
-        Build lamps <br /> the right way
-      </motion.h1>
-    </LampContainer>
+    <div className="mt-8 space-y-6">
+      <div className="h-16"></div> {/* Added space above the lamp component */}
+      <LampContainer tubeLightControls={tubeLightControls}>
+        <motion.h1
+          animate={textControls}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
+        >
+          Build lamps <br /> the right way
+        </motion.h1>
+      </LampContainer>
+    </div>
   );
 }
