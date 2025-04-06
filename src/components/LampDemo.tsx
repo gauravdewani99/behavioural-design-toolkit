@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { motion, useAnimationControls } from "framer-motion";
 import { LampContainer } from "@/components/ui/lamp";
+import { ExternalLink } from "lucide-react";
 
 export function LampDemo() {
   const textControls = useAnimationControls();
