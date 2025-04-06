@@ -10,7 +10,7 @@ const components = [
     description: "Techniques to draw attention to key elements through contrast, color, and emphasis."
   },
   { 
-    title: "Text Cycle Loop", 
+    title: "Cycle Loop Text", 
     link: "/text-cycle-loop",
     description: "Dynamic text animations that rotate through multiple content options in a limited space."
   },
