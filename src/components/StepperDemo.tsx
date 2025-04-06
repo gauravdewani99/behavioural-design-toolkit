@@ -34,7 +34,7 @@ function StepperDemo() {
   const [currentStep, setCurrentStep] = useState(1);
 
   return (
-    <div className="mx-auto max-w-xl space-y-8 text-center min-w-[300px]">
+    <div className="mx-auto max-w-xl space-y-8 text-center min-w-[300px] pt-12">
       <div className="space-y-3">
         <Stepper value={currentStep} onValueChange={setCurrentStep}>
           {stepContent.map((step, index) => (
@@ -76,7 +76,6 @@ function StepperDemo() {
           Next step
         </Button>
       </div>
-      {/* Removed the "Progress stepper" text here */}
     </div>
   );
 }

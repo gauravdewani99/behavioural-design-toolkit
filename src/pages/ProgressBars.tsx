@@ -1,3 +1,4 @@
+
 import React from 'react';
 import StepperDemo from '../components/StepperDemo';
 import { Card } from '@/components/ui/card';
@@ -385,7 +386,7 @@ Steps to integrate
         </div>
 
         <div className="grid gap-8">
-          <Card className="p-6 bg-secondary/20 border border-border glass-morphism relative">
+          <Card className="p-8 bg-secondary/20 border border-border glass-morphism relative">
             <CopyPromptButton 
               prompt={`You are given a task to integrate an existing React component in the codebase
 
@@ -742,7 +743,7 @@ Steps to integrate
  3. Use lucide-react icons for svgs or logos if component requires them`}
               previewText="Prompt: Create a multi-step progress indicator component..."
             />
-            <h2 className="text-2xl font-semibold mb-6">Stepper Component</h2>
+            <h2 className="text-2xl font-semibold mb-6 mt-6">Stepper Component</h2>
             <StepperDemo />
           </Card>
           
