@@ -4,6 +4,7 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { Sparkles } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -48,9 +49,10 @@ export function CopyPromptButton({
       <Button
         variant="default"
         size="sm"
-        className={`absolute top-2 right-2 z-10 bg-blue-500 hover:bg-blue-600 text-white ${className}`}
+        className={`absolute top-2 right-2 z-10 bg-[#D3E4FD] hover:bg-[#bfd7fa] text-black ${className}`}
         onClick={() => setIsDialogOpen(true)}
       >
+        <Sparkles className="mr-1 h-4 w-4" />
         AI prompt
       </Button>
 
@@ -59,11 +61,18 @@ export function CopyPromptButton({
           <DialogHeader>
             <DialogTitle>AI Prompt</DialogTitle>
           </DialogHeader>
+          <div className="text-sm text-muted-foreground mb-4">
+            This prompt is optimized for most AI code editors.
+          </div>
           <div className="overflow-y-auto max-h-[50vh] p-4 border rounded bg-secondary/20">
             <pre className="whitespace-pre-wrap text-sm">{prompt}</pre>
           </div>
           <DialogFooter>
-            <Button onClick={handleCopy} className="mt-2 bg-blue-500 hover:bg-blue-600">
+            <Button 
+              onClick={handleCopy} 
+              className="mt-2 bg-[#D3E4FD] hover:bg-[#bfd7fa] text-black"
+            >
+              <Sparkles className="mr-1 h-4 w-4" />
               Copy AI prompt
             </Button>
           </DialogFooter>
