@@ -24,7 +24,7 @@ export function LampDemo() {
     // Initial animation
     resetAnimation();
     
-    // Set up interval to reset animation every 5 seconds
+    // Set up interval to reset animation every 5 seconds (changed from 10 seconds)
     const intervalId = setInterval(() => {
       resetAnimation();
     }, 5000);
@@ -34,20 +34,18 @@ export function LampDemo() {
   }, [textControls, tubeLightControls]);
 
   return (
-    <div className="h-[45vh] md:h-[50vh] w-full">
-      <LampContainer tubeLightControls={tubeLightControls}>
-        <motion.h1
-          animate={textControls}
-          transition={{
-            delay: 0.3,
-            duration: 0.8,
-            ease: "easeInOut",
-          }}
-          className="mt-2 bg-gradient-to-br from-slate-300 to-slate-500 py-2 bg-clip-text text-center text-3xl font-medium tracking-tight text-transparent md:text-5xl lg:text-6xl"
-        >
-          Build lamps <br /> the right way
-        </motion.h1>
-      </LampContainer>
-    </div>
+    <LampContainer tubeLightControls={tubeLightControls}>
+      <motion.h1
+        animate={textControls}
+        transition={{
+          delay: 0.3,
+          duration: 0.8,
+          ease: "easeInOut",
+        }}
+        className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
+      >
+        Build lamps <br /> the right way
+      </motion.h1>
+    </LampContainer>
   );
 }
