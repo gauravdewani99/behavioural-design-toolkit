@@ -41,17 +41,6 @@ const components = [
   }
 ];
 
-// Pastel background colors for each component
-const pastelColors = [
-  "bg-pink-100", 
-  "bg-indigo-100", 
-  "bg-emerald-100", 
-  "bg-amber-100",
-  "bg-sky-100",
-  "bg-violet-100",
-  "bg-rose-100"
-];
-
 // Pre-load components to avoid dynamic imports that can cause update loop issues
 const VisualSalience = lazy(() => import('../pages/VisualSalience'));
 const TextCycleLoop = lazy(() => import('../pages/TextCycleLoop'));
@@ -81,8 +70,6 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   
   // Get the component based on the selected link
   const ComponentToRender = componentMap[selectedComponent.link];
-  const selectedIndex = components.findIndex(c => c.link === selectedComponent.link);
-  const pastelColor = pastelColors[selectedIndex];
   
   return (
     <div className="flex flex-col w-full min-h-screen bg-background">
@@ -132,12 +119,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 
           {/* Simplified component view area - no duplicated titles */}
           <div className="flex-1">
-            <div className="h-full flex flex-col items-center justify-center gap-6">
-              {/* Description box above the component */}
-              <div className={`${pastelColor} rounded-xl p-4 shadow-md max-w-3xl mx-auto text-center w-full`}>
-                <p className="text-foreground/80">This is the space for text</p>
-              </div>
-              
+            <div className="h-full flex items-center justify-center">
               <Suspense fallback={
                 <div className="animate-pulse p-12 flex items-center justify-center rounded-lg border border-border/30">
                   <div className="flex flex-col items-center">
