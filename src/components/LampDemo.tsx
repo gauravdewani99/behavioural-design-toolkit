@@ -4,7 +4,11 @@ import React, { useState, useEffect } from "react";
 import { motion, useAnimationControls } from "framer-motion";
 import { LampContainer } from "@/components/ui/lamp";
 
-export function LampDemo() {
+interface LampDemoProps {
+  customText?: string;
+}
+
+export function LampDemo({ customText }: LampDemoProps) {
   const textControls = useAnimationControls();
   const tubeLightControls = useAnimationControls();
   
@@ -33,6 +37,16 @@ export function LampDemo() {
     return () => clearInterval(intervalId);
   }, [textControls, tubeLightControls]);
 
+  // Replace line breaks with <br /> tags for rendering
+  const formattedText = customText ? 
+    customText.split('\n').map((line, i) => 
+      <React.Fragment key={i}>
+        {line}
+        {i < customText.split('\n').length - 1 && <br />}
+      </React.Fragment>
+    ) : 
+    <>Build lamps <br /> the right way</>;
+
   return (
     <div className="mt-8 space-y-6">
       <div className="h-16"></div> {/* Added space above the lamp component */}
@@ -46,7 +60,7 @@ export function LampDemo() {
           }}
           className="mt-8 bg-gradient-to-br from-slate-300 to-slate-500 py-4 bg-clip-text text-center text-4xl font-medium tracking-tight text-transparent md:text-7xl"
         >
-          Build lamps <br /> the right way
+          {formattedText}
         </motion.h1>
       </LampContainer>
     </div>
