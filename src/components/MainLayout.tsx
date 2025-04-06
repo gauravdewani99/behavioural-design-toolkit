@@ -1,51 +1,43 @@
 
 import React, { useState, lazy, Suspense } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import DescriptionBanner from '@/components/DescriptionBanner';
 
 // Component definitions with descriptions
 const components = [
   { 
     title: "Spotlight Text", 
     link: "/visual-salience",
-    description: "Techniques to draw attention to key elements through contrast, color, and emphasis.",
-    bannerTexts: ["Spotlight Text draws attention using motion and light.", "Visual hierarchy guides users to important content."]
+    description: "Techniques to draw attention to key elements through contrast, color, and emphasis."
   },
   { 
     title: "Text Cycle Loop", 
     link: "/text-cycle-loop",
-    description: "Dynamic text animations that rotate through multiple content options in a limited space.",
-    bannerTexts: ["Cycle Text showcases your ideas in a seamless loop.", "Dynamic content rotation maximizes limited space."]
+    description: "Dynamic text animations that rotate through multiple content options in a limited space."
   },
   { 
     title: "Motion", 
     link: "/motion",
-    description: "Animation patterns that guide users and create a sense of orientation and hierarchy.",
-    bannerTexts: ["Motion guides users through your digital experience.", "Subtle animations create natural interaction flows."]
+    description: "Animation patterns that guide users and create a sense of orientation and hierarchy."
   },
   { 
     title: "Progress Bars", 
     link: "/progress-bars",
-    description: "Visual indicators that show completion status and reduce anxiety during waiting periods.",
-    bannerTexts: ["Progress indicators reduce perceived wait time.", "Visual feedback keeps users engaged during delays."]
+    description: "Visual indicators that show completion status and reduce anxiety during waiting periods."
   },
   { 
     title: "Conversational Input", 
     link: "/conversational-input",
-    description: "Natural language interfaces that make complex interactions more intuitive and engaging.",
-    bannerTexts: ["Conversational UI creates natural, human interactions.", "Dialog-based inputs simplify complex tasks."]
+    description: "Natural language interfaces that make complex interactions more intuitive and engaging."
   },
   { 
     title: "Theme Toggle", 
     link: "/theme-toggle",
-    description: "Controls that allow users to personalize their experience through appearance settings.",
-    bannerTexts: ["Theme toggles provide personalized experiences.", "Light and dark modes improve accessibility."]
+    description: "Controls that allow users to personalize their experience through appearance settings."
   },
   { 
     title: "Social Proofing", 
     link: "/social-proofing",
-    description: "Elements that leverage social influence to build trust and guide decision-making.",
-    bannerTexts: ["Social proof builds trust through collective validation.", "User testimonials increase conversion rates."]
+    description: "Elements that leverage social influence to build trust and guide decision-making."
   }
 ];
 
@@ -127,11 +119,6 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 
           {/* Simplified component view area - no duplicated titles */}
           <div className="flex-1">
-            {/* Description Banner */}
-            {selectedComponent && (
-              <DescriptionBanner descriptions={selectedComponent.bannerTexts} />
-            )}
-            
             <div className="h-full flex items-center justify-center">
               <Suspense fallback={
                 <div className="animate-pulse p-12 flex items-center justify-center rounded-lg border border-border/30">
