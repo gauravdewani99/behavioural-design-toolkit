@@ -1,10 +1,8 @@
-
 import React, { useState, lazy, Suspense } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Linkedin } from "lucide-react";
 
-// Component definitions with descriptions
 const components = [
   { 
     title: "Spotlight Text", 
@@ -43,7 +41,6 @@ const components = [
   }
 ];
 
-// Pre-load components to avoid dynamic imports that can cause update loop issues
 const VisualSalience = lazy(() => import('../pages/VisualSalience'));
 const TextCycleLoop = lazy(() => import('../pages/TextCycleLoop'));
 const Motion = lazy(() => import('../pages/Motion'));
@@ -52,7 +49,6 @@ const ConversationalInput = lazy(() => import('../pages/ConversationalInput'));
 const ThemeToggle = lazy(() => import('../pages/ThemeToggle'));
 const SocialProofing = lazy(() => import('../pages/SocialProofing'));
 
-// Map of component paths to their respective components
 const componentMap = {
   '/visual-salience': VisualSalience,
   '/text-cycle-loop': TextCycleLoop,
@@ -70,29 +66,24 @@ interface MainLayoutProps {
 const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   const [selectedComponent, setSelectedComponent] = useState(components[0]);
   
-  // Get the component based on the selected link
   const ComponentToRender = componentMap[selectedComponent.link];
   
   return (
     <div className="flex flex-col w-full min-h-screen bg-background">
-      {/* Header Section - With Name and LinkedIn */}
       <header className="w-full py-8 px-6 bg-background border-b border-border/30">
         <div className="max-w-5xl mx-auto flex justify-between items-center">
           <div>
             <h1 className="text-3xl font-bold tracking-tight mb-2">BeSci x UI</h1>
             <p className="text-muted-foreground text-lg">Behaviourally backed UI components to improve product metrics</p>
           </div>
-          <div className="flex items-center gap-2">
-            <h2 className="text-xl font-medium">Gaurav Dewani</h2>
+          <div>
             <a 
               href="https://www.linkedin.com/in/gaurav-dewani-0a4973167/" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="inline-flex items-center"
+              className="text-xl font-medium hover:text-primary hover:underline transition-colors"
             >
-              <Button variant="ghost" size="icon" className="rounded-full">
-                <Linkedin className="h-5 w-5" />
-              </Button>
+              Gaurav Dewani
             </a>
           </div>
         </div>
@@ -108,7 +99,6 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
             if (component) setSelectedComponent(component);
           }}
         >
-          {/* Simplified sidebar without label */}
           <div className="w-52 md:w-56">
             <TabsList className="flex-col rounded-none border-l border-border bg-transparent p-0">
               {components.map((component, index) => {
@@ -134,7 +124,6 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
             </TabsList>
           </div>
 
-          {/* Component view area */}
           <div className="flex-1">
             <div className="h-full flex items-center justify-center">
               <Suspense fallback={
@@ -156,7 +145,6 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
         </Tabs>
       </div>
 
-      {/* Footer */}
       <footer className="w-full py-6 px-6 border-t border-border/30 mt-auto">
         <div className="max-w-5xl mx-auto text-center text-muted-foreground">
           <p>
