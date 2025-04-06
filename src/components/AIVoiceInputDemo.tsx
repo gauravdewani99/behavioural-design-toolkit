@@ -10,11 +10,11 @@ export function AIVoiceInputDemo() {
   };
 
   return (
-    <div className="w-full max-w-[350px] mx-auto">
+    <div className="w-full max-w-[350px] mx-auto flex flex-col items-center justify-center">
       <AIVoiceInput 
         onStart={() => console.log('Recording started')}
         onStop={handleStop}
-        className="py-2" 
+        className="py-2 w-full" 
       />   
     </div>
   );

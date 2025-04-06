@@ -128,7 +128,11 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
                   </div>
                 </div>
               }>
-                {ComponentToRender && <ComponentToRender simplifiedView={true} />}
+                {ComponentToRender && (
+                  <div className="w-full flex flex-col items-center justify-center">
+                    <ComponentToRender simplifiedView={true} />
+                  </div>
+                )}
               </Suspense>
             </div>
           </div>

@@ -43,7 +43,7 @@ export function PromptInputDemo() {
   }
 
   return (
-    <div className="w-full max-w-[350px] mx-auto">
+    <div className="w-full max-w-[350px] mx-auto flex flex-col items-center justify-center">
       <PromptInput
         value={input}
         onValueChange={setInput}
@@ -110,5 +110,5 @@ export function PromptInputDemo() {
         </PromptInputActions>
       </PromptInput>
     </div>
-  )
+  );
 }
