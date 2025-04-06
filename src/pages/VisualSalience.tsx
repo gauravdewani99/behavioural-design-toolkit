@@ -373,7 +373,7 @@ Steps to integrate
                 Our attention is attracted to visually salient stimuli. [Itti, L. (2007). Visual salience. Scholarpedia, 2(9), 3327.]. 
                 Digital ecosystems are a constant fight for attention. Reduce drop offs and increase conversion rates by emphasizing your textual callouts!
               </p>
-              <div className="h-[360px] md:h-[380px] w-full">
+              <div className="w-full">
                 <LampDemo />
               </div>
             </div>
