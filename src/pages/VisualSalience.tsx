@@ -1,6 +1,5 @@
 
 import React from "react";
-import { AuroraBackgroundDemo } from "@/components/AuroraBackgroundDemo";
 import { ArrowLeft } from "lucide-react";
 import { LampDemo } from "@/components/LampDemo";
 import { CopyPromptButton } from "@/components/CopyPromptButton";
@@ -182,187 +181,6 @@ Steps to integrate
             />
             <LampDemo />
           </div>
-          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism relative">
-            <CopyPromptButton 
-              prompt={`You are given a task to integrate an existing React component in the codebase
-
-The codebase should support:
-- shadcn project structure  
-- Tailwind CSS
-- Typescript
-
-If it doesn't, provide instructions on how to setup project via shadcn CLI, install Tailwind or Typescript.
-
-Determine the default path for components and styles. 
-If default path for components is not /components/ui, provide instructions on why it's important to create this folder
-Copy-paste this component to /components/ui folder:
-\`\`\`tsx
-component.tsx
-"use client" 
-
-import * as React from "react"
-import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-
-interface AnimatedWordCycleProps {
-  words: string[];
-  interval?: number;
-  className?: string;
-}
-
-export default function AnimatedWordCycle({
-  words,
-  interval = 5000,
-  className = "",
-}: AnimatedWordCycleProps) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [width, setWidth] = useState("auto");
-  const measureRef = useRef<HTMLDivElement>(null);
-
-  // Get the width of the current word
-  useEffect(() => {
-    if (measureRef.current) {
-      const elements = measureRef.current.children;
-      if (elements.length > currentIndex) {
-        // Add a small buffer (10px) to prevent text wrapping
-        const newWidth = elements[currentIndex].getBoundingClientRect().width;
-        setWidth(\`\${newWidth}px\`);
-      }
-    }
-  }, [currentIndex]);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, interval);
-
-    return () => clearInterval(timer);
-  }, [interval, words.length]);
-
-  // Container animation for the whole word
-  const containerVariants = {
-    hidden: { 
-      y: -20,
-      opacity: 0,
-      filter: "blur(8px)"
-    },
-    visible: {
-      y: 0,
-      opacity: 1,
-      filter: "blur(0px)",
-      transition: {
-        duration: 0.4,
-        ease: "easeOut"
-      }
-    },
-    exit: { 
-      y: 20,
-      opacity: 0,
-      filter: "blur(8px)",
-      transition: { 
-        duration: 0.3, 
-        ease: "easeIn"
-      }
-    },
-  };
-
-  return (
-    <>
-      {/* Hidden measurement div with all words rendered */}
-      <div 
-        ref={measureRef} 
-        aria-hidden="true"
-        className="absolute opacity-0 pointer-events-none"
-        style={{ visibility: "hidden" }}
-      >
-        {words.map((word, i) => (
-          <span key={i} className={\`font-bold \${className}\`}>
-            {word}
-          </span>
-        ))}
-      </div>
-
-      {/* Visible animated word */}
-      <motion.span 
-        className="relative inline-block"
-        animate={{ 
-          width,
-          transition: { 
-            type: "spring",
-            stiffness: 150,
-            damping: 15,
-            mass: 1.2,
-          }
-        }}
-      >
-        <AnimatePresence mode="wait" initial={false}>
-          <motion.span
-            key={currentIndex}
-            className={\`inline-block font-bold \${className}\`}
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            style={{ whiteSpace: "nowrap" }}
-          >
-            {words[currentIndex]}
-          </motion.span>
-        </AnimatePresence>
-      </motion.span>
-    </>
-  );
-} 
-
-demo.tsx
-"use client";
-
-import * as React from "react"
-import AnimatedWordCycle from "@/components/ui/animated-text-cycle"
-
-export function AuroraBackgroundDemo() {
-  return (
-    <div className="p-4 max-w-[500px]">
-        <h1 className="text-4xl font-light text-left text-muted-foreground">
-            Your <AnimatedWordCycle 
-                words={[
-                    "business",
-                    "team",
-                    "workflow",
-                    "productivity",
-                    "projects",
-                    "analytics",
-                    "dashboard",
-                    "platform"
-                ]}
-                interval={3000}
-                className={"text-foreground font-semi-bold"} 
-            /> deserves better tools
-        </h1>
-    </div>
-  );
-}
-\`\`\`
-
-Implementation Guidelines
- 1. Analyze the component structure and identify all required dependencies
- 2. Review the component's argumens and state
- 3. Identify any required context providers or hooks and install them
- 4. Questions to Ask
- - What data/props will be passed to this component?
- - Are there any specific state management requirements?
- - Are there any required assets (images, icons, etc.)?
- - What is the expected responsive behavior?
- - What is the best place to use this component in the app?
-
-Steps to integrate
- 0. Copy paste all the code above in the correct directories
- 1. Install external dependencies
- 2. Fill image assets with Unsplash stock images you know exist
- 3. Use lucide-react icons for svgs or logos if component requires them`}
-              previewText="Prompt: Create an animated background with text that cycles through different words..."
-            />
-            <AuroraBackgroundDemo />
-          </div>
         </div>
       </div>;
   }
@@ -373,13 +191,13 @@ Steps to integrate
           Back to Portfolio
         </a>
         
-        <h1 className="text-3xl md:text-4xl font-bold text-gradient mb-6">Visual Salience</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-gradient mb-6">Spotlight Text</h1>
         
         <div className="prose prose-invert max-w-none mb-10">
           <p className="text-muted-foreground text-lg">
             Visual salience in UI design refers to the prominence or noticeability of elements. 
-            These components demonstrate animations that draw attention through 
-            subtle motion and create visual interest.
+            This component demonstrates animations that draw attention through 
+            subtle lighting effects and create visual interest.
           </p>
         </div>
         
@@ -547,9 +365,7 @@ Steps to integrate
  0. Copy paste all the code above in the correct directories
  1. Install external dependencies
  2. Fill image assets with Unsplash stock images you know exist
- 3. Use lucide-react icons for svgs or logos if component requires them
-
-`}
+ 3. Use lucide-react icons for svgs or logos if component requires them`}
               previewText="Prompt: Create a spotlight effect component that highlights text..."
             />
             <div className="flex flex-col gap-6">
@@ -561,188 +377,6 @@ Steps to integrate
                 <LampDemo />
               </div>
             </div>
-          </div>
-          
-          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism h-auto relative">
-            <CopyPromptButton 
-              prompt={`You are given a task to integrate an existing React component in the codebase
-
-The codebase should support:
-- shadcn project structure  
-- Tailwind CSS
-- Typescript
-
-If it doesn't, provide instructions on how to setup project via shadcn CLI, install Tailwind or Typescript.
-
-Determine the default path for components and styles. 
-If default path for components is not /components/ui, provide instructions on why it's important to create this folder
-Copy-paste this component to /components/ui folder:
-\`\`\`tsx
-component.tsx
-"use client" 
-
-import * as React from "react"
-import { useState, useEffect, useRef } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-
-interface AnimatedWordCycleProps {
-  words: string[];
-  interval?: number;
-  className?: string;
-}
-
-export default function AnimatedWordCycle({
-  words,
-  interval = 5000,
-  className = "",
-}: AnimatedWordCycleProps) {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [width, setWidth] = useState("auto");
-  const measureRef = useRef<HTMLDivElement>(null);
-
-  // Get the width of the current word
-  useEffect(() => {
-    if (measureRef.current) {
-      const elements = measureRef.current.children;
-      if (elements.length > currentIndex) {
-        // Add a small buffer (10px) to prevent text wrapping
-        const newWidth = elements[currentIndex].getBoundingClientRect().width;
-        setWidth(\`\${newWidth}px\`);
-      }
-    }
-  }, [currentIndex]);
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % words.length);
-    }, interval);
-
-    return () => clearInterval(timer);
-  }, [interval, words.length]);
-
-  // Container animation for the whole word
-  const containerVariants = {
-    hidden: { 
-      y: -20,
-      opacity: 0,
-      filter: "blur(8px)"
-    },
-    visible: {
-      y: 0,
-      opacity: 1,
-      filter: "blur(0px)",
-      transition: {
-        duration: 0.4,
-        ease: "easeOut"
-      }
-    },
-    exit: { 
-      y: 20,
-      opacity: 0,
-      filter: "blur(8px)",
-      transition: { 
-        duration: 0.3, 
-        ease: "easeIn"
-      }
-    },
-  };
-
-  return (
-    <>
-      {/* Hidden measurement div with all words rendered */}
-      <div 
-        ref={measureRef} 
-        aria-hidden="true"
-        className="absolute opacity-0 pointer-events-none"
-        style={{ visibility: "hidden" }}
-      >
-        {words.map((word, i) => (
-          <span key={i} className={\`font-bold \${className}\`}>
-            {word}
-          </span>
-        ))}
-      </div>
-
-      {/* Visible animated word */}
-      <motion.span 
-        className="relative inline-block"
-        animate={{ 
-          width,
-          transition: { 
-            type: "spring",
-            stiffness: 150,
-            damping: 15,
-            mass: 1.2,
-          }
-        }}
-      >
-        <AnimatePresence mode="wait" initial={false}>
-          <motion.span
-            key={currentIndex}
-            className={\`inline-block font-bold \${className}\`}
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
-            exit="exit"
-            style={{ whiteSpace: "nowrap" }}
-          >
-            {words[currentIndex]}
-          </motion.span>
-        </AnimatePresence>
-      </motion.span>
-    </>
-  );
-} 
-
-demo.tsx
-"use client";
-
-import * as React from "react"
-import AnimatedWordCycle from "@/components/ui/animated-text-cycle"
-
-export function AuroraBackgroundDemo() {
-  return (
-    <div className="p-4 max-w-[500px]">
-        <h1 className="text-4xl font-light text-left text-muted-foreground">
-            Your <AnimatedWordCycle 
-                words={[
-                    "business",
-                    "team",
-                    "workflow",
-                    "productivity",
-                    "projects",
-                    "analytics",
-                    "dashboard",
-                    "platform"
-                ]}
-                interval={3000}
-                className={"text-foreground font-semi-bold"} 
-            /> deserves better tools
-        </h1>
-    </div>
-  );
-}
-\`\`\`
-
-Implementation Guidelines
- 1. Analyze the component structure and identify all required dependencies
- 2. Review the component's argumens and state
- 3. Identify any required context providers or hooks and install them
- 4. Questions to Ask
- - What data/props will be passed to this component?
- - Are there any specific state management requirements?
- - Are there any required assets (images, icons, etc.)?
- - What is the expected responsive behavior?
- - What is the best place to use this component in the app?
-
-Steps to integrate
- 0. Copy paste all the code above in the correct directories
- 1. Install external dependencies
- 2. Fill image assets with Unsplash stock images you know exist
- 3. Use lucide-react icons for svgs or logos if component requires them`}
-              previewText="Prompt: Create an animated background with text that cycles through different words..."
-            />
-            <AuroraBackgroundDemo />
           </div>
         </div>
       </div>

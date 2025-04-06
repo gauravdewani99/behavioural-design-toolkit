@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { ThemeProvider } from "@/contexts/ThemeContext";
 import Index from "./pages/Index";
 import VisualSalience from "./pages/VisualSalience";
+import TextCycleLoop from "./pages/TextCycleLoop";
 import Motion from "./pages/Motion";
 import ProgressBars from "./pages/ProgressBars";
 import ThemeToggle from "./pages/ThemeToggle";
@@ -26,6 +27,7 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/visual-salience" element={<VisualSalience />} />
+            <Route path="/text-cycle-loop" element={<TextCycleLoop />} />
             <Route path="/motion" element={<Motion />} />
             <Route path="/progress-bars" element={<ProgressBars />} />
             <Route path="/theme-toggle" element={<ThemeToggle />} />

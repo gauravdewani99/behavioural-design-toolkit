@@ -2,11 +2,15 @@
 import React from 'react';
 import ComponentCard from './ComponentCard';
 
-// Restructured to have 6 main components
+// Restructured to have 7 main components with updated names
 const components = [
   { 
-    title: "Visual Salience", 
+    title: "Spotlight Text", 
     link: "/visual-salience"
+  },
+  { 
+    title: "Text Cycle Loop", 
+    link: "/text-cycle-loop"
   },
   { 
     title: "Motion", 

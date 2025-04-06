@@ -5,9 +5,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 // Component definitions with descriptions
 const components = [
   { 
-    title: "Visual Salience", 
+    title: "Spotlight Text", 
     link: "/visual-salience",
     description: "Techniques to draw attention to key elements through contrast, color, and emphasis."
+  },
+  { 
+    title: "Text Cycle Loop", 
+    link: "/text-cycle-loop",
+    description: "Dynamic text animations that rotate through multiple content options in a limited space."
   },
   { 
     title: "Motion", 
@@ -38,6 +43,7 @@ const components = [
 
 // Pre-load components to avoid dynamic imports that can cause update loop issues
 const VisualSalience = lazy(() => import('../pages/VisualSalience'));
+const TextCycleLoop = lazy(() => import('../pages/TextCycleLoop'));
 const Motion = lazy(() => import('../pages/Motion'));
 const ProgressBars = lazy(() => import('../pages/ProgressBars'));
 const ConversationalInput = lazy(() => import('../pages/ConversationalInput'));
@@ -47,6 +53,7 @@ const SocialProofing = lazy(() => import('../pages/SocialProofing'));
 // Map of component paths to their respective components
 const componentMap = {
   '/visual-salience': VisualSalience,
+  '/text-cycle-loop': TextCycleLoop,
   '/motion': Motion,
   '/progress-bars': ProgressBars,
   '/conversational-input': ConversationalInput,
