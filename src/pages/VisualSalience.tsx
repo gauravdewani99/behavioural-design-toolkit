@@ -1,18 +1,13 @@
-
-import React, { useState } from "react";
+import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { LampDemo } from "@/components/LampDemo";
 import { CopyPromptButton } from "@/components/CopyPromptButton";
-
 interface VisualSalienceProps {
   simplifiedView?: boolean;
 }
-
 const VisualSalience: React.FC<VisualSalienceProps> = ({
   simplifiedView = false
 }) => {
-  const [customText, setCustomText] = useState("Build lamps\nthe right way");
-
   if (simplifiedView) {
     return <div className="w-full max-w-3xl mx-auto">
         <div className="grid gap-6">
@@ -179,7 +174,7 @@ Steps to integrate
  1. Install external dependencies
  2. Fill image assets with Unsplash stock images you know exist
  3. Use lucide-react icons for svgs or logos if component requires them`} previewText="Prompt: Create a spotlight effect component that highlights text..." />
-            <LampDemo customText={customText} />
+            <LampDemo />
           </div>
         </div>
       </div>;
@@ -370,20 +365,8 @@ Steps to integrate
                 Our attention is attracted to visually salient stimuli. [Itti, L. (2007). Visual salience. Scholarpedia, 2(9), 3327.]. 
                 Digital ecosystems are a constant fight for attention. Reduce drop offs and increase conversion rates by emphasizing your textual callouts!
               </p>
-              
-              {/* Add text input area with subtle styling */}
-              <div className="max-w-2xl w-full mx-auto mb-6 mt-4">
-                <textarea 
-                  value={customText}
-                  onChange={(e) => setCustomText(e.target.value)}
-                  placeholder="Type something here..."
-                  className="w-full p-4 h-32 bg-secondary/10 border border-secondary/20 rounded-md text-foreground placeholder:text-muted-foreground resize-none focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
-                />
-              </div>
-              
-              {/* Add margin-top to separate the lamp demo */}
-              <div className="h-[360px] md:h-[380px] w-full mt-12">
-                <LampDemo customText={customText} />
+              <div className="h-[360px] md:h-[380px] w-full">
+                <LampDemo />
               </div>
             </div>
           </div>
