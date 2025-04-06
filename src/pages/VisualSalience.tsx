@@ -198,6 +198,11 @@ Steps to integrate
         
         <h1 className="text-3xl md:text-4xl font-bold text-gradient mb-6">Spotlight Text</h1>
         
+        <div className="bg-background/50 rounded-lg p-4 mb-6 text-sm text-muted-foreground">
+          <p className="mb-1">Visual salience leverages contrast and motion to direct user attention. Studies show elements with high visual distinction receive up to 70% more focus.</p>
+          <p>Spotlight effects create an emotional connection and can increase engagement time by creating a sense of depth and importance.</p>
+        </div>
+        
         <div className="prose prose-invert max-w-none mb-10">
           <p className="text-muted-foreground text-lg">
             Visual salience in UI design refers to the prominence or noticeability of elements. 

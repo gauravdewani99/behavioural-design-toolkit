@@ -1,8 +1,7 @@
-
-import React from 'react';
-import StepperDemo from '../components/StepperDemo';
-import { Card } from '@/components/ui/card';
-import { CopyPromptButton } from '@/components/CopyPromptButton';
+import React from "react";
+import { ArrowLeft } from "lucide-react";
+import { StepperDemo } from "@/components/StepperDemo";
+import { CopyPromptButton } from "@/components/CopyPromptButton";
 
 interface ProgressBarsProps {
   simplifiedView?: boolean;
@@ -378,13 +377,18 @@ Steps to integrate
   return (
     <div className="min-h-screen bg-background">
       <div className="container py-8">
-        <div className="mb-8">
-          <h1 className="text-4xl font-bold mb-2">Progress Bar</h1>
-          <p className="text-muted-foreground">
-            Modern, interactive progress indicators to enhance user experience
-          </p>
+        <a href="/" className="flex items-center text-primary hover:text-primary/80 mb-6 group">
+          <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
+          Back to Portfolio
+        </a>
+        
+        <h1 className="text-3xl md:text-4xl font-bold text-gradient mb-6">Progress Bars</h1>
+        
+        <div className="bg-background/50 rounded-lg p-4 mb-6 text-sm text-muted-foreground">
+          <p className="mb-1">Progress indicators reduce perceived wait times by up to 40% by providing certainty and setting expectations. The Zeigarnik effect explains why we feel tension with incomplete tasks.</p>
+          <p>Visual progress feedback creates a sense of accomplishment that releases dopamine, encouraging users to complete multi-step processes.</p>
         </div>
-
+        
         <div className="grid gap-8">
           <Card className="p-8 bg-secondary/20 border border-border glass-morphism relative">
             <CopyPromptButton 
@@ -741,23 +745,22 @@ Steps to integrate
  1. Install external dependencies
  2. Fill image assets with Unsplash stock images you know exist
  3. Use lucide-react icons for svgs or logos if component requires them`}
-              previewText="Prompt: Create a multi-step progress indicator component..."
-            />
-            <h2 className="text-2xl font-semibold mb-6 mt-6">Stepper Component</h2>
-            <StepperDemo />
-          </Card>
-          
-          {/* Additional progress bar examples could be added here */}
-        </div>
+            previewText="Prompt: Create a multi-step progress indicator component..."
+          />
+          <h2 className="text-2xl font-semibold mb-6 mt-6">Stepper Component</h2>
+          <StepperDemo />
+        </Card>
         
-        <div className="mt-8">
-          <a 
-            href="/" 
-            className="inline-flex items-center text-primary hover:underline"
-          >
-            &larr; Back to Home
-          </a>
-        </div>
+        {/* Additional progress bar examples could be added here */}
+      </div>
+      
+      <div className="mt-8">
+        <a 
+          href="/" 
+          className="inline-flex items-center text-primary hover:underline"
+        >
+          &larr; Back to Home
+        </a>
       </div>
     </div>
   );

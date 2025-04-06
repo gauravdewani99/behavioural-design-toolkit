@@ -1,3 +1,4 @@
+
 import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { AuroraBackgroundDemo } from "@/components/AuroraBackgroundDemo";
@@ -200,6 +201,11 @@ Steps to integrate
         </a>
         
         <h1 className="text-3xl md:text-4xl font-bold text-gradient mb-6">Text Cycle Loop</h1>
+        
+        <div className="bg-background/50 rounded-lg p-4 mb-6 text-sm text-muted-foreground">
+          <p className="mb-1">Dynamic text cycling capitalizes on our natural tendency to notice changes in our visual field. Cognitive science shows that motion attracts attention 2.5x faster than static elements.</p>
+          <p>This technique efficiently delivers multiple messages in limited space while maintaining continuous user engagement.</p>
+        </div>
         
         {/* Moved the AuroraBackgroundDemo to the top, right after the title */}
         <div className="bg-secondary/20 rounded-lg p-8 glass-morphism relative mb-10">

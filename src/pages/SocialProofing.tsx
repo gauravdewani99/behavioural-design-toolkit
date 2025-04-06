@@ -155,6 +155,11 @@ Steps to integrate
         
         <h1 className="text-3xl md:text-4xl font-bold text-gradient mb-6">Social Proofing</h1>
         
+        <div className="bg-background/50 rounded-lg p-4 mb-6 text-sm text-muted-foreground">
+          <p className="mb-1">Social proof exploits our inherent trust in collective wisdom. Users are 63% more likely to purchase when they see others have already done so.</p>
+          <p>Visual social cues like user avatars create an immediate sense of community and credibility, bypassing rational decision-making processes.</p>
+        </div>
+        
         <div className="prose prose-invert max-w-none mb-10">
           <p className="text-muted-foreground text-lg">
             Social proofing is a powerful psychological phenomenon where people follow the actions 
