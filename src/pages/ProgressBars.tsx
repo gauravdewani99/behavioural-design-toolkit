@@ -1,4 +1,3 @@
-
 import React from 'react';
 import StepperDemo from '../components/StepperDemo';
 import { Card } from '@/components/ui/card';
@@ -379,7 +378,7 @@ Steps to integrate
     <div className="min-h-screen bg-background">
       <div className="container py-8">
         <div className="mb-8">
-          <h1 className="text-4xl font-bold mb-2">Progress Bars</h1>
+          <h1 className="text-4xl font-bold mb-2">Progress Bar</h1>
           <p className="text-muted-foreground">
             Modern, interactive progress indicators to enhance user experience
           </p>
@@ -398,7 +397,7 @@ The codebase should support:
 If it doesn't, provide instructions on how to setup project via shadcn CLI, install Tailwind or Typescript.
 
 Determine the default path for components and styles. 
-If default path for components is not /components/ui, provide instructions on why it's important to create this folder
+If default path for components is not /components/ui, create this folder
 Copy-paste this component to /components/ui folder:
 \`\`\`tsx
 component.tsx

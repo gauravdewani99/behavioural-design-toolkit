@@ -9,7 +9,26 @@ import {
   StepperTrigger,
 } from "@/components/ui/stepper";
 import { useState } from "react";
-const steps = [1, 2, 3, 4];
+
+// Define step content
+const stepContent = [
+  {
+    title: "Set Expectations",
+    description: "Progress bars reduce anxiety by setting clear timeline expectations."
+  },
+  {
+    title: "Show Current State",
+    description: "They provide visual feedback about the current state of a process."
+  },
+  {
+    title: "Maintain Engagement",
+    description: "Progress indicators keep users engaged during multi-step processes."
+  },
+  {
+    title: "Celebrate Completion",
+    description: "Completing steps offers a sense of achievement and forward momentum."
+  }
+];
 
 function StepperDemo() {
   const [currentStep, setCurrentStep] = useState(1);
@@ -18,20 +37,27 @@ function StepperDemo() {
     <div className="mx-auto max-w-xl space-y-8 text-center min-w-[300px]">
       <div className="space-y-3">
         <Stepper value={currentStep} onValueChange={setCurrentStep}>
-          {steps.map((step) => (
-            <StepperItem key={step} step={step} className="flex-1">
+          {stepContent.map((step, index) => (
+            <StepperItem key={index + 1} step={index + 1} className="flex-1">
               <StepperTrigger className="w-full flex-col items-start gap-2" asChild>
                 <StepperIndicator asChild className="h-2 w-full rounded-none bg-border">
-                  <span className="sr-only">{step}</span>
+                  <span className="sr-only">{index + 1}</span>
                 </StepperIndicator>
               </StepperTrigger>
             </StepperItem>
           ))}
         </Stepper>
         <div className="text-sm font-medium tabular-nums text-muted-foreground">
-          Step {currentStep} of {steps.length}
+          Step {currentStep} of {stepContent.length}
         </div>
       </div>
+
+      {/* Display the content for the current step */}
+      <div className="bg-card p-6 rounded-md border border-border">
+        <h3 className="font-semibold text-lg mb-2">{stepContent[currentStep - 1].title}</h3>
+        <p className="text-muted-foreground">{stepContent[currentStep - 1].description}</p>
+      </div>
+
       <div className="flex justify-center space-x-4">
         <Button
           variant="outline"
@@ -45,14 +71,12 @@ function StepperDemo() {
           variant="outline"
           className="w-32"
           onClick={() => setCurrentStep((prev) => prev + 1)}
-          disabled={currentStep >= steps.length}
+          disabled={currentStep >= stepContent.length}
         >
           Next step
         </Button>
       </div>
-      <p className="mt-2 text-xs text-muted-foreground" role="region" aria-live="polite">
-        Progress stepper
-      </p>
+      {/* Removed the "Progress stepper" text here */}
     </div>
   );
 }

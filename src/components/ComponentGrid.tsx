@@ -13,11 +13,11 @@ const components = [
     link: "/text-cycle-loop"
   },
   { 
-    title: "Motion", 
+    title: "3D Motion", 
     link: "/motion"
   },
   { 
-    title: "Progress Bars", 
+    title: "Progress Bar", 
     link: "/progress-bars"
   },
   { 

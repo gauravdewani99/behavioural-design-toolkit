@@ -15,12 +15,12 @@ const components = [
     description: "Dynamic text animations that rotate through multiple content options in a limited space."
   },
   { 
-    title: "Motion", 
+    title: "3D Motion", 
     link: "/motion",
     description: "Animation patterns that guide users and create a sense of orientation and hierarchy."
   },
   { 
-    title: "Progress Bars", 
+    title: "Progress Bar", 
     link: "/progress-bars",
     description: "Visual indicators that show completion status and reduce anxiety during waiting periods."
   },

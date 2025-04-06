@@ -127,7 +127,7 @@ Steps to integrate
           Back to Portfolio
         </a>
         
-        <h1 className="text-3xl md:text-4xl font-bold text-gradient mb-6">Motion</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-gradient mb-6">3D Motion</h1>
         
         <div className="mb-8">
           <p className="text-lg text-muted-foreground mb-6">
