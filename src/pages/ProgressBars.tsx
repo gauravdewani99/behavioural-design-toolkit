@@ -1,7 +1,9 @@
+
 import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { StepperDemo } from "@/components/StepperDemo";
 import { CopyPromptButton } from "@/components/CopyPromptButton";
+import { Card } from "@/components/ui/card";
 
 interface ProgressBarsProps {
   simplifiedView?: boolean;
@@ -347,25 +349,7 @@ function Component() {
   );
 }
 
-export { Component };
-\`\`\`
-
-Implementation Guidelines
- 1. Analyze the component structure and identify all required dependencies
- 2. Review the component's argumens and state
- 3. Identify any required context providers or hooks and install them
- 4. Questions to Ask
- - What data/props will be passed to this component?
- - Are there any specific state management requirements?
- - Are there any required assets (images, icons, etc.)?
- - What is the expected responsive behavior?
- - What is the best place to use this component in the app?
-
-Steps to integrate
- 0. Copy paste all the code above in the correct directories
- 1. Install external dependencies
- 2. Fill image assets with Unsplash stock images you know exist
- 3. Use lucide-react icons for svgs or logos if component requires them`}
+export { Component };`}
             previewText="Prompt: Create a multi-step progress indicator component..."
           />
           <StepperDemo />
@@ -726,41 +710,24 @@ function Component() {
   );
 }
 
-export { Component };
-\`\`\`
-
-Implementation Guidelines
- 1. Analyze the component structure and identify all required dependencies
- 2. Review the component's argumens and state
- 3. Identify any required context providers or hooks and install them
- 4. Questions to Ask
- - What data/props will be passed to this component?
- - Are there any specific state management requirements?
- - Are there any required assets (images, icons, etc.)?
- - What is the expected responsive behavior?
- - What is the best place to use this component in the app?
-
-Steps to integrate
- 0. Copy paste all the code above in the correct directories
- 1. Install external dependencies
- 2. Fill image assets with Unsplash stock images you know exist
- 3. Use lucide-react icons for svgs or logos if component requires them`}
-            previewText="Prompt: Create a multi-step progress indicator component..."
-          />
-          <h2 className="text-2xl font-semibold mb-6 mt-6">Stepper Component</h2>
-          <StepperDemo />
-        </Card>
+export { Component };`}
+              previewText="Prompt: Create a multi-step progress indicator component..."
+            />
+            <h2 className="text-2xl font-semibold mb-6 mt-6">Stepper Component</h2>
+            <StepperDemo />
+          </Card>
+          
+          {/* Additional progress bar examples could be added here */}
+        </div>
         
-        {/* Additional progress bar examples could be added here */}
-      </div>
-      
-      <div className="mt-8">
-        <a 
-          href="/" 
-          className="inline-flex items-center text-primary hover:underline"
-        >
-          &larr; Back to Home
-        </a>
+        <div className="mt-8">
+          <a 
+            href="/" 
+            className="inline-flex items-center text-primary hover:underline"
+          >
+            &larr; Back to Home
+          </a>
+        </div>
       </div>
     </div>
   );
