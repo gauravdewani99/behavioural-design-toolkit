@@ -211,6 +211,11 @@ Steps to integrate
         
         <h1 className="text-3xl md:text-4xl font-bold text-gradient mb-6">Text Cycle Loop</h1>
         
+        {/* Moved the AuroraBackgroundDemo to the top, right after the title */}
+        <div className="bg-secondary/20 rounded-lg p-8 glass-morphism relative mb-10">
+          <AuroraBackgroundDemo />
+        </div>
+        
         <div className="prose prose-invert max-w-none mb-10">
           <p className="text-muted-foreground text-lg">
             Text cycle animations provide a dynamic way to present multiple options in limited space.
@@ -405,9 +410,6 @@ Steps to integrate
                   Text cycling creates focused attention through motion and cognitive novelty. Words that change draw 20% more attention than static text. [Nielsen Norman Group].
                   Use this pattern to highlight multiple benefits, features, or product variations efficiently.
                 </p>
-                <div className="flex justify-center items-center py-8">
-                  <AuroraBackgroundDemo />
-                </div>
               </div>
             </div>
           </div>
