@@ -24,10 +24,10 @@ export function LampDemo() {
     // Initial animation
     resetAnimation();
     
-    // Set up interval to reset animation every 10 seconds
+    // Set up interval to reset animation every 5 seconds (changed from 10 seconds)
     const intervalId = setInterval(() => {
       resetAnimation();
-    }, 10000);
+    }, 5000);
     
     // Clean up interval on component unmount
     return () => clearInterval(intervalId);
