@@ -1,4 +1,3 @@
-
 import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { LampDemo } from "@/components/LampDemo";
@@ -179,7 +178,9 @@ Steps to integrate
  3. Use lucide-react icons for svgs or logos if component requires them`}
               previewText="Prompt: Create a spotlight effect component that highlights text..."
             />
-            <LampDemo />
+            <div className="h-[300px] overflow-hidden">
+              <LampDemo />
+            </div>
           </div>
         </div>
       </div>;
@@ -373,7 +374,7 @@ Steps to integrate
                 Our attention is attracted to visually salient stimuli. [Itti, L. (2007). Visual salience. Scholarpedia, 2(9), 3327.]. 
                 Digital ecosystems are a constant fight for attention. Reduce drop offs and increase conversion rates by emphasizing your textual callouts!
               </p>
-              <div className="h-[360px] md:h-[380px] w-full">
+              <div className="h-[300px] overflow-hidden">
                 <LampDemo />
               </div>
             </div>
