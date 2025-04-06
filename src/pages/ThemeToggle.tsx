@@ -154,11 +154,6 @@ Steps to integrate
             Seamless theme switching with a visually appealing toggle component
           </p>
         </div>
-        
-        <div className="bg-background/50 rounded-lg p-4 mb-6 text-sm text-muted-foreground">
-          <p className="mb-1">Customizable interfaces increase user autonomy and satisfaction. Studies show users who can personalize their experience stay 25-50% longer and report higher satisfaction scores.</p>
-          <p>Toggle components leverage familiar mental models that reduce cognitive load and make interfaces more accessible to diverse users.</p>
-        </div>
 
         <div className="grid gap-8">
           <Card className="p-6 bg-secondary/20 border border-border glass-morphism relative">

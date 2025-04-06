@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { LampDemo } from "@/components/LampDemo";
 import { CopyPromptButton } from "@/components/CopyPromptButton";
@@ -11,13 +11,13 @@ interface VisualSalienceProps {
 const VisualSalience: React.FC<VisualSalienceProps> = ({
   simplifiedView = false
 }) => {
+  const [customText, setCustomText] = useState("Build lamps\nthe right way");
+
   if (simplifiedView) {
-    return (
-      <div className="w-full max-w-3xl mx-auto">
+    return <div className="w-full max-w-3xl mx-auto">
         <div className="grid gap-6">
           <div className="bg-secondary/20 rounded-lg p-8 glass-morphism relative px-0 mx-0 py-0">
-            <CopyPromptButton 
-              prompt={`You are given a task to integrate an existing React component in the codebase
+            <CopyPromptButton prompt={`You are given a task to integrate an existing React component in the codebase
 
 The codebase should support:
 - shadcn project structure  
@@ -178,18 +178,13 @@ Steps to integrate
  0. Copy paste all the code above in the correct directories
  1. Install external dependencies
  2. Fill image assets with Unsplash stock images you know exist
- 3. Use lucide-react icons for svgs or logos if component requires them`} 
-              previewText="Prompt: Create a spotlight effect component that highlights text..." 
-            />
-            <LampDemo />
+ 3. Use lucide-react icons for svgs or logos if component requires them`} previewText="Prompt: Create a spotlight effect component that highlights text..." />
+            <LampDemo customText={customText} />
           </div>
         </div>
-      </div>
-    );
+      </div>;
   }
-  
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <div className="container py-8">
         <a href="/" className="flex items-center text-primary hover:text-primary/80 mb-6 group">
           <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
@@ -197,11 +192,6 @@ Steps to integrate
         </a>
         
         <h1 className="text-3xl md:text-4xl font-bold text-gradient mb-6">Spotlight Text</h1>
-        
-        <div className="bg-background/50 rounded-lg p-4 mb-6 text-sm text-muted-foreground">
-          <p className="mb-1">Visual salience leverages contrast and motion to direct user attention. Studies show elements with high visual distinction receive up to 70% more focus.</p>
-          <p>Spotlight effects create an emotional connection and can increase engagement time by creating a sense of depth and importance.</p>
-        </div>
         
         <div className="prose prose-invert max-w-none mb-10">
           <p className="text-muted-foreground text-lg">
@@ -213,8 +203,7 @@ Steps to integrate
         
         <div className="grid gap-10">
           <div className="bg-secondary/20 rounded-lg p-8 glass-morphism relative">
-            <CopyPromptButton 
-              prompt={`You are given a task to integrate an existing React component in the codebase
+            <CopyPromptButton prompt={`You are given a task to integrate an existing React component in the codebase
 
 The codebase should support:
 - shadcn project structure  
@@ -375,23 +364,31 @@ Steps to integrate
  0. Copy paste all the code above in the correct directories
  1. Install external dependencies
  2. Fill image assets with Unsplash stock images you know exist
- 3. Use lucide-react icons for svgs or logos if component requires them`} 
-              previewText="Prompt: Create a spotlight effect component that highlights text..." 
-            />
+ 3. Use lucide-react icons for svgs or logos if component requires them`} previewText="Prompt: Create a spotlight effect component that highlights text..." />
             <div className="flex flex-col gap-6">
               <p className="text-base text-muted-foreground leading-relaxed max-w-3xl mx-auto text-center">
                 Our attention is attracted to visually salient stimuli. [Itti, L. (2007). Visual salience. Scholarpedia, 2(9), 3327.]. 
                 Digital ecosystems are a constant fight for attention. Reduce drop offs and increase conversion rates by emphasizing your textual callouts!
               </p>
-              <div className="h-[360px] md:h-[380px] w-full">
-                <LampDemo />
+              
+              {/* Add text input area with subtle styling */}
+              <div className="max-w-2xl w-full mx-auto mb-6 mt-4">
+                <textarea 
+                  value={customText}
+                  onChange={(e) => setCustomText(e.target.value)}
+                  placeholder="Type something here..."
+                  className="w-full p-4 h-32 bg-secondary/10 border border-secondary/20 rounded-md text-foreground placeholder:text-muted-foreground resize-none focus:outline-none focus:ring-2 focus:ring-primary/50 transition-all"
+                />
+              </div>
+              
+              {/* Add margin-top to separate the lamp demo */}
+              <div className="h-[360px] md:h-[380px] w-full mt-12">
+                <LampDemo customText={customText} />
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default VisualSalience;

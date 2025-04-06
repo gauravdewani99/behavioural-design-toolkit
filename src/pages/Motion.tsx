@@ -129,11 +129,6 @@ Steps to integrate
         
         <h1 className="text-3xl md:text-4xl font-bold text-gradient mb-6">3D Motion</h1>
         
-        <div className="bg-background/50 rounded-lg p-4 mb-6 text-sm text-muted-foreground">
-          <p className="mb-1">3D elements create depth perception that naturally draws human attention. Research indicates interfaces with subtle three-dimensional cues increase user retention by up to 34%.</p>
-          <p>Interactive 3D objects tap into our innate spatial reasoning abilities, making complex information more intuitive to understand.</p>
-        </div>
-        
         <div className="mb-8">
           <p className="text-lg text-muted-foreground mb-6">
             Motion and 3D elements can significantly enhance your UI, creating more engaging and memorable experiences for users.
