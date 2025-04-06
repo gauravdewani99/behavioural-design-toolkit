@@ -25,12 +25,12 @@ const components = [
     description: "Visual indicators that show completion status and reduce anxiety during waiting periods."
   },
   { 
-    title: "Conversational Input", 
+    title: "AI Conversational Input", 
     link: "/conversational-input",
     description: "Natural language interfaces that make complex interactions more intuitive and engaging."
   },
   { 
-    title: "Theme Toggle", 
+    title: "Accessibility Toggle", 
     link: "/theme-toggle",
     description: "Controls that allow users to personalize their experience through appearance settings."
   },

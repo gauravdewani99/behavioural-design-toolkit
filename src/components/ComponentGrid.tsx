@@ -21,11 +21,11 @@ const components = [
     link: "/progress-bars"
   },
   { 
-    title: "Conversational Input", 
+    title: "AI Conversational Input", 
     link: "/conversational-input"
   },
   { 
-    title: "Theme Toggle", 
+    title: "Accessibility Toggle", 
     link: "/theme-toggle"
   },
   { 
