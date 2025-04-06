@@ -9,27 +9,18 @@ export function LampDemo() {
   const tubeLightControls = useAnimationControls();
   
   useEffect(() => {
-    // Function to reset the animation
     const resetAnimation = () => {
-      // Reset text to initial state
       textControls.set({ opacity: 0.5, y: 100 });
-      // Then animate text to the final state
       textControls.start({ opacity: 1, y: 0 });
       
-      // Reset tube light animations
       tubeLightControls.set({ width: "15rem", opacity: 0.5 });
       tubeLightControls.start({ width: "30rem", opacity: 1 });
     };
     
-    // Initial animation
     resetAnimation();
     
-    // Set up interval to reset animation every 5 seconds (changed from 10 seconds)
-    const intervalId = setInterval(() => {
-      resetAnimation();
-    }, 5000);
+    const intervalId = setInterval(resetAnimation, 5000);
     
-    // Clean up interval on component unmount
     return () => clearInterval(intervalId);
   }, [textControls, tubeLightControls]);
 

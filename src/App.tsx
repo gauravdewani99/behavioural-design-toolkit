@@ -33,7 +33,6 @@ const App = () => (
             <Route path="/theme-toggle" element={<ThemeToggle />} />
             <Route path="/social-proofing" element={<SocialProofing />} />
             <Route path="/conversational-input" element={<ConversationalInput />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
