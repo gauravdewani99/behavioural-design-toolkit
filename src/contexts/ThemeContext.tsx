@@ -23,8 +23,8 @@ export function ThemeProvider({ children }: { children: React.ReactNode }) {
     } else {
       document.documentElement.classList.add('light');
       document.documentElement.classList.remove('dark');
-      // Add soft beige background color for light mode
-      document.documentElement.style.backgroundColor = '#f5f2e9'; // Soft beige color
+      // Adjusted background color for light mode - darker and more saturated
+      document.documentElement.style.backgroundColor = '#e5ddca'; // Darker, more saturated beige color
     }
     
     // Reset background color when component unmounts or when going back to dark mode
