@@ -1,6 +1,8 @@
 
 import React, { useState, lazy, Suspense } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Button } from "@/components/ui/button";
+import { Linkedin } from "lucide-react";
 
 // Component definitions with descriptions
 const components = [
@@ -73,11 +75,26 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
   
   return (
     <div className="flex flex-col w-full min-h-screen bg-background">
-      {/* Header Section - Centered */}
-      <header className="w-full py-8 px-6 bg-background border-b border-border/30 text-center">
-        <div className="max-w-3xl mx-auto">
-          <h1 className="text-3xl font-bold tracking-tight mb-2">BeSci x UI</h1>
-          <p className="text-muted-foreground text-lg">Behaviourally backed UI components to improve product metrics</p>
+      {/* Header Section - With Name and LinkedIn */}
+      <header className="w-full py-8 px-6 bg-background border-b border-border/30">
+        <div className="max-w-5xl mx-auto flex justify-between items-center">
+          <div>
+            <h1 className="text-3xl font-bold tracking-tight mb-2">BeSci x UI</h1>
+            <p className="text-muted-foreground text-lg">Behaviourally backed UI components to improve product metrics</p>
+          </div>
+          <div className="flex items-center gap-2">
+            <h2 className="text-xl font-medium">Gaurav Dewani</h2>
+            <a 
+              href="https://www.linkedin.com/in/gaurav-dewani-0a4973167/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="inline-flex items-center"
+            >
+              <Button variant="ghost" size="icon" className="rounded-full">
+                <Linkedin className="h-5 w-5" />
+              </Button>
+            </a>
+          </div>
         </div>
       </header>
       
@@ -138,6 +155,23 @@ const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
           </div>
         </Tabs>
       </div>
+
+      {/* Footer */}
+      <footer className="w-full py-6 px-6 border-t border-border/30 mt-auto">
+        <div className="max-w-5xl mx-auto text-center text-muted-foreground">
+          <p>
+            If you're interested in working together, reach out to me on {" "}
+            <a 
+              href="https://www.linkedin.com/in/gaurav-dewani-0a4973167/" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary hover:underline font-medium"
+            >
+              LinkedIn
+            </a>.
+          </p>
+        </div>
+      </footer>
     </div>
   );
 };
