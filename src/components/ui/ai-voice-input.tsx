@@ -82,11 +82,11 @@ export function AIVoiceInput({
   };
 
   return (
-    <div className={cn("w-full py-4", className)}>
-      <div className="relative max-w-xl w-full mx-auto flex items-center flex-col gap-2">
+    <div className={cn("w-full", className)}>
+      <div className="relative w-full mx-auto flex items-center flex-col gap-2">
         <button
           className={cn(
-            "group w-16 h-16 rounded-xl flex items-center justify-center transition-colors",
+            "group w-14 h-14 rounded-xl flex items-center justify-center transition-colors",
             submitted
               ? "bg-none"
               : "bg-none hover:bg-black/10 dark:hover:bg-white/10"

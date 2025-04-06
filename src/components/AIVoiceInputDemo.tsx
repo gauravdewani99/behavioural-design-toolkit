@@ -10,13 +10,12 @@ export function AIVoiceInputDemo() {
   };
 
   return (
-    <div className="space-y-8">
-      <div className="space-y-4">
-        <AIVoiceInput 
-          onStart={() => console.log('Recording started')}
-          onStop={handleStop}
-        />   
-      </div>
+    <div className="w-full max-w-[350px] mx-auto">
+      <AIVoiceInput 
+        onStart={() => console.log('Recording started')}
+        onStop={handleStop}
+        className="py-2" 
+      />   
     </div>
   );
 }

@@ -1,4 +1,3 @@
-
 import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { PromptInputDemo } from "@/components/PromptInputDemo";
@@ -222,7 +221,6 @@ export {
   PromptInputAction,
 }
 
-
 demo.tsx
 "use client"
 
@@ -332,8 +330,8 @@ export function PromptInputWithActions() {
         </PromptInputAction>
       </PromptInputActions>
     </PromptInput>
-    )
-  }
+  )
+}
 \`\`\`
 
 Implementation Guidelines
@@ -372,7 +370,7 @@ If default path for components is not /components/ui, provide instructions on wh
 Copy-paste this component to /components/ui folder:
 \`\`\`tsx
 component.tsx
-"use client";
+"use client"
 
 import { Mic } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -590,11 +588,9 @@ Steps to integrate
               prompt="Create a modern chat interface with support for text input and file attachments."
               previewText="Prompt: Create a modern chat interface with text input and attachments..."
             />
-            <div className="flex flex-col items-center space-y-6">
+            <div className="flex flex-col items-center space-y-4">
               <h2 className="text-xl font-medium">Text-Based Conversation</h2>
-              <div className="w-full flex justify-center">
-                <PromptInputDemo />
-              </div>
+              <PromptInputDemo />
               <p className="text-sm text-muted-foreground max-w-md text-center">
                 This component provides a modern chat interface with support for text input and file attachments. 
                 Try typing a message and submitting it with the button or by pressing Enter.
@@ -618,7 +614,7 @@ If default path for components is not /components/ui, provide instructions on wh
 Copy-paste this component to /components/ui folder:
 \`\`\`tsx
 component.tsx
-"use client";
+"use client"
 
 import { Mic } from "lucide-react";
 import { useState, useEffect } from "react";
@@ -806,7 +802,7 @@ Steps to integrate
  3. Use lucide-react icons for svgs or logos if component requires them`}
               previewText="Prompt: Create a voice input interface with animated waveform..."
             />
-            <div className="flex flex-col items-center space-y-6">
+            <div className="flex flex-col items-center space-y-4">
               <h2 className="text-xl font-medium">Voice-Based Conversation</h2>
               <AIVoiceInputDemo />
               <p className="text-sm text-muted-foreground max-w-md text-center">
