@@ -1,9 +1,7 @@
-
 import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { LampDemo } from "@/components/LampDemo";
 import { CopyPromptButton } from "@/components/CopyPromptButton";
-
 interface VisualSalienceProps {
   simplifiedView?: boolean;
 }
@@ -13,9 +11,8 @@ const VisualSalience: React.FC<VisualSalienceProps> = ({
   if (simplifiedView) {
     return <div className="w-full max-w-3xl mx-auto">
         <div className="grid gap-6">
-          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism px-[22px] relative">
-            <CopyPromptButton 
-              prompt={`You are given a task to integrate an existing React component in the codebase
+          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism relative px-0 mx-0 py-0">
+            <CopyPromptButton prompt={`You are given a task to integrate an existing React component in the codebase
 
 The codebase should support:
 - shadcn project structure  
@@ -176,9 +173,7 @@ Steps to integrate
  0. Copy paste all the code above in the correct directories
  1. Install external dependencies
  2. Fill image assets with Unsplash stock images you know exist
- 3. Use lucide-react icons for svgs or logos if component requires them`}
-              previewText="Prompt: Create a spotlight effect component that highlights text..."
-            />
+ 3. Use lucide-react icons for svgs or logos if component requires them`} previewText="Prompt: Create a spotlight effect component that highlights text..." />
             <LampDemo />
           </div>
         </div>
@@ -203,8 +198,7 @@ Steps to integrate
         
         <div className="grid gap-10">
           <div className="bg-secondary/20 rounded-lg p-8 glass-morphism relative">
-            <CopyPromptButton 
-              prompt={`You are given a task to integrate an existing React component in the codebase
+            <CopyPromptButton prompt={`You are given a task to integrate an existing React component in the codebase
 
 The codebase should support:
 - shadcn project structure  
@@ -365,9 +359,7 @@ Steps to integrate
  0. Copy paste all the code above in the correct directories
  1. Install external dependencies
  2. Fill image assets with Unsplash stock images you know exist
- 3. Use lucide-react icons for svgs or logos if component requires them`}
-              previewText="Prompt: Create a spotlight effect component that highlights text..."
-            />
+ 3. Use lucide-react icons for svgs or logos if component requires them`} previewText="Prompt: Create a spotlight effect component that highlights text..." />
             <div className="flex flex-col gap-6">
               <p className="text-base text-muted-foreground leading-relaxed max-w-3xl mx-auto text-center">
                 Our attention is attracted to visually salient stimuli. [Itti, L. (2007). Visual salience. Scholarpedia, 2(9), 3327.]. 
