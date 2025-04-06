@@ -1,23 +1,18 @@
-
 import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { AuroraBackgroundDemo } from "@/components/AuroraBackgroundDemo";
 import { CopyPromptButton } from "@/components/CopyPromptButton";
-
 interface TextCycleLoopProps {
   simplifiedView?: boolean;
 }
-
 const TextCycleLoop: React.FC<TextCycleLoopProps> = ({
   simplifiedView = false
 }) => {
   if (simplifiedView) {
-    return (
-      <div className="w-full max-w-3xl mx-auto">
+    return <div className="w-full max-w-3xl mx-auto">
         <div className="grid gap-6">
-          <div className="bg-secondary/20 rounded-lg p-8 glass-morphism relative">
-            <CopyPromptButton 
-              prompt={`You are given a task to integrate an existing React component in the codebase
+          <div className="bg-secondary/20 p-8 glass-morphism relative rounded-lg">
+            <CopyPromptButton prompt={`You are given a task to integrate an existing React component in the codebase
 
 The codebase should support:
 - shadcn project structure  
@@ -191,18 +186,13 @@ Steps to integrate
  0. Copy paste all the code above in the correct directories
  1. Install external dependencies
  2. Fill image assets with Unsplash stock images you know exist
- 3. Use lucide-react icons for svgs or logos if component requires them`}
-              previewText="Prompt: Create an animated background with text that cycles through different words..."
-            />
+ 3. Use lucide-react icons for svgs or logos if component requires them`} previewText="Prompt: Create an animated background with text that cycles through different words..." />
             <AuroraBackgroundDemo />
           </div>
         </div>
-      </div>
-    );
+      </div>;
   }
-  
-  return (
-    <div className="min-h-screen bg-background">
+  return <div className="min-h-screen bg-background">
       <div className="container py-8">
         <a href="/" className="flex items-center text-primary hover:text-primary/80 mb-6 group">
           <ArrowLeft className="mr-2 h-4 w-4 transition-transform group-hover:-translate-x-1" />
@@ -226,8 +216,7 @@ Steps to integrate
         
         <div className="grid gap-10">
           <div className="bg-secondary/20 rounded-lg p-8 glass-morphism relative">
-            <CopyPromptButton 
-              prompt={`You are given a task to integrate an existing React component in the codebase
+            <CopyPromptButton prompt={`You are given a task to integrate an existing React component in the codebase
 
 The codebase should support:
 - shadcn project structure  
@@ -401,9 +390,7 @@ Steps to integrate
  0. Copy paste all the code above in the correct directories
  1. Install external dependencies
  2. Fill image assets with Unsplash stock images you know exist
- 3. Use lucide-react icons for svgs or logos if component requires them`}
-              previewText="Prompt: Create an animated background with text that cycles through different words..."
-            />
+ 3. Use lucide-react icons for svgs or logos if component requires them`} previewText="Prompt: Create an animated background with text that cycles through different words..." />
             <div className="p-8">
               <div className="flex flex-col gap-6">
                 <p className="text-base text-muted-foreground leading-relaxed max-w-3xl mx-auto text-center">
@@ -415,8 +402,6 @@ Steps to integrate
           </div>
         </div>
       </div>
-    </div>
-  );
+    </div>;
 };
-
 export default TextCycleLoop;
