@@ -74,11 +74,11 @@ const MainLayout: React.FC<MainLayoutProps> = ({
         <div className="max-w-5xl mx-auto flex justify-between items-center">
           <div>
             <h1 className="text-3xl font-bold tracking-tight mb-2">
-              <span className="text-[#FEC6A1]">BeSci</span>
+              <span className="text-[#FFDEE2]">BeSci</span>
               <span className="mx-2">x</span>
-              <span className="text-[#FEC6A1]">UI</span>
+              <span className="text-[#FFDEE2]">UI</span>
               <span className="mx-2">x</span>
-              <span className="text-[#FEC6A1]">AI</span>
+              <span className="text-[#FFDEE2]">AI</span>
             </h1>
             <p className="text-muted-foreground text-lg">Behaviourally backed UI components to improve user engagement</p>
           </div>
