@@ -1,3 +1,4 @@
+
 import React, { useState, lazy, Suspense } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
@@ -199,6 +200,19 @@ const MainLayout: React.FC<MainLayoutProps> = ({
                       Research shows users spend 20% more time engaging with conversational UIs compared to traditional forms{" "}
                       <a 
                         href="https://arxiv.org/pdf/2104.03940" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="underline hover:text-primary transition-colors"
+                      >
+                        [1]
+                      </a>.
+                    </p>
+                  ) : selectedComponent.title === "Theme Toggle" ? (
+                    <p>
+                      Dark mode toggles offer user autonomy and comfort, reducing eye strain and increasing session duration. 
+                      This customization boosts user satisfaction and retention, leading to improved engagement and product metrics{" "}
+                      <a 
+                        href="https://socialspacejournal.eu/menu-script/index.php/ssj/article/view/343" 
                         target="_blank" 
                         rel="noopener noreferrer" 
                         className="underline hover:text-primary transition-colors"
