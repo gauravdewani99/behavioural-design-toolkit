@@ -1,4 +1,3 @@
-
 import React, { useState, lazy, Suspense } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
@@ -7,7 +6,7 @@ const components = [{
   title: "Spotlight Text",
   link: "/visual-salience",
   description: "Techniques to draw attention to key elements through contrast, color, and emphasis.",
-  info: "UI design patterns backed by behavioral science principles create more engaging and effective user experiences. Research shows that intentional UI pattern selection can increase user engagement by up to 30% and improve task completion rates."
+  info: "Emphasized or spotlighted text improves visual salience by making specific elements stand out, thereby capturing user attention and facilitating engagement. Studies show that such emphasis techniques guide decision-making by leveraging cognitive biases like the Von Restorff effect."
 }, {
   title: "Cycle Loop Text",
   link: "/text-cycle-loop",
@@ -115,7 +114,23 @@ const MainLayout: React.FC<MainLayoutProps> = ({
           <div className="flex-1">
             <div className="h-full flex flex-col items-center justify-center">
               {selectedComponent && <div className="bg-background/80 p-4 mb-6 rounded text-sm text-muted-foreground w-full">
-                  <p>{selectedComponent.info}</p>
+                  {selectedComponent.title === "Spotlight Text" ? (
+                    <p>
+                      Emphasized or spotlighted text improves visual salience by making specific elements stand out, 
+                      thereby capturing user attention and facilitating engagement. Studies show that such emphasis 
+                      techniques guide decision-making by leveraging cognitive biases like the Von Restorff effect{" "}
+                      <a 
+                        href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8841630/" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="underline hover:text-primary transition-colors"
+                      >
+                        [1]
+                      </a>.
+                    </p>
+                  ) : (
+                    <p>{selectedComponent.info}</p>
+                  )}
                 </div>}
               <Suspense fallback={<div className="animate-pulse p-12 flex items-center justify-center rounded-lg border border-border/30">
                   <div className="flex flex-col items-center">
