@@ -580,7 +580,7 @@ Steps to integrate
         
         <div className="bg-background/80 p-4 mb-6 rounded text-sm text-muted-foreground">
           <p>Conversational interfaces leverage natural language processing to reduce cognitive load and friction in human-computer interaction.</p>
-          <p>Research shows that chatbot-style interfaces can increase form completion rates by 31% compared to traditional forms by making interactions feel more personal.</p>
+          <p>Research shows that chatbot-style interfaces can increase form completion rates by 31% compared to traditional forms by making interactions feel more personal <a href="https://arxiv.org/pdf/2104.03940" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">[1]</a>.</p>
         </div>
         
         <div className="grid gap-8 md:grid-cols-2 mt-8">
