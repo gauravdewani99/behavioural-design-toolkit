@@ -1,4 +1,3 @@
-
 import React, { useState, lazy, Suspense } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
@@ -30,7 +29,7 @@ const components = [{
   description: "Natural language interfaces that make complex interactions more intuitive and engaging.",
   info: "Conversational interfaces utilize our natural inclination for dialogue, reducing cognitive load by up to 30%. Research shows users spend 20% more time engaging with conversational UIs compared to traditional forms."
 }, {
-  title: "Accessibility Theme Toggle",
+  title: "Theme Toggle",
   link: "/theme-toggle",
   description: "Controls that allow users to personalize their experience through appearance settings.",
   info: "Dark mode toggles offer user autonomy and comfort, reducing eye strain and increasing session duration. This customization boosts user satisfaction and retention, leading to improved engagement and product metrics."
