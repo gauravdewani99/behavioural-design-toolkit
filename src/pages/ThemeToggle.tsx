@@ -156,8 +156,16 @@ Steps to integrate
         </div>
         
         <div className="bg-background/80 p-4 mb-6 rounded text-sm text-muted-foreground">
-          <p>Theme toggles leverage user agency principles, giving users control over their visual environment to increase ownership and engagement.</p>
-          <p>Research shows personalization options like theme switching can increase session duration by 20% and improve user satisfaction ratings.</p>
+          <p>Dark mode toggles offer user autonomy and comfort, reducing eye strain and increasing session duration. This customization boosts user satisfaction and retention, leading to improved engagement and product metrics {" "}
+            <a 
+              href="https://socialspacejournal.eu/menu-script/index.php/ssj/article/view/343" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="underline hover:text-primary transition-colors"
+            >
+              [1]
+            </a>.
+          </p>
         </div>
 
         <div className="grid gap-8">

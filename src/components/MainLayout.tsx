@@ -30,10 +30,10 @@ const components = [{
   description: "Natural language interfaces that make complex interactions more intuitive and engaging.",
   info: "Conversational interfaces utilize our natural inclination for dialogue, reducing cognitive load by up to 30%. Research shows users spend 20% more time engaging with conversational UIs compared to traditional forms."
 }, {
-  title: "Accessibility Toggle",
+  title: "Accessibility Theme Toggle",
   link: "/theme-toggle",
   description: "Controls that allow users to personalize their experience through appearance settings.",
-  info: "Theme toggles capitalize on the IKEA effect - users value interfaces they can customize. Studies show personalization options can increase user satisfaction by up to 45% and retention by 15%."
+  info: "Dark mode toggles offer user autonomy and comfort, reducing eye strain and increasing session duration. This customization boosts user satisfaction and retention, leading to improved engagement and product metrics."
 }, {
   title: "Social Proofing",
   link: "/social-proofing",

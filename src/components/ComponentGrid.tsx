@@ -25,7 +25,7 @@ const components = [
     link: "/conversational-input"
   },
   { 
-    title: "Accessibility Toggle", 
+    title: "Accessibility Theme Toggle", 
     link: "/theme-toggle"
   },
   { 
