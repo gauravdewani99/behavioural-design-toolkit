@@ -10,15 +10,23 @@ interface ConversationalInputProps {
 }
 
 const ConversationalInput: React.FC<ConversationalInputProps> = ({ simplifiedView = false }) => {
+  // Text input prompt content
+  const textPrompt = `Create a React component with a customizable text input that has a clean, minimal design with rounded corners, and includes a send button. Add hover and focus effects for better user experience.`;
+
+  // Voice input prompt content
+  const voicePrompt = `Create a React component for voice input with a microphone button that animates when recording, displays a timer, and shows a visualizer with animated bars when active.`;
+
   if (simplifiedView) {
     return (
       <div className="w-full max-w-3xl mx-auto">
         <div className="flex flex-col gap-8">
-          <div className="bg-secondary/20 rounded-lg p-6 glass-morphism">
+          <div className="bg-secondary/20 rounded-lg p-6 glass-morphism relative">
+            <CopyPromptButton prompt={textPrompt} />
             <PromptInputDemo />
           </div>
           
-          <div className="bg-secondary/20 rounded-lg p-6 glass-morphism">
+          <div className="bg-secondary/20 rounded-lg p-6 glass-morphism relative">
+            <CopyPromptButton prompt={voicePrompt} />
             <AIVoiceInputDemo />
           </div>
         </div>
@@ -43,11 +51,13 @@ const ConversationalInput: React.FC<ConversationalInputProps> = ({ simplifiedVie
         
         <div className="grid gap-8 md:grid-cols-2 mt-8">
           <div className="bg-secondary/20 rounded-lg p-8 glass-morphism relative flex flex-col items-center">
+            <CopyPromptButton prompt={textPrompt} />
             <h2 className="text-xl font-medium mb-8">Basic Text Input</h2>
             <PromptInputDemo />
           </div>
           
           <div className="bg-secondary/20 rounded-lg p-8 glass-morphism relative flex flex-col items-center">
+            <CopyPromptButton prompt={voicePrompt} />
             <h2 className="text-xl font-medium mb-8">Voice Interface</h2>
             <AIVoiceInputDemo />
           </div>
