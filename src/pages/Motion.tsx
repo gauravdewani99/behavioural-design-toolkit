@@ -1,4 +1,3 @@
-
 import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { SplineSceneBasic } from "@/components/SplineSceneDemo";
@@ -130,8 +129,7 @@ Steps to integrate
         <h1 className="text-3xl md:text-4xl font-bold text-gradient mb-6">3D Motion</h1>
         
         <div className="bg-background/80 p-4 mb-6 rounded text-sm text-muted-foreground">
-          <p>3D motion elements trigger the Von Restorff effect, making interfaces more memorable through distinctive visual patterns.</p>
-          <p>Studies show interactive 3D elements increase engagement time by 34% compared to static interfaces.</p>
+          <p>Motion design taps into our neurological attraction to movement, creating visual hierarchy and guiding attention. Research indicates that strategic animation can improve task completion rates by up to 15% <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8279254/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">[1]</a> <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11347423/" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">[2]</a>.</p>
         </div>
         
         <div className="mb-8">

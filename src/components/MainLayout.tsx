@@ -1,3 +1,4 @@
+
 import React, { useState, lazy, Suspense } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
@@ -17,7 +18,7 @@ const components = [{
   title: "3D Motion",
   link: "/motion",
   description: "Animation patterns that guide users and create a sense of orientation and hierarchy.",
-  info: "Motion design taps into our neurological attraction to movement, creating visual hierarchy and guiding attention. Research indicates that strategic animation can improve task completion rates by up to 15%."
+  info: "Motion design taps into our neurological attraction to movement, creating visual hierarchy and guiding attention. Research indicates that strategic animation can improve task completion rates by up to 15% [https://pmc.ncbi.nlm.nih.gov/articles/PMC8279254/] [https://pmc.ncbi.nlm.nih.gov/articles/PMC11347423/]."
 }, {
   title: "Progress Bar",
   link: "/progress-bars",
