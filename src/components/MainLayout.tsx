@@ -220,6 +220,19 @@ const MainLayout: React.FC<MainLayoutProps> = ({
                         [1]
                       </a>.
                     </p>
+                  ) : selectedComponent.title === "Social Proofing" ? (
+                    <p>
+                      Social proof elements tap into conformity bias, where users rely on others' actions to guide their own. 
+                      Research indicates social validation increases conversion rates by 15-40% depending on implementation{" "}
+                      <a 
+                        href="https://www.researchgate.net/publication/8902776_Social_Influence_Compliance_and_Conformity" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="underline hover:text-primary transition-colors"
+                      >
+                        [1]
+                      </a>.
+                    </p>
                   ) : (
                     <p>{selectedComponent.info}</p>
                   )}

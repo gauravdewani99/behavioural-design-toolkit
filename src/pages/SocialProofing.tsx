@@ -185,8 +185,15 @@ Steps to integrate
             </ul>
             
             <p className="mt-4 italic text-muted-foreground">
-              Research shows that implementing social proof elements like testimonial badges can increase conversion rates by up to 15% 
-              and improve retention rates by demonstrating ongoing user satisfaction.
+              Social proof elements tap into conformity bias, where users rely on others' actions to guide their own. Research indicates social validation increases conversion rates by 15-40% depending on implementation{" "}
+              <a 
+                href="https://www.researchgate.net/publication/8902776_Social_Influence_Compliance_and_Conformity" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="underline hover:text-primary transition-colors"
+              >
+                [1]
+              </a>.
             </p>
           </div>
         </div>
