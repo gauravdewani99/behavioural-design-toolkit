@@ -114,8 +114,8 @@ const MainLayout: React.FC<MainLayoutProps> = ({
           <div className="flex-1">
             <div className="h-full flex flex-col items-center justify-center">
               {selectedComponent && (
-                <div className="bg-background/80 p-5 mb-6 rounded-md border border-border/20 text-sm text-muted-foreground w-full shadow-sm">
-                  <p className="leading-relaxed">{selectedComponent.info}</p>
+                <div className="bg-background/80 p-4 mb-6 rounded text-sm text-muted-foreground w-full">
+                  <p>{selectedComponent.info}</p>
                 </div>
               )}
               <Suspense fallback={<div className="animate-pulse p-12 flex items-center justify-center rounded-lg border border-border/30">
@@ -124,7 +124,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
                     <p className="text-muted-foreground">Loading component...</p>
                   </div>
                 </div>}>
-                {ComponentToRender && <div className="w-full flex flex-col items-center justify-center p-4 border border-border/20 rounded-md bg-white/5 backdrop-blur-sm">
+                {ComponentToRender && <div className="w-full flex flex-col items-center justify-center">
                     <ComponentToRender simplifiedView={true} />
                   </div>}
               </Suspense>
