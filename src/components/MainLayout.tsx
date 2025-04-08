@@ -1,7 +1,9 @@
+
 import React, { useState, lazy, Suspense } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Linkedin } from "lucide-react";
+
 const components = [{
   title: "Spotlight Text",
   link: "/visual-salience",
@@ -38,6 +40,7 @@ const components = [{
   description: "Elements that leverage social influence to build trust and guide decision-making.",
   info: "Social proof elements tap into conformity bias, where users rely on others' actions to guide their own. Research indicates social validation increases conversion rates by 15-40% depending on implementation."
 }];
+
 const VisualSalience = lazy(() => import('../pages/VisualSalience'));
 const TextCycleLoop = lazy(() => import('../pages/TextCycleLoop'));
 const Motion = lazy(() => import('../pages/Motion'));
@@ -45,6 +48,7 @@ const ProgressBars = lazy(() => import('../pages/ProgressBars'));
 const ConversationalInput = lazy(() => import('../pages/ConversationalInput'));
 const ThemeToggle = lazy(() => import('../pages/ThemeToggle'));
 const SocialProofing = lazy(() => import('../pages/SocialProofing'));
+
 const componentMap = {
   '/visual-salience': VisualSalience,
   '/text-cycle-loop': TextCycleLoop,
@@ -54,27 +58,29 @@ const componentMap = {
   '/theme-toggle': ThemeToggle,
   '/social-proofing': SocialProofing
 };
+
 interface MainLayoutProps {
   children?: React.ReactNode;
 }
+
 const MainLayout: React.FC<MainLayoutProps> = ({
   children
 }) => {
   const [selectedComponent, setSelectedComponent] = useState(components[0]);
   const ComponentToRender = componentMap[selectedComponent.link];
+
   return <div className="flex flex-col w-full min-h-screen bg-background">
       <header className="w-full py-8 px-6 bg-background border-b border-border/30">
         <div className="max-w-5xl mx-auto flex justify-between items-center">
           <div>
             <h1 className="text-3xl font-bold tracking-tight mb-2">
-              <span className="text-[#F08CAA]">Behavioral Design Toolkit</span>
-              <span className="mx-2"></span>
-              <span className="text-[#F08CAA]"></span>
-              <span className="mx-2"></span>
-              <span className="text-[#F08CAA]"></span>
+              <span className="text-[#F08CAA]">BeSci</span>
+              <span className="mx-2">x</span>
+              <span className="text-[#F08CAA]">UI</span>
+              <span className="mx-2">x</span>
+              <span className="text-[#F08CAA]">AI</span>
             </h1>
-            <p className="text-muted-foreground font-normal text-base">
-          </p>
+            <p className="text-muted-foreground text-lg">Behaviourally backed UI components to improve user engagement</p>
           </div>
           <div>
             <a href="https://www.linkedin.com/in/gaurav-dewani-0a4973167/" target="_blank" rel="noopener noreferrer" className="text-xl font-medium hover:text-primary hover:underline transition-colors">
@@ -113,9 +119,11 @@ const MainLayout: React.FC<MainLayoutProps> = ({
 
           <div className="flex-1">
             <div className="h-full flex flex-col items-center justify-center">
-              {selectedComponent && <div className="bg-background/80 p-4 mb-6 rounded text-sm text-muted-foreground w-full">
+              {selectedComponent && (
+                <div className="bg-background/80 p-4 mb-6 rounded text-sm text-muted-foreground w-full">
                   <p>{selectedComponent.info}</p>
-                </div>}
+                </div>
+              )}
               <Suspense fallback={<div className="animate-pulse p-12 flex items-center justify-center rounded-lg border border-border/30">
                   <div className="flex flex-col items-center">
                     <div className="h-8 w-8 rounded-full border-2 border-primary border-t-transparent animate-spin mb-4"></div>
@@ -143,4 +151,5 @@ const MainLayout: React.FC<MainLayoutProps> = ({
       </footer>
     </div>;
 };
+
 export default MainLayout;
