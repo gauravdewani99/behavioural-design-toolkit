@@ -76,9 +76,9 @@ const MainLayout: React.FC<MainLayoutProps> = ({
             <h1 className="text-3xl font-bold tracking-tight mb-2">
               <span className="text-[#FEC6A1]">BeSci</span>
               <span className="mx-2">x</span>
-              <span className="text-[#E5DEFF]">UI</span>
+              <span className="text-[#FEC6A1]">UI</span>
               <span className="mx-2">x</span>
-              <span className="text-[#D3E4FD]">AI</span>
+              <span className="text-[#FEC6A1]">AI</span>
             </h1>
             <p className="text-muted-foreground text-lg">Behaviourally backed UI components to improve user engagement</p>
           </div>
@@ -153,3 +153,4 @@ const MainLayout: React.FC<MainLayoutProps> = ({
 };
 
 export default MainLayout;
+
