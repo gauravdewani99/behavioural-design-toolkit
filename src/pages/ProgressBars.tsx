@@ -299,7 +299,7 @@ export {
     <div className="w-full">
       <div className="bg-background/80 p-4 mb-6 rounded text-sm text-muted-foreground mx-auto max-w-7xl">
         <p>Progress indicators leverage the Goal-Gradient Effect, where users accelerate effort as they approach completion.</p>
-        <p>Studies show step indicators can increase form completion rates by up to 40% by making progress visible and attainable.</p>
+        <p>Studies show step indicators can increase form completion rates by up to 40% by making progress visible and attainable <a href="https://journals.sagepub.com/doi/abs/10.1509/jmkr.43.1.39" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">[1]</a> <a href="https://ieeexplore.ieee.org/abstract/document/9222360" target="_blank" rel="noopener noreferrer" className="underline hover:text-primary transition-colors">[2]</a>.</p>
       </div>
       
       <div className="w-full max-w-3xl mx-auto">

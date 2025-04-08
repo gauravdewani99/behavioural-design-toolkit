@@ -23,7 +23,7 @@ const components = [{
   title: "Progress Bar",
   link: "/progress-bars",
   description: "Visual indicators that show completion status and reduce anxiety during waiting periods.",
-  info: "Progress indicators leverage the Goal-Gradient Effect, where users accelerate effort as they approach completion. Studies show step indicators can increase form completion rates by up to 40% by making progress visible and attainable."
+  info: "Progress indicators leverage the Goal-Gradient Effect, where users accelerate effort as they approach completion. Studies show step indicators can increase form completion rates by up to 40% by making progress visible and attainable [https://journals.sagepub.com/doi/abs/10.1509/jmkr.43.1.39] [https://ieeexplore.ieee.org/abstract/document/9222360]."
 }, {
   title: "AI Conversational Input",
   link: "/conversational-input",
