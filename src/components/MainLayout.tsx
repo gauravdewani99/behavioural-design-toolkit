@@ -18,17 +18,17 @@ const components = [{
   title: "3D Motion",
   link: "/motion",
   description: "Animation patterns that guide users and create a sense of orientation and hierarchy.",
-  info: "Motion design taps into our neurological attraction to movement, creating visual hierarchy and guiding attention. Research indicates that strategic animation can improve task completion rates by up to 15% [https://pmc.ncbi.nlm.nih.gov/articles/PMC8279254/] [https://pmc.ncbi.nlm.nih.gov/articles/PMC11347423/]."
+  info: "Motion design taps into our neurological attraction to movement, creating visual hierarchy and guiding attention. Research indicates that strategic animation can improve task completion rates by up to 15%."
 }, {
   title: "Progress Bar",
   link: "/progress-bars",
   description: "Visual indicators that show completion status and reduce anxiety during waiting periods.",
-  info: "Progress indicators leverage the Goal-Gradient Effect, where users accelerate effort as they approach completion. Studies show step indicators can increase form completion rates by up to 40% by making progress visible and attainable [https://journals.sagepub.com/doi/abs/10.1509/jmkr.43.1.39] [https://ieeexplore.ieee.org/abstract/document/9222360]."
+  info: "Progress indicators leverage the Goal-Gradient Effect, where users accelerate effort as they approach completion. Studies show step indicators can increase form completion rates by up to 40% by making progress visible and attainable."
 }, {
   title: "AI Conversational Input",
   link: "/conversational-input",
   description: "Natural language interfaces that make complex interactions more intuitive and engaging.",
-  info: "Conversational interfaces utilize our natural inclination for dialogue, reducing cognitive load by up to 30%. Research shows users spend 20% more time engaging with conversational UIs compared to traditional forms [https://arxiv.org/pdf/2104.03940]."
+  info: "Conversational interfaces utilize our natural inclination for dialogue, reducing cognitive load by up to 30%. Research shows users spend 20% more time engaging with conversational UIs compared to traditional forms."
 }, {
   title: "Accessibility Toggle",
   link: "/theme-toggle",
@@ -150,6 +150,61 @@ const MainLayout: React.FC<MainLayoutProps> = ({
                         className="underline hover:text-primary transition-colors"
                       >
                         [2]
+                      </a>.
+                    </p>
+                  ) : selectedComponent.title === "3D Motion" ? (
+                    <p>
+                      Motion design taps into our neurological attraction to movement, creating visual hierarchy and guiding attention. 
+                      Research indicates that strategic animation can improve task completion rates by up to 15%{" "}
+                      <a 
+                        href="https://pmc.ncbi.nlm.nih.gov/articles/PMC8279254/" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="underline hover:text-primary transition-colors"
+                      >
+                        [1]
+                      </a>{" "}
+                      <a 
+                        href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11347423/" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="underline hover:text-primary transition-colors"
+                      >
+                        [2]
+                      </a>.
+                    </p>
+                  ) : selectedComponent.title === "Progress Bar" ? (
+                    <p>
+                      Progress indicators leverage the Goal-Gradient Effect, where users accelerate effort as they approach completion. 
+                      Studies show step indicators can increase form completion rates by up to 40% by making progress visible and attainable{" "}
+                      <a 
+                        href="https://journals.sagepub.com/doi/abs/10.1509/jmkr.43.1.39" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="underline hover:text-primary transition-colors"
+                      >
+                        [1]
+                      </a>{" "}
+                      <a 
+                        href="https://ieeexplore.ieee.org/abstract/document/9222360" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="underline hover:text-primary transition-colors"
+                      >
+                        [2]
+                      </a>.
+                    </p>
+                  ) : selectedComponent.title === "AI Conversational Input" ? (
+                    <p>
+                      Conversational interfaces utilize our natural inclination for dialogue, reducing cognitive load by up to 30%. 
+                      Research shows users spend 20% more time engaging with conversational UIs compared to traditional forms{" "}
+                      <a 
+                        href="https://arxiv.org/pdf/2104.03940" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="underline hover:text-primary transition-colors"
+                      >
+                        [1]
                       </a>.
                     </p>
                   ) : (
