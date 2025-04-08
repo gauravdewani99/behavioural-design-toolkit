@@ -286,10 +286,11 @@ export {
   StepperSeparator,
   StepperTitle,
   StepperTrigger,
-};
+};\`\`\`
 
 
 demo.tsx
+\`\`\`tsx
 "use client";
 
 import { Button } from "@/components/ui/button";
@@ -346,31 +347,27 @@ function Component() {
       </p>
     </div>
   );
-}
-
-export { Component };
-`}
-              previewText="Prompt: Create a multi-step progress indicator component..."
-            />
-            <h2 className="text-2xl font-semibold mb-6 mt-6">Stepper Component</h2>
-            <div className="bg-background/80 p-4 mb-6 rounded text-sm text-muted-foreground">
-              <p>Progress indicators leverage the Goal-Gradient Effect, where users accelerate effort as they approach completion.</p>
-              <p>Studies show step indicators can increase form completion rates by up to 40% by making progress visible and attainable.</p>
-            </div>
-            <StepperDemo />
-          </Card>
-          
-          {/* Additional progress bar examples could be added here */}
-        </div>
+}\`\`\``}
+            previewText="Prompt: Create a multi-step progress indicator component..."
+          />
+          <h2 className="text-2xl font-semibold mb-6 mt-6">Stepper Component</h2>
+          <div className="bg-background/80 p-4 mb-6 rounded text-sm text-muted-foreground">
+            <p>Progress indicators leverage the Goal-Gradient Effect, where users accelerate effort as they approach completion.</p>
+            <p>Studies show step indicators can increase form completion rates by up to 40% by making progress visible and attainable.</p>
+          </div>
+          <StepperDemo />
+        </Card>
         
-        <div className="mt-8">
-          <a 
-            href="/" 
-            className="inline-flex items-center text-primary hover:underline"
-          >
-            &larr; Back to Home
-          </a>
-        </div>
+        {/* Additional progress bar examples could be added here */}
+      </div>
+      
+      <div className="mt-8">
+        <a 
+          href="/" 
+          className="inline-flex items-center text-primary hover:underline"
+        >
+          &larr; Back to Home
+        </a>
       </div>
     </div>
   );
