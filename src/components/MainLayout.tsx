@@ -1,3 +1,4 @@
+
 import React, { useState, lazy, Suspense } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
@@ -109,7 +110,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
               // soft pink
               "hover:bg-[#D3E4FD]" // soft blue
               ][index % 6];
-              return <TabsTrigger key={component.link} value={component.link} className={`relative w-full justify-start rounded-none py-3 transition-colors dark:hover:bg-white/5 ${pastelBg} after:absolute after:inset-y-0 after:start-0 after:w-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-primary`}>
+              return <TabsTrigger key={component.link} value={component.link} className={`relative w-full justify-start rounded-none py-3 transition-colors dark:hover:bg-white/5 ${pastelBg} after:absolute after:inset-y-0 after:start-0 after:w-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-[#F08CAA]`}>
                     {component.title}
                   </TabsTrigger>;
             })}
