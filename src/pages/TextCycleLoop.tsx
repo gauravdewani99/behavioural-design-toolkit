@@ -1,3 +1,4 @@
+
 import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { AuroraBackgroundDemo } from "@/components/AuroraBackgroundDemo";
@@ -200,6 +201,11 @@ Steps to integrate
         </a>
         
         <h1 className="text-3xl md:text-4xl font-bold text-gradient mb-6">Text Cycle Loop</h1>
+        
+        <div className="bg-background/80 p-4 mb-6 rounded text-sm text-muted-foreground">
+          <p>Text cycling creates cognitive novelty, activating the brain's ventral tegmental area which responds to novelty with dopamine release.</p>
+          <p>Research shows animated text changes increase user attention by 30% compared to static text, keeping engagement without distracting.</p>
+        </div>
         
         {/* Moved the AuroraBackgroundDemo to the top, right after the title */}
         <div className="bg-secondary/20 rounded-lg p-8 glass-morphism relative mb-10">

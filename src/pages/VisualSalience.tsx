@@ -1,3 +1,4 @@
+
 import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { LampDemo } from "@/components/LampDemo";
@@ -187,6 +188,11 @@ Steps to integrate
         </a>
         
         <h1 className="text-3xl md:text-4xl font-bold text-gradient mb-6">Spotlight Text</h1>
+        
+        <div className="bg-background/80 p-4 mb-6 rounded text-sm text-muted-foreground">
+          <p>Visual salience creates automatic attentional capture through contrast and motion, directing user focus to key elements.</p>
+          <p>Research shows light effects can increase element memorability by 30% and improve conversion rates on key messaging.</p>
+        </div>
         
         <div className="prose prose-invert max-w-none mb-10">
           <p className="text-muted-foreground text-lg">

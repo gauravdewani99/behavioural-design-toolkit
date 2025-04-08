@@ -155,6 +155,11 @@ Steps to integrate
         
         <h1 className="text-3xl md:text-4xl font-bold text-gradient mb-6">Social Proofing</h1>
         
+        <div className="bg-background/80 p-4 mb-6 rounded text-sm text-muted-foreground">
+          <p>Social proof leverages conformity bias, where people follow others' actions when uncertain about decisions.</p>
+          <p>Studies show that displaying user counts and testimonials can increase conversion rates by up to 15% by reducing perceived risk.</p>
+        </div>
+        
         <div className="prose prose-invert max-w-none mb-10">
           <p className="text-muted-foreground text-lg">
             Social proofing is a powerful psychological phenomenon where people follow the actions 
