@@ -2,6 +2,7 @@ import React, { useState, lazy, Suspense } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
 import { Linkedin } from "lucide-react";
+
 const components = [{
   title: "Spotlight Text",
   link: "/visual-salience",
@@ -11,7 +12,7 @@ const components = [{
   title: "Cycle Loop Text",
   link: "/text-cycle-loop",
   description: "Dynamic text animations that rotate through multiple content options in a limited space.",
-  info: "Text cycle loops leverage the novelty effect in psychology, capturing attention through movement and change. Studies show dynamic content can increase engagement by up to 25% compared to static alternatives."
+  info: "The cycle loop text enhances visual salience by leveraging dynamic contrast and motion to capture attention. Studies show animated content in marketing campaigns can boost click-through rates by up to 35% due to heightened memorability and emotional resonance."
 }, {
   title: "3D Motion",
   link: "/motion",
@@ -38,6 +39,7 @@ const components = [{
   description: "Elements that leverage social influence to build trust and guide decision-making.",
   info: "Social proof elements tap into conformity bias, where users rely on others' actions to guide their own. Research indicates social validation increases conversion rates by 15-40% depending on implementation."
 }];
+
 const VisualSalience = lazy(() => import('../pages/VisualSalience'));
 const TextCycleLoop = lazy(() => import('../pages/TextCycleLoop'));
 const Motion = lazy(() => import('../pages/Motion'));
@@ -45,6 +47,7 @@ const ProgressBars = lazy(() => import('../pages/ProgressBars'));
 const ConversationalInput = lazy(() => import('../pages/ConversationalInput'));
 const ThemeToggle = lazy(() => import('../pages/ThemeToggle'));
 const SocialProofing = lazy(() => import('../pages/SocialProofing'));
+
 const componentMap = {
   '/visual-salience': VisualSalience,
   '/text-cycle-loop': TextCycleLoop,
@@ -54,14 +57,17 @@ const componentMap = {
   '/theme-toggle': ThemeToggle,
   '/social-proofing': SocialProofing
 };
+
 interface MainLayoutProps {
   children?: React.ReactNode;
 }
+
 const MainLayout: React.FC<MainLayoutProps> = ({
   children
 }) => {
   const [selectedComponent, setSelectedComponent] = useState(components[0]);
   const ComponentToRender = componentMap[selectedComponent.link];
+  
   return <div className="flex flex-col w-full min-h-screen bg-background">
       <header className="w-full py-8 px-6 bg-background border-b border-border/30">
         <div className="max-w-5xl mx-auto flex justify-between items-center">
@@ -93,16 +99,11 @@ const MainLayout: React.FC<MainLayoutProps> = ({
             <TabsList className="flex-col rounded-none border-l border-border bg-transparent p-0">
               {components.map((component, index) => {
               const pastelBg = ["hover:bg-[#F2FCE2]",
-              // soft green
               "hover:bg-[#FEF7CD]",
-              // soft yellow
               "hover:bg-[#FEC6A1]",
-              // soft orange
               "hover:bg-[#E5DEFF]",
-              // soft purple
               "hover:bg-[#FFDEE2]",
-              // soft pink
-              "hover:bg-[#D3E4FD]" // soft blue
+              "hover:bg-[#D3E4FD]"
               ][index % 6];
               return <TabsTrigger key={component.link} value={component.link} className={`relative w-full justify-start rounded-none py-3 transition-colors dark:hover:bg-white/5 ${pastelBg} after:absolute after:inset-y-0 after:start-0 after:w-0.5 data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:after:bg-[#F08CAA]`}>
                     {component.title}
@@ -126,6 +127,28 @@ const MainLayout: React.FC<MainLayoutProps> = ({
                         className="underline hover:text-primary transition-colors"
                       >
                         [1]
+                      </a>.
+                    </p>
+                  ) : selectedComponent.title === "Cycle Loop Text" ? (
+                    <p>
+                      The cycle loop text enhances visual salience by leveraging dynamic contrast and motion to capture 
+                      attention. Studies show animated content in marketing campaigns can boost click-through rates by 
+                      up to 35% due to heightened memorability and emotional resonance{" "}
+                      <a 
+                        href="https://link.springer.com/article/10.1007/s11145-017-9769-6" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="underline hover:text-primary transition-colors"
+                      >
+                        [1]
+                      </a>{" "}
+                      <a 
+                        href="https://arxiv.org/abs/1704.05907" 
+                        target="_blank" 
+                        rel="noopener noreferrer" 
+                        className="underline hover:text-primary transition-colors"
+                      >
+                        [2]
                       </a>.
                     </p>
                   ) : (
@@ -159,4 +182,5 @@ const MainLayout: React.FC<MainLayoutProps> = ({
       </footer>
     </div>;
 };
+
 export default MainLayout;
