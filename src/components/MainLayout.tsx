@@ -1,3 +1,4 @@
+
 import React, { useState, lazy, Suspense } from 'react';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Button } from "@/components/ui/button";
@@ -73,8 +74,8 @@ const MainLayout: React.FC<MainLayoutProps> = ({
               <span className="mx-2"></span>
               <span className="text-[#F08CAA]"></span>
             </h1>
-            <p className="text-muted-foreground text-base">Evidence-based UI components with ready-to-use AI prompts for faster, smarter builds.
-Take the guesswork out of design and predictably improve your product metrics.</p>
+            <p className="text-muted-foreground text-base">Evidence-based UI components with ready-to-use AI prompts for faster, smarter builds.</p>
+            <p className="text-muted-foreground text-base">Take the guesswork out of design and predictably improve your product metrics.</p>
           </div>
           <div>
             <a href="https://www.linkedin.com/in/gaurav-dewani-0a4973167/" target="_blank" rel="noopener noreferrer" className="text-xl font-medium hover:text-primary hover:underline transition-colors">
