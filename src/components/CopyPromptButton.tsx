@@ -49,10 +49,10 @@ export function CopyPromptButton({
       <Button
         variant="default"
         size="sm"
-        className={`absolute top-2 right-2 z-10 bg-[#D3E4FD] hover:bg-[#bfd7fa] text-black ${className}`}
+        className={`absolute top-2 right-2 z-10 bg-[#D3E4FD] hover:bg-[#bfd7fa] text-black text-xs h-7 px-2 py-1 ${className}`}
         onClick={() => setIsDialogOpen(true)}
       >
-        <Sparkles className="mr-1 h-4 w-4" />
+        <Sparkles className="mr-1 h-3 w-3" />
         AI prompt
       </Button>
 
