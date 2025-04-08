@@ -1,3 +1,4 @@
+
 import React from 'react';
 import StepperDemo from '../components/StepperDemo';
 import { Card } from '@/components/ui/card';
@@ -288,15 +289,8 @@ export {
 };`}
             previewText="Prompt: Create a multi-step progress indicator component..."
           />
-          <h2 className="text-2xl font-semibold mb-6 mt-6">Stepper Component</h2>
-          <div className="bg-background/80 p-4 mb-6 rounded text-sm text-muted-foreground">
-            <p>Progress indicators leverage the Goal-Gradient Effect, where users accelerate effort as they approach completion.</p>
-            <p>Studies show step indicators can increase form completion rates by up to 40% by making progress visible and attainable.</p>
-          </div>
           <StepperDemo />
         </Card>
-        
-        {/* Additional progress bar examples could be added here */}
       </div>
     );
   }
@@ -583,19 +577,11 @@ export {
   StepperSeparator,
   StepperTitle,
   StepperTrigger,
-};
-\`\`\``}
+};`}
             previewText="Prompt: Create a multi-step progress indicator component..."
           />
-          <h2 className="text-2xl font-semibold mb-6 mt-6">Stepper Component</h2>
-          <div className="bg-background/80 p-4 mb-6 rounded text-sm text-muted-foreground">
-            <p>Progress indicators leverage the Goal-Gradient Effect, where users accelerate effort as they approach completion.</p>
-            <p>Studies show step indicators can increase form completion rates by up to 40% by making progress visible and attainable.</p>
-          </div>
           <StepperDemo />
         </Card>
-        
-        {/* Additional progress bar examples could be added here */}
       </div>
       
       <div className="mt-8">
