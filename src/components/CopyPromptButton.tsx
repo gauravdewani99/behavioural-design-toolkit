@@ -49,10 +49,10 @@ export function CopyPromptButton({
       <Button
         variant="default"
         size="sm"
-        className={`absolute top-2 right-2 z-10 bg-[#F08CAA] hover:bg-[#e07a98] text-white text-xs h-7 px-3 py-1 ${className}`}
+        className={`absolute top-2 right-2 z-10 bg-[#D3E4FD] hover:bg-[#bfd7fa] text-black ${className}`}
         onClick={() => setIsDialogOpen(true)}
       >
-        <Sparkles className="mr-1.5 h-3.5 w-3.5" />
+        <Sparkles className="mr-1 h-4 w-4" />
         AI prompt
       </Button>
 
@@ -70,9 +70,9 @@ export function CopyPromptButton({
           <DialogFooter>
             <Button 
               onClick={handleCopy} 
-              className="mt-2 bg-[#F08CAA] hover:bg-[#e07a98] text-white"
+              className="mt-2 bg-[#D3E4FD] hover:bg-[#bfd7fa] text-black"
             >
-              <Sparkles className="mr-2 h-4 w-4" />
+              <Sparkles className="mr-1 h-4 w-4" />
               Copy AI prompt
             </Button>
           </DialogFooter>
