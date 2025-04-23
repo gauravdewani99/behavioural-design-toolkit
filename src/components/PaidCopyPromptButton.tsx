@@ -1,4 +1,3 @@
-
 "use client";
 
 import React, { useState, useEffect } from "react";
@@ -22,10 +21,7 @@ import {
   AlertDialogHeader,
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
-import { loadStripe } from "@stripe/stripe-js";
-
-// Replace with your actual Stripe publishable key
-const stripePromise = loadStripe("pk_live_51RHCYdJYhMt8Hs7c4rj1MGzUxcxxcdWbgKl2hpnqWuoWoIxH7aBLJvHv3Dpw26NbrtfK1JuTFT9rticZwG0jwwPF00d4bpX2Rk");
+import { supabase } from "@/integrations/supabase/client";
 
 interface PaidCopyPromptButtonProps {
   prompt: string;
@@ -74,10 +70,8 @@ export function PaidCopyPromptButton({
 
   const handleAIPromptClick = () => {
     if (isPaid) {
-      // If already paid, show the prompt dialog directly
       setIsDialogOpen(true);
     } else {
-      // If not paid, show the payment confirmation dialog
       setIsPaymentDialogOpen(true);
     }
   };
@@ -86,42 +80,17 @@ export function PaidCopyPromptButton({
     setIsPaymentLoading(true);
     
     try {
-      // In a real implementation, this would call your backend to create a Stripe checkout session
-      // For this demo, we'll simulate a successful payment
+      const { data, error } = await supabase.functions.invoke('create-checkout');
       
-      // Stripe checkout would typically look like this:
-      /*
-      const stripe = await stripePromise;
-      const response = await fetch('/api/create-checkout-session', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          productId: PRODUCT_ID,
-        }),
-      });
-      const session = await response.json();
-      await stripe.redirectToCheckout({
-        sessionId: session.id,
-      });
-      */
-      
-      // For demo purposes, we'll simulate a successful payment after a short delay
-      await new Promise(resolve => setTimeout(resolve, 1500));
-      
-      // Store payment status in local storage
-      localStorage.setItem(PAYMENT_STATUS_KEY, PRODUCT_ID);
-      setIsPaid(true);
-      setIsPaymentDialogOpen(false);
-      
-      toast({
-        title: "Payment successful",
-        description: "Thank you for your purchase! You can now access the AI prompt.",
-      });
-      
-      // Open the prompt dialog immediately after successful payment
-      setIsDialogOpen(true);
+      if (error) {
+        throw error;
+      }
+
+      if (data?.url) {
+        window.location.href = data.url;
+      } else {
+        throw new Error('No checkout URL received');
+      }
     } catch (error) {
       console.error("Payment error:", error);
       toast({
@@ -129,7 +98,6 @@ export function PaidCopyPromptButton({
         description: "There was a problem processing your payment. Please try again.",
         variant: "destructive",
       });
-    } finally {
       setIsPaymentLoading(false);
     }
   };

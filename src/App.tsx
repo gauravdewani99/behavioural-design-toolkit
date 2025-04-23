@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -14,6 +13,8 @@ import ThemeToggle from "./pages/ThemeToggle";
 import SocialProofing from "./pages/SocialProofing";
 import ConversationalInput from "./pages/ConversationalInput";
 import NotFound from "./pages/NotFound";
+import Success from "./pages/success";
+import Cancel from "./pages/cancel";
 
 const queryClient = new QueryClient();
 
@@ -33,7 +34,8 @@ const App = () => (
             <Route path="/theme-toggle" element={<ThemeToggle />} />
             <Route path="/social-proofing" element={<SocialProofing />} />
             <Route path="/conversational-input" element={<ConversationalInput />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="/success" element={<Success />} />
+            <Route path="/cancel" element={<Cancel />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>

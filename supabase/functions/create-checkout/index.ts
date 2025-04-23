@@ -26,10 +26,10 @@ serve(async (req) => {
           price_data: {
             currency: 'usd',
             product_data: {
-              name: 'Product Name', // You can customize this based on your needs
-              description: 'Product Description', // You can customize this based on your needs
+              name: 'AI Prompt Access',
+              description: 'Access to the 3D Motion AI Prompt',
             },
-            unit_amount: 2000, // $20.00 (amount in cents)
+            unit_amount: 500, // $5.00 (amount in cents)
           },
           quantity: 1,
         },
