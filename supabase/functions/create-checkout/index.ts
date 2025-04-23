@@ -8,7 +8,6 @@ const corsHeaders = {
 };
 
 serve(async (req) => {
-  // Handle CORS preflight requests
   if (req.method === 'OPTIONS') {
     return new Response(null, { headers: corsHeaders });
   }
@@ -34,8 +33,8 @@ serve(async (req) => {
           quantity: 1,
         },
       ],
-      success_url: `${req.headers.get("origin")}/success`,
-      cancel_url: `${req.headers.get("origin")}/cancel`,
+      success_url: `${req.headers.get("origin")}/success?redirect=/motion&openPrompt=true`,
+      cancel_url: `${req.headers.get("origin")}/cancel?redirect=/motion`,
     });
 
     return new Response(

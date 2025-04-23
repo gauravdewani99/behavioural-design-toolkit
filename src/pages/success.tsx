@@ -1,6 +1,6 @@
 
 import React, { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { useToast } from "@/hooks/use-toast";
 
 const PAYMENT_STATUS_KEY = "prompt_payment_status";
@@ -9,6 +9,10 @@ const PRODUCT_ID = "ai_prompt_3d_motion";
 export default function SuccessPage() {
   const { toast } = useToast();
   const navigate = useNavigate();
+  const location = useLocation();
+  const searchParams = new URLSearchParams(location.search);
+  const redirectPath = searchParams.get('redirect') || '/';
+  const shouldOpenPrompt = searchParams.get('openPrompt') === 'true';
 
   useEffect(() => {
     // Mark the payment as successful
@@ -17,16 +21,18 @@ export default function SuccessPage() {
     // Show success message
     toast({
       title: "Payment successful!",
-      description: "You now have access to the AI prompt. You'll be redirected back shortly.",
+      description: "You can now view the prompt.",
     });
 
-    // Redirect back to the previous page after a short delay
+    // Redirect back to the specified page after a short delay
     const timer = setTimeout(() => {
-      navigate(-1);
+      navigate(redirectPath, { 
+        state: { openPrompt: shouldOpenPrompt } 
+      });
     }, 3000);
 
     return () => clearTimeout(timer);
-  }, [navigate, toast]);
+  }, [navigate, toast, redirectPath, shouldOpenPrompt]);
 
   return (
     <div className="min-h-screen bg-background flex items-center justify-center">

@@ -22,6 +22,7 @@ import {
   AlertDialogTitle,
 } from "@/components/ui/alert-dialog";
 import { supabase } from "@/integrations/supabase/client";
+import { useLocation } from "react-router-dom";
 
 interface PaidCopyPromptButtonProps {
   prompt: string;
@@ -42,14 +43,19 @@ export function PaidCopyPromptButton({
   const [isPaymentDialogOpen, setIsPaymentDialogOpen] = useState(false);
   const [isPaid, setIsPaid] = useState(false);
   const [isPaymentLoading, setIsPaymentLoading] = useState(false);
+  const location = useLocation();
   
-  // Check payment status from local storage on component mount
   useEffect(() => {
     const paymentStatus = localStorage.getItem(PAYMENT_STATUS_KEY);
+    const shouldOpen = location.state?.openPrompt;
+    
     if (paymentStatus === PRODUCT_ID) {
       setIsPaid(true);
+      if (shouldOpen) {
+        setIsDialogOpen(true);
+      }
     }
-  }, []);
+  }, [location.state]);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(prompt).then(() => {
@@ -114,7 +120,6 @@ export function PaidCopyPromptButton({
         AI prompt
       </Button>
 
-      {/* Payment Confirmation Dialog */}
       <AlertDialog open={isPaymentDialogOpen} onOpenChange={setIsPaymentDialogOpen}>
         <AlertDialogContent>
           <AlertDialogHeader>
@@ -143,7 +148,6 @@ export function PaidCopyPromptButton({
         </AlertDialogContent>
       </AlertDialog>
 
-      {/* AI Prompt Dialog */}
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
         <DialogContent className="max-w-2xl max-h-[80vh]">
           <DialogHeader>
