@@ -25,7 +25,7 @@ import {
 import { loadStripe } from "@stripe/stripe-js";
 
 // Replace with your actual Stripe publishable key
-const stripePromise = loadStripe("pk_test_51RHCYnR3aQz277S2gr8KR4C2U3ChKWcG1QUgoUoOMh8YIS5cORiktiUnIXLPOu5ZzZUlEaBKrvDfBTIvUPAzPpRF00Ir9dtWvG");
+const stripePromise = loadStripe("pk_live_51RHCYdJYhMt8Hs7c4rj1MGzUxcxxcdWbgKl2hpnqWuoWoIxH7aBLJvHv3Dpw26NbrtfK1JuTFT9rticZwG0jwwPF00d4bpX2Rk");
 
 interface PaidCopyPromptButtonProps {
   prompt: string;
