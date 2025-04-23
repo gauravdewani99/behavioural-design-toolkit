@@ -1,8 +1,7 @@
-
 import React from "react";
 import { ArrowLeft } from "lucide-react";
 import { SplineSceneBasic } from "@/components/SplineSceneDemo";
-import { CopyPromptButton } from "@/components/CopyPromptButton";
+import { PaidCopyPromptButton } from "@/components/PaidCopyPromptButton";
 
 interface MotionProps {
   simplifiedView?: boolean;
@@ -13,7 +12,7 @@ const Motion: React.FC<MotionProps> = ({ simplifiedView = false }) => {
     return (
       <div className="w-full max-w-3xl mx-auto">
         <div className="relative">
-          <CopyPromptButton 
+          <PaidCopyPromptButton 
             prompt={`You are given a task to integrate an existing React component in the codebase
 
 The codebase should support:
@@ -139,7 +138,7 @@ Steps to integrate
           </p>
           
           <div className="relative">
-            <CopyPromptButton 
+            <PaidCopyPromptButton 
               prompt={`You are given a task to integrate an existing React component in the codebase
 
 The codebase should support:
