@@ -129,7 +129,7 @@ Implementation Guidelines
  - What data/props will be passed to this component?
  - Are there any specific state management requirements?
  - Are there any required assets (images, icons, etc.)?
- - What is the expected responsive behavior?
+  - What is the expected responsive behaviour?
  - What is the best place to use this component in the app?
 
 Steps to integrate
@@ -163,7 +163,7 @@ Steps to integrate
         <div className="prose prose-invert max-w-none mb-10">
           <p className="text-muted-foreground text-lg">
             Social proofing is a powerful psychological phenomenon where people follow the actions 
-            of others, assuming those actions reflect correct behavior. This component demonstrates 
+            of others, assuming those actions reflect correct behaviour. This component demonstrates 
             a simple yet effective social proof element showing user adoption.
           </p>
           
@@ -315,7 +315,7 @@ Implementation Guidelines
  - What data/props will be passed to this component?
  - Are there any specific state management requirements?
  - Are there any required assets (images, icons, etc.)?
- - What is the expected responsive behavior?
+ - What is the expected responsive behaviour?
  - What is the best place to use this component in the app?
 
 Steps to integrate

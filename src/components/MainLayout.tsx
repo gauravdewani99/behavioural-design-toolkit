@@ -74,7 +74,7 @@ const MainLayout: React.FC<MainLayoutProps> = ({
         <div className="max-w-5xl mx-auto flex justify-between items-center">
           <div>
             <h1 className="text-3xl font-bold tracking-tight mb-2">
-              <span className="text-[#F08CAA]">Behavioral Design Toolkit</span>
+              <span className="text-[#F08CAA]">Behavioural Design Toolkit</span>
               <span className="mx-2"></span>
               <span className="text-[#F08CAA]"></span>
               <span className="mx-2"></span>

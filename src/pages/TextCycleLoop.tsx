@@ -180,7 +180,7 @@ Implementation Guidelines
  - What data/props will be passed to this component?
  - Are there any specific state management requirements?
  - Are there any required assets (images, icons, etc.)?
- - What is the expected responsive behavior?
+  - What is the expected responsive behaviour?
  - What is the best place to use this component in the app?
 
 Steps to integrate
@@ -389,7 +389,7 @@ Implementation Guidelines
  - What data/props will be passed to this component?
  - Are there any specific state management requirements?
  - Are there any required assets (images, icons, etc.)?
- - What is the expected responsive behavior?
+ - What is the expected responsive behaviour?
  - What is the best place to use this component in the app?
 
 Steps to integrate
