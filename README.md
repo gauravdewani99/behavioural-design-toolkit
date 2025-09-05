@@ -1,10 +1,10 @@
-Behavioural Desing Toolkit
-
-# Welcome to your Lovable project
+# Welcome to Behavioural Design Toolkit
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/ce0d88cd-7f51-42b5-80be-fbeff84ab1a6
+Behavioural Design Toolkit is a collection of behaviourally backed UI components to improve user engagement.
+
+**URL**: https://visual-reflection-galaxy.lovable.app/
 
 ## How can I edit this code?
 
