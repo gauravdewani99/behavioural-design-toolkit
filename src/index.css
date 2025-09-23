@@ -10,6 +10,35 @@
   .neo-blur {
     @apply backdrop-blur-2xl bg-black/40 border border-white/10;
   }
+
+  /* iOS Liquid Glass Effects */
+  .liquid-glass {
+    @apply backdrop-blur-2xl bg-white/10 border border-white/20 shadow-[0_8px_32px_0_rgba(31,38,135,0.37)] rounded-2xl;
+  }
+
+  .liquid-glass-dark {
+    @apply backdrop-blur-2xl bg-black/10 border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] rounded-2xl;
+  }
+
+  .liquid-button {
+    @apply backdrop-blur-xl bg-gradient-to-r from-white/20 to-white/10 border border-white/30 shadow-[0_8px_32px_0_rgba(31,38,135,0.37),inset_0_1px_0_0_rgba(255,255,255,0.5)] rounded-2xl transition-all duration-300 hover:shadow-[0_12px_40px_0_rgba(31,38,135,0.5),inset_0_1px_0_0_rgba(255,255,255,0.6)] hover:scale-105 active:scale-95;
+  }
+
+  .liquid-button-dark {
+    @apply backdrop-blur-xl bg-gradient-to-r from-white/10 to-white/5 border border-white/20 shadow-[0_8px_32px_0_rgba(0,0,0,0.5),inset_0_1px_0_0_rgba(255,255,255,0.2)] rounded-2xl transition-all duration-300 hover:shadow-[0_12px_40px_0_rgba(0,0,0,0.7),inset_0_1px_0_0_rgba(255,255,255,0.3)] hover:scale-105 active:scale-95;
+  }
+
+  .liquid-modal {
+    @apply backdrop-blur-3xl bg-gradient-to-br from-white/30 to-white/10 border border-white/30 shadow-[0_20px_80px_0_rgba(31,38,135,0.4)] rounded-3xl;
+  }
+
+  .liquid-modal-dark {
+    @apply backdrop-blur-3xl bg-gradient-to-br from-black/30 to-black/10 border border-white/20 shadow-[0_20px_80px_0_rgba(0,0,0,0.6)] rounded-3xl;
+  }
+
+  .frosted-overlay {
+    @apply backdrop-blur-md bg-black/20;
+  }
 }
 
 @layer base {

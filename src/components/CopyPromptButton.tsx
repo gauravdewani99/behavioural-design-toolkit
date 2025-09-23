@@ -4,7 +4,8 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { Sparkles } from "lucide-react";
+import { Sparkles, Copy, Zap } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import {
   Dialog,
   DialogContent,
@@ -46,34 +47,63 @@ export function CopyPromptButton({
 
   return (
     <>
-      <Button
-        variant="default"
-        size="sm"
-        className={`absolute top-2 right-2 z-10 bg-[#D3E4FD] hover:bg-[#bfd7fa] text-black ${className}`}
-        onClick={() => setIsDialogOpen(true)}
-      >
-        <Sparkles className="mr-1 h-4 w-4" />
-        AI prompt
-      </Button>
+      <div className="group relative">
+        <Button
+          variant="ghost"
+          size="sm"
+          className={`
+            absolute top-2 right-2 z-10 
+            liquid-button dark:liquid-button-dark
+            text-slate-700 dark:text-slate-200 
+            font-medium tracking-wide
+            group-hover:text-slate-900 dark:group-hover:text-white
+            ${className}
+          `}
+          onClick={() => setIsDialogOpen(true)}
+        >
+          <div className="flex items-center gap-2">
+            <Zap className="h-4 w-4 text-blue-500" />
+            <span className="text-sm">AI Prompt</span>
+            <Badge variant="secondary" className="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
+              Free
+            </Badge>
+          </div>
+        </Button>
+      </div>
 
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="max-w-2xl max-h-[80vh]">
-          <DialogHeader>
-            <DialogTitle>AI Prompt</DialogTitle>
+        <DialogContent className="liquid-modal dark:liquid-modal-dark border-0 shadow-2xl max-w-3xl max-h-[85vh]">
+          <DialogHeader className="space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-xl bg-gradient-to-r from-blue-400/20 to-cyan-400/20 dark:from-blue-500/20 dark:to-cyan-500/20">
+                <Sparkles className="h-6 w-6 text-blue-500" />
+              </div>
+              <div>
+                <DialogTitle className="text-xl font-semibold text-slate-800 dark:text-slate-100">
+                  Free AI Prompt
+                </DialogTitle>
+                <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
+                  Optimized for all major AI code editors
+                </p>
+              </div>
+            </div>
           </DialogHeader>
-          <div className="text-sm text-muted-foreground mb-4">
-            This prompt is optimized for most AI code editors.
+          
+          <div className="space-y-4">
+            <div className="liquid-glass dark:liquid-glass-dark p-6 overflow-y-auto max-h-[50vh]">
+              <pre className="whitespace-pre-wrap text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-mono">
+                {prompt}
+              </pre>
+            </div>
           </div>
-          <div className="overflow-y-auto max-h-[50vh] p-4 border rounded bg-secondary/20">
-            <pre className="whitespace-pre-wrap text-sm">{prompt}</pre>
-          </div>
+          
           <DialogFooter>
             <Button 
               onClick={handleCopy} 
-              className="mt-2 bg-[#D3E4FD] hover:bg-[#bfd7fa] text-black"
+              className="liquid-button dark:liquid-button-dark w-full py-3 text-slate-700 dark:text-slate-200 font-medium border-0"
             >
-              <Sparkles className="mr-1 h-4 w-4" />
-              Copy AI prompt
+              <Copy className="mr-2 h-4 w-4" />
+              Copy to Clipboard
             </Button>
           </DialogFooter>
         </DialogContent>

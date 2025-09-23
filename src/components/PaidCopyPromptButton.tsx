@@ -3,7 +3,8 @@
 import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import { Sparkles } from "lucide-react";
+import { Sparkles, Copy, Star, Zap } from "lucide-react";
+import { Badge } from "@/components/ui/badge";
 import {
   Dialog,
   DialogContent,
@@ -110,62 +111,124 @@ export function PaidCopyPromptButton({
 
   return (
     <>
-      <Button
-        variant="default"
-        size="sm"
-        className={`absolute top-2 right-2 z-10 bg-[#D3E4FD] hover:bg-[#bfd7fa] text-black ${className}`}
-        onClick={handleAIPromptClick}
-      >
-        <Sparkles className="mr-1 h-4 w-4" />
-        AI prompt
-      </Button>
+      <div className="group relative">
+        <Button
+          variant="ghost"
+          size="sm"
+          className={`
+            absolute top-2 right-2 z-10 
+            liquid-button dark:liquid-button-dark
+            text-slate-700 dark:text-slate-200 
+            font-medium tracking-wide
+            group-hover:text-slate-900 dark:group-hover:text-white
+            ${className}
+          `}
+          onClick={handleAIPromptClick}
+        >
+          <div className="flex items-center gap-2">
+            {isPaid ? (
+              <>
+                <Zap className="h-4 w-4 text-emerald-500" />
+                <span className="text-sm">AI Prompt</span>
+                <Badge variant="secondary" className="text-xs px-2 py-0.5 bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">
+                  Premium
+                </Badge>
+              </>
+            ) : (
+              <>
+                <Star className="h-4 w-4 text-amber-500" />
+                <span className="text-sm">AI Prompt</span>
+                <Badge variant="secondary" className="text-xs px-2 py-0.5 bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">
+                  $5
+                </Badge>
+              </>
+            )}
+          </div>
+        </Button>
+      </div>
 
       <AlertDialog open={isPaymentDialogOpen} onOpenChange={setIsPaymentDialogOpen}>
-        <AlertDialogContent>
-          <AlertDialogHeader>
-            <AlertDialogTitle>Purchase AI Prompt</AlertDialogTitle>
-            <AlertDialogDescription>
-              This AI prompt costs $5. Would you like to proceed with the payment?
+        <AlertDialogContent className="liquid-modal dark:liquid-modal-dark border-0 shadow-2xl max-w-md">
+          <AlertDialogHeader className="text-center space-y-4">
+            <div className="flex justify-center">
+              <div className="p-3 rounded-2xl bg-gradient-to-r from-amber-400/20 to-orange-400/20 dark:from-amber-500/20 dark:to-orange-500/20">
+                <Star className="h-8 w-8 text-amber-500" />
+              </div>
+            </div>
+            <AlertDialogTitle className="text-xl font-semibold text-slate-800 dark:text-slate-100">
+              Unlock Premium AI Prompt
+            </AlertDialogTitle>
+            <AlertDialogDescription className="text-slate-600 dark:text-slate-300 leading-relaxed">
+              Get access to the complete, optimized AI prompt that was used to create this component. 
+              Perfect for customizing and building similar interactions.
             </AlertDialogDescription>
+            <div className="flex justify-center">
+              <Badge variant="outline" className="text-2xl font-bold py-2 px-4 bg-gradient-to-r from-amber-50 to-orange-50 dark:from-amber-950/50 dark:to-orange-950/50 border-amber-200 dark:border-amber-800">
+                $5
+              </Badge>
+            </div>
           </AlertDialogHeader>
-          <AlertDialogFooter>
-            <AlertDialogCancel disabled={isPaymentLoading}>Cancel</AlertDialogCancel>
+          <AlertDialogFooter className="flex-col gap-3 sm:flex-col">
             <AlertDialogAction 
               onClick={handlePayment} 
-              className="bg-primary text-primary-foreground hover:bg-primary/90"
+              className="liquid-button dark:liquid-button-dark w-full py-3 text-slate-700 dark:text-slate-200 font-medium border-0"
               disabled={isPaymentLoading}
             >
               {isPaymentLoading ? (
-                <>
-                  <div className="h-4 w-4 mr-2 rounded-full border-2 border-t-transparent border-white animate-spin"></div>
-                  Processing...
-                </>
+                <div className="flex items-center gap-2">
+                  <div className="h-4 w-4 rounded-full border-2 border-current border-t-transparent animate-spin"></div>
+                  <span>Processing Payment...</span>
+                </div>
               ) : (
-                "Continue to Payment"
+                <div className="flex items-center gap-2">
+                  <Zap className="h-4 w-4" />
+                  <span>Continue to Payment</span>
+                </div>
               )}
             </AlertDialogAction>
+            <AlertDialogCancel 
+              disabled={isPaymentLoading}
+              className="w-full bg-transparent border-slate-200 dark:border-slate-700 text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800/50"
+            >
+              Maybe Later
+            </AlertDialogCancel>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
 
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="max-w-2xl max-h-[80vh]">
-          <DialogHeader>
-            <DialogTitle>AI Prompt</DialogTitle>
+        <DialogContent className="liquid-modal dark:liquid-modal-dark border-0 shadow-2xl max-w-3xl max-h-[85vh]">
+          <DialogHeader className="space-y-4">
+            <div className="flex items-center gap-3">
+              <div className="p-2 rounded-xl bg-gradient-to-r from-emerald-400/20 to-blue-400/20 dark:from-emerald-500/20 dark:to-blue-500/20">
+                <Sparkles className="h-6 w-6 text-emerald-500" />
+              </div>
+              <div>
+                <DialogTitle className="text-xl font-semibold text-slate-800 dark:text-slate-100">
+                  Premium AI Prompt
+                </DialogTitle>
+                <p className="text-sm text-slate-600 dark:text-slate-400 mt-1">
+                  Optimized for all major AI code editors
+                </p>
+              </div>
+            </div>
           </DialogHeader>
-          <div className="text-sm text-muted-foreground mb-4">
-            This prompt is optimized for most AI code editors.
+          
+          <div className="space-y-4">
+            <div className="liquid-glass dark:liquid-glass-dark p-6 overflow-y-auto max-h-[50vh]">
+              <pre className="whitespace-pre-wrap text-sm text-slate-700 dark:text-slate-300 leading-relaxed font-mono">
+                {prompt}
+              </pre>
+            </div>
           </div>
-          <div className="overflow-y-auto max-h-[50vh] p-4 border rounded bg-secondary/20">
-            <pre className="whitespace-pre-wrap text-sm">{prompt}</pre>
-          </div>
+          
           <DialogFooter>
             <Button 
               onClick={handleCopy} 
-              className="mt-2 bg-[#D3E4FD] hover:bg-[#bfd7fa] text-black"
+              className="liquid-button dark:liquid-button-dark w-full py-3 text-slate-700 dark:text-slate-200 font-medium border-0"
             >
-              <Sparkles className="mr-1 h-4 w-4" />
-              Copy AI prompt
+              <Copy className="mr-2 h-4 w-4" />
+              Copy to Clipboard
             </Button>
           </DialogFooter>
         </DialogContent>
