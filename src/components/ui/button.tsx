@@ -5,7 +5,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 tap-target",
   {
     variants: {
       variant: {
@@ -20,10 +20,14 @@ const buttonVariants = cva(
         link: "text-primary underline-offset-4 hover:underline",
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
-        icon: "h-10 w-10",
+        default: "h-10 px-4 py-2 md:h-10 md:px-4 md:py-2",
+        sm: "h-8 px-2 py-1 text-xs md:h-9 md:px-3 md:text-sm",
+        lg: "h-12 px-6 py-3 text-base md:h-11 md:px-8 md:text-sm",
+        xl: "h-14 px-8 py-4 text-lg md:h-12 md:px-10 md:text-base",
+        icon: "h-10 w-10 md:h-10 md:w-10",
+        "icon-sm": "h-8 w-8 md:h-9 md:w-9",
+        "icon-lg": "h-12 w-12 md:h-11 md:w-11",
+        mobile: "w-full h-12 px-6 py-3 text-base font-medium rounded-lg sm:w-auto sm:h-10 sm:px-4 sm:py-2 sm:text-sm",
       },
     },
     defaultVariants: {

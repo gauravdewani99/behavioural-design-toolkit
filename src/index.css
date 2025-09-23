@@ -97,3 +97,50 @@
     transform: translateY(0);
   }
 }
+
+/* Mobile responsive utilities */
+@layer utilities {
+  .mobile-full-width {
+    @apply w-full;
+  }
+  
+  .mobile-stack {
+    @apply flex-col space-y-4 space-x-0;
+  }
+  
+  .mobile-center {
+    @apply text-center items-center;
+  }
+  
+  .mobile-padding {
+    @apply px-4 py-2;
+  }
+  
+  .tablet-collapse {
+    @apply lg:flex lg:flex-row lg:space-y-0 lg:space-x-4;
+  }
+  
+  /* Hide scrollbar for mobile horizontal scroll */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Touch-friendly tap targets */
+  .tap-target {
+    @apply min-h-[44px] min-w-[44px];
+  }
+  
+  /* Mobile button styles */
+  .mobile-button {
+    @apply px-6 py-3 text-base font-medium rounded-lg;
+  }
+  
+  .mobile-button-small {
+    @apply px-4 py-2 text-sm font-medium rounded-md;
+  }
+}
