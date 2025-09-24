@@ -20,6 +20,72 @@
     @apply backdrop-blur-2xl bg-black/10 border border-white/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.5)] rounded-2xl;
   }
 
+  /* Glowy AI Prompt Button */
+  .ai-prompt-button {
+    @apply relative backdrop-blur-xl bg-gradient-to-r from-white/20 to-white/10 border-2 border-blue-400/50 shadow-[0_8px_32px_0_rgba(59,130,246,0.4),inset_0_1px_0_0_rgba(255,255,255,0.5)] rounded-2xl transition-all duration-300 hover:shadow-[0_12px_40px_0_rgba(59,130,246,0.6),inset_0_1px_0_0_rgba(255,255,255,0.6)] hover:scale-105 active:scale-95;
+  }
+
+  .ai-prompt-button-dark {
+    @apply relative backdrop-blur-xl bg-gradient-to-r from-white/10 to-white/5 border-2 border-blue-400/60 shadow-[0_8px_32px_0_rgba(59,130,246,0.5),inset_0_1px_0_0_rgba(255,255,255,0.2)] rounded-2xl transition-all duration-300 hover:shadow-[0_12px_40px_0_rgba(59,130,246,0.7),inset_0_1px_0_0_rgba(255,255,255,0.3)] hover:scale-105 active:scale-95;
+  }
+
+  .ai-prompt-button::before {
+    @apply content-[''] absolute -inset-[1px] bg-gradient-to-r from-blue-400 via-cyan-400 to-blue-400 rounded-2xl opacity-75 blur-sm animate-pulse;
+    z-index: -1;
+  }
+
+  .ai-prompt-button-dark::before {
+    @apply content-[''] absolute -inset-[1px] bg-gradient-to-r from-blue-500 via-cyan-500 to-blue-500 rounded-2xl opacity-60 blur-sm animate-pulse;
+    z-index: -1;
+  }
+
+  /* Premium AI Prompt Button */
+  .ai-prompt-premium {
+    @apply relative backdrop-blur-xl bg-gradient-to-r from-white/20 to-white/10 border-2 border-emerald-400/50 shadow-[0_8px_32px_0_rgba(16,185,129,0.4),inset_0_1px_0_0_rgba(255,255,255,0.5)] rounded-2xl transition-all duration-300 hover:shadow-[0_12px_40px_0_rgba(16,185,129,0.6),inset_0_1px_0_0_rgba(255,255,255,0.6)] hover:scale-105 active:scale-95;
+  }
+
+  .ai-prompt-premium-dark {
+    @apply relative backdrop-blur-xl bg-gradient-to-r from-white/10 to-white/5 border-2 border-emerald-400/60 shadow-[0_8px_32px_0_rgba(16,185,129,0.5),inset_0_1px_0_0_rgba(255,255,255,0.2)] rounded-2xl transition-all duration-300 hover:shadow-[0_12px_40px_0_rgba(16,185,129,0.7),inset_0_1px_0_0_rgba(255,255,255,0.3)] hover:scale-105 active:scale-95;
+  }
+
+  .ai-prompt-premium::before {
+    @apply content-[''] absolute -inset-[1px] bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400 rounded-2xl opacity-75 blur-sm animate-pulse;
+    z-index: -1;
+  }
+
+  .ai-prompt-premium-dark::before {
+    @apply content-[''] absolute -inset-[1px] bg-gradient-to-r from-emerald-500 via-teal-500 to-emerald-500 rounded-2xl opacity-60 blur-sm animate-pulse;
+    z-index: -1;
+  }
+
+  /* Paid AI Prompt Button */
+  .ai-prompt-paid {
+    @apply relative backdrop-blur-xl bg-gradient-to-r from-white/20 to-white/10 border-2 border-amber-400/50 shadow-[0_8px_32px_0_rgba(245,158,11,0.4),inset_0_1px_0_0_rgba(255,255,255,0.5)] rounded-2xl transition-all duration-300 hover:shadow-[0_12px_40px_0_rgba(245,158,11,0.6),inset_0_1px_0_0_rgba(255,255,255,0.6)] hover:scale-105 active:scale-95;
+  }
+
+  .ai-prompt-paid-dark {
+    @apply relative backdrop-blur-xl bg-gradient-to-r from-white/10 to-white/5 border-2 border-amber-400/60 shadow-[0_8px_32px_0_rgba(245,158,11,0.5),inset_0_1px_0_0_rgba(255,255,255,0.2)] rounded-2xl transition-all duration-300 hover:shadow-[0_12px_40px_0_rgba(245,158,11,0.7),inset_0_1px_0_0_rgba(255,255,255,0.3)] hover:scale-105 active:scale-95;
+  }
+
+  .ai-prompt-paid::before {
+    @apply content-[''] absolute -inset-[1px] bg-gradient-to-r from-amber-400 via-yellow-400 to-amber-400 rounded-2xl opacity-75 blur-sm animate-pulse;
+    z-index: -1;
+  }
+
+  .ai-prompt-paid-dark::before {
+    @apply content-[''] absolute -inset-[1px] bg-gradient-to-r from-amber-500 via-yellow-500 to-amber-500 rounded-2xl opacity-60 blur-sm animate-pulse;
+    z-index: -1;
+  }
+
+  /* Copy Button Enhanced */
+  .copy-button {
+    @apply backdrop-blur-xl bg-gradient-to-r from-slate-900/90 to-slate-800/90 border border-slate-600/30 shadow-[0_8px_32px_0_rgba(15,23,42,0.5),inset_0_1px_0_0_rgba(255,255,255,0.1)] rounded-2xl transition-all duration-300 hover:shadow-[0_12px_40px_0_rgba(15,23,42,0.7),inset_0_1px_0_0_rgba(255,255,255,0.2)] hover:scale-105 active:scale-95 text-white font-semibold;
+  }
+
+  .copy-button-dark {
+    @apply backdrop-blur-xl bg-gradient-to-r from-white/95 to-slate-100/95 border border-slate-300/30 shadow-[0_8px_32px_0_rgba(255,255,255,0.5),inset_0_1px_0_0_rgba(0,0,0,0.1)] rounded-2xl transition-all duration-300 hover:shadow-[0_12px_40px_0_rgba(255,255,255,0.7),inset_0_1px_0_0_rgba(0,0,0,0.2)] hover:scale-105 active:scale-95 text-slate-900 font-semibold;
+  }
+
   .liquid-button {
     @apply backdrop-blur-xl bg-gradient-to-r from-white/20 to-white/10 border border-white/30 shadow-[0_8px_32px_0_rgba(31,38,135,0.37),inset_0_1px_0_0_rgba(255,255,255,0.5)] rounded-2xl transition-all duration-300 hover:shadow-[0_12px_40px_0_rgba(31,38,135,0.5),inset_0_1px_0_0_rgba(255,255,255,0.6)] hover:scale-105 active:scale-95;
   }

@@ -117,9 +117,9 @@ export function PaidCopyPromptButton({
           size="sm"
           className={`
             absolute top-2 right-2 z-10 
-            liquid-button dark:liquid-button-dark
-            text-slate-700 dark:text-slate-200 
-            font-medium tracking-wide
+            ${isPaid ? 'ai-prompt-premium dark:ai-prompt-premium-dark' : 'ai-prompt-paid dark:ai-prompt-paid-dark'}
+            text-slate-800 dark:text-slate-100 
+            font-semibold tracking-wide
             group-hover:text-slate-900 dark:group-hover:text-white
             ${className}
           `}
@@ -171,7 +171,7 @@ export function PaidCopyPromptButton({
           <AlertDialogFooter className="flex-col gap-3 sm:flex-col">
             <AlertDialogAction 
               onClick={handlePayment} 
-              className="liquid-button dark:liquid-button-dark w-full py-3 text-slate-700 dark:text-slate-200 font-medium border-0"
+              className="copy-button dark:copy-button-dark w-full py-3 border-0"
               disabled={isPaymentLoading}
             >
               {isPaymentLoading ? (
@@ -225,7 +225,7 @@ export function PaidCopyPromptButton({
           <DialogFooter>
             <Button 
               onClick={handleCopy} 
-              className="liquid-button dark:liquid-button-dark w-full py-3 text-slate-700 dark:text-slate-200 font-medium border-0"
+              className="copy-button dark:copy-button-dark w-full py-3 border-0"
             >
               <Copy className="mr-2 h-4 w-4" />
               Copy to Clipboard
