@@ -52,19 +52,19 @@ export function CopyPromptButton({
           variant="ghost"
           size="sm"
           className={`
-            absolute top-3 right-3 z-10 
-            ai-prompt-button dark:ai-prompt-button-dark
-            text-slate-800 dark:text-slate-100 
-            font-medium tracking-wide text-xs px-2 py-1 h-7
+            absolute top-2 right-2 z-10 
+            liquid-button dark:liquid-button-dark
+            text-slate-700 dark:text-slate-200 
+            font-medium tracking-wide
             group-hover:text-slate-900 dark:group-hover:text-white
             ${className}
           `}
           onClick={() => setIsDialogOpen(true)}
         >
-          <div className="flex items-center gap-1.5">
-            <Zap className="h-3 w-3 text-blue-500" />
-            <span className="text-xs">AI</span>
-            <Badge variant="secondary" className="text-[10px] px-1.5 py-0 bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
+          <div className="flex items-center gap-2">
+            <Zap className="h-4 w-4 text-blue-500" />
+            <span className="text-sm">AI Prompt</span>
+            <Badge variant="secondary" className="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
               Free
             </Badge>
           </div>
@@ -100,7 +100,7 @@ export function CopyPromptButton({
           <DialogFooter>
             <Button 
               onClick={handleCopy} 
-              className="copy-button dark:copy-button-dark w-full py-3 border-0"
+              className="liquid-button dark:liquid-button-dark w-full py-3 text-slate-700 dark:text-slate-200 font-medium border-0"
             >
               <Copy className="mr-2 h-4 w-4" />
               Copy to Clipboard
