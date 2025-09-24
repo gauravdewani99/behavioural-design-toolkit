@@ -116,29 +116,29 @@ export function PaidCopyPromptButton({
           variant="ghost"
           size="sm"
           className={`
-            absolute top-2 right-2 z-10 
+            absolute top-3 right-3 z-10 
             ${isPaid ? 'ai-prompt-premium dark:ai-prompt-premium-dark' : 'ai-prompt-paid dark:ai-prompt-paid-dark'}
             text-slate-800 dark:text-slate-100 
-            font-semibold tracking-wide
+            font-medium tracking-wide text-xs px-2 py-1 h-7
             group-hover:text-slate-900 dark:group-hover:text-white
             ${className}
           `}
           onClick={handleAIPromptClick}
         >
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5">
             {isPaid ? (
               <>
-                <Zap className="h-4 w-4 text-emerald-500" />
-                <span className="text-sm">AI Prompt</span>
-                <Badge variant="secondary" className="text-xs px-2 py-0.5 bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">
-                  Premium
+                <Zap className="h-3 w-3 text-emerald-500" />
+                <span className="text-xs">AI</span>
+                <Badge variant="secondary" className="text-[10px] px-1.5 py-0 bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">
+                  Pro
                 </Badge>
               </>
             ) : (
               <>
-                <Star className="h-4 w-4 text-amber-500" />
-                <span className="text-sm">AI Prompt</span>
-                <Badge variant="secondary" className="text-xs px-2 py-0.5 bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">
+                <Star className="h-3 w-3 text-amber-500" />
+                <span className="text-xs">AI</span>
+                <Badge variant="secondary" className="text-[10px] px-1.5 py-0 bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">
                   $5
                 </Badge>
               </>
