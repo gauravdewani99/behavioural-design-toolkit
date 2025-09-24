@@ -52,19 +52,20 @@ export function CopyPromptButton({
           variant="ghost"
           size="sm"
           className={`
-            absolute top-2 right-2 z-10 
+            absolute top-3 right-3 z-20 
             liquid-button dark:liquid-button-dark
             text-slate-700 dark:text-slate-200 
             font-medium tracking-wide
             group-hover:text-slate-900 dark:group-hover:text-white
+            min-w-fit max-w-[140px] h-auto
             ${className}
           `}
           onClick={() => setIsDialogOpen(true)}
         >
-          <div className="flex items-center gap-2">
-            <Zap className="h-4 w-4 text-blue-500" />
-            <span className="text-sm">AI Prompt</span>
-            <Badge variant="secondary" className="text-xs px-2 py-0.5 bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300">
+          <div className="flex items-center gap-1.5 px-1">
+            <Zap className="h-3.5 w-3.5 text-blue-500 flex-shrink-0" />
+            <span className="text-xs font-medium truncate">AI Prompt</span>
+            <Badge variant="secondary" className="text-[10px] px-1.5 py-0.5 bg-blue-100 text-blue-700 dark:bg-blue-900/30 dark:text-blue-300 flex-shrink-0">
               Free
             </Badge>
           </div>

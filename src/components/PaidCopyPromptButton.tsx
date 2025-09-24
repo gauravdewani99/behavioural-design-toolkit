@@ -116,29 +116,30 @@ export function PaidCopyPromptButton({
           variant="ghost"
           size="sm"
           className={`
-            absolute top-2 right-2 z-10 
+            absolute top-3 right-3 z-20 
             liquid-button dark:liquid-button-dark
             text-slate-700 dark:text-slate-200 
             font-medium tracking-wide
             group-hover:text-slate-900 dark:group-hover:text-white
+            min-w-fit max-w-[140px] h-auto
             ${className}
           `}
           onClick={handleAIPromptClick}
         >
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-1.5 px-1">
             {isPaid ? (
               <>
-                <Zap className="h-4 w-4 text-emerald-500" />
-                <span className="text-sm">AI Prompt</span>
-                <Badge variant="secondary" className="text-xs px-2 py-0.5 bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300">
+                <Zap className="h-3.5 w-3.5 text-emerald-500 flex-shrink-0" />
+                <span className="text-xs font-medium truncate">AI Prompt</span>
+                <Badge variant="secondary" className="text-[10px] px-1.5 py-0.5 bg-emerald-100 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-300 flex-shrink-0">
                   Premium
                 </Badge>
               </>
             ) : (
               <>
-                <Star className="h-4 w-4 text-amber-500" />
-                <span className="text-sm">AI Prompt</span>
-                <Badge variant="secondary" className="text-xs px-2 py-0.5 bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300">
+                <Star className="h-3.5 w-3.5 text-amber-500 flex-shrink-0" />
+                <span className="text-xs font-medium truncate">AI Prompt</span>
+                <Badge variant="secondary" className="text-[10px] px-1.5 py-0.5 bg-amber-100 text-amber-700 dark:bg-amber-900/30 dark:text-amber-300 flex-shrink-0">
                   $5
                 </Badge>
               </>
