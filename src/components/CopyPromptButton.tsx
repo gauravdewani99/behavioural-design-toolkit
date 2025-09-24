@@ -100,9 +100,9 @@ export function CopyPromptButton({
           <DialogFooter>
             <Button 
               onClick={handleCopy} 
-              className="liquid-button dark:liquid-button-dark w-full py-3 text-slate-700 dark:text-slate-200 font-medium border-0"
+              className="w-full py-3 font-semibold bg-gradient-to-r from-blue-600 to-cyan-600 hover:from-blue-700 hover:to-cyan-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-200"
             >
-              <Copy className="mr-2 h-4 w-4" />
+              <Copy className="mr-2 h-5 w-5" />
               Copy to Clipboard
             </Button>
           </DialogFooter>

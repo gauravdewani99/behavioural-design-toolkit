@@ -171,7 +171,7 @@ export function PaidCopyPromptButton({
           <AlertDialogFooter className="flex-col gap-3 sm:flex-col">
             <AlertDialogAction 
               onClick={handlePayment} 
-              className="liquid-button dark:liquid-button-dark w-full py-3 text-slate-700 dark:text-slate-200 font-medium border-0"
+              className="w-full py-3 font-semibold bg-gradient-to-r from-amber-600 to-orange-600 hover:from-amber-700 hover:to-orange-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-200"
               disabled={isPaymentLoading}
             >
               {isPaymentLoading ? (
@@ -225,9 +225,9 @@ export function PaidCopyPromptButton({
           <DialogFooter>
             <Button 
               onClick={handleCopy} 
-              className="liquid-button dark:liquid-button-dark w-full py-3 text-slate-700 dark:text-slate-200 font-medium border-0"
+              className="w-full py-3 font-semibold bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white border-0 shadow-lg hover:shadow-xl transition-all duration-200"
             >
-              <Copy className="mr-2 h-4 w-4" />
+              <Copy className="mr-2 h-5 w-5" />
               Copy to Clipboard
             </Button>
           </DialogFooter>
